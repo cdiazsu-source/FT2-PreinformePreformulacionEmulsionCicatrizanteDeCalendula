@@ -29,36 +29,36 @@ const FORMS = [
 
 /* ---------- Fases de la cicatrización ---------- */
 const PHASES = [
-  { name: "Hemostasia", time: "minutos–horas", text: "Formación del coágulo de fibrina y liberación de factores de crecimiento plaquetarios.", actors: [], role: "La emulsión no interviene; se aplica sobre la herida limpia." },
-  { name: "Inflamación", time: "1–4 días", text: "Llegan neutrófilos y macrófagos, se liberan mediadores (prostaglandinas, leucotrienos) y especies reactivas de oxígeno.", actors: ["Ésteres de faradiol: ↓ COX-2/LOX", "Flavonoides: captura de ROS, ↓ edema", "Taninos y flavonoides: antisépticos"], role: "Fase principal de acción antiinflamatoria y antiséptica.", hot: true },
-  { name: "Proliferación", time: "4–21 días", text: "Tejido de granulación, angiogénesis, depósito de colágeno y reepitelización desde los bordes: es la fase que define el cierre por segunda intención.", actors: ["Faradiol: proliferación y migración de fibroblastos", "Carotenoides y saponinas: reepitelización", "Polisacáridos: ambiente húmedo"], role: "Fase principal de acción cicatrizante.", hot: true },
-  { name: "Remodelación", time: "21 días – 1 año", text: "Maduración del colágeno de tipo III a tipo I y contracción de la cicatriz.", actors: ["Antioxidantes: limitan el daño oxidativo residual"], role: "Efecto secundario de soporte." }
+  { icon: "droplet", name: "Hemostasia", time: "minutos–horas", text: "Formación del coágulo de fibrina y liberación de factores de crecimiento plaquetarios.", actors: [], role: "La emulsión no interviene; se aplica sobre la herida limpia." },
+  { icon: "flame", name: "Inflamación", time: "1–4 días", text: "Llegan neutrófilos y macrófagos, se liberan mediadores (prostaglandinas, leucotrienos) y especies reactivas de oxígeno.", actors: ["Ésteres de faradiol: ↓ COX-2/LOX", "Flavonoides: captura de ROS, ↓ edema", "Taninos y flavonoides: antisépticos"], role: "Fase principal de acción antiinflamatoria y antiséptica.", hot: true },
+  { icon: "sprout", name: "Proliferación", time: "4–21 días", text: "Tejido de granulación, angiogénesis, depósito de colágeno y reepitelización desde los bordes: es la fase que define el cierre por segunda intención.", actors: ["Faradiol: proliferación y migración de fibroblastos", "Carotenoides y saponinas: reepitelización", "Polisacáridos: ambiente húmedo"], role: "Fase principal de acción cicatrizante.", hot: true },
+  { icon: "refresh-cw", name: "Remodelación", time: "21 días – 1 año", text: "Maduración del colágeno de tipo III a tipo I y contracción de la cicatriz.", actors: ["Antioxidantes: limitan el daño oxidativo residual"], role: "Efecto secundario de soporte." }
 ];
 
 /* ---------- Flujo QbD ---------- */
 const QBD = [
-  { k: "QTPP", t: "Perfil objetivo de calidad", d: "Resumen prospectivo de las características de calidad que el producto debe tener: emulsión O/W homogénea, pH 5,0–6,0, viscosidad 15 000–17 000 cP, gota 0,1–10 µm, adhesividad 20–60 N·mm, 5 % de extracto y límites microbianos farmacopeicos." },
-  { k: "CQA", t: "Atributos críticos de calidad", d: "Propiedades físicas, químicas o microbiológicas que deben estar en un intervalo para asegurar la calidad: viscosidad, pH, tamaño de gota, contenido de fitoactivos (marcadores: faradiol y rutina), carga microbiana y apariencia." },
-  { k: "CMA", t: "Atributos de materiales", d: "Características de las materias primas que afectan los CQA: perfil fitoquímico y contenido de electrolitos del extracto, índice de peróxidos del Tween 80, pureza del agua (metales traza) y grado de la goma xantana." },
-  { k: "CPP", t: "Parámetros de proceso", d: "Variables del proceso que afectan los CQA: temperatura de las fases al emulsionar, velocidad y tiempo de homogenización, orden de adición del extracto y temperatura de incorporación (para proteger los termolábiles)." },
-  { k: "DS", t: "Espacio de diseño", d: "Combinación multidimensional de CMA y CPP en la que se asegura la calidad. Se explorará con las formulaciones propuestas (punto 5) variando el HLB y el % de emulsionante, el % de goma xantana y las condiciones de homogenización." },
-  { k: "CS", t: "Estrategia de control", d: "Controles en proceso y del producto terminado: pH, viscosidad, microscopía de gota, centrifugación, ciclos de temperatura y recuento microbiano." }
+  { icon: "target", k: "QTPP", t: "Perfil objetivo de calidad", d: "Resumen prospectivo de las características de calidad que el producto debe tener: emulsión O/W homogénea, pH 5,0–6,0, viscosidad 15 000–17 000 cP, gota 0,1–10 µm, adhesividad 20–60 N·mm, 5 % de extracto y límites microbianos farmacopeicos." },
+  { icon: "list-checks", k: "CQA", t: "Atributos críticos de calidad", d: "Propiedades físicas, químicas o microbiológicas que deben estar en un intervalo para asegurar la calidad: viscosidad, pH, tamaño de gota, contenido de fitoactivos (marcadores: faradiol y rutina), carga microbiana y apariencia." },
+  { icon: "package", k: "CMA", t: "Atributos de materiales", d: "Características de las materias primas que afectan los CQA: perfil fitoquímico y contenido de electrolitos del extracto, índice de peróxidos del Tween 80, pureza del agua (metales traza) y grado de la goma xantana." },
+  { icon: "settings-2", k: "CPP", t: "Parámetros de proceso", d: "Variables del proceso que afectan los CQA: temperatura de las fases al emulsionar, velocidad y tiempo de homogenización, orden de adición del extracto y temperatura de incorporación (para proteger los termolábiles)." },
+  { icon: "grid-3x3", k: "DS", t: "Espacio de diseño", d: "Combinación multidimensional de CMA y CPP en la que se asegura la calidad. Se explorará con las formulaciones propuestas (punto 5) variando el HLB y el % de emulsionante, el % de goma xantana y las condiciones de homogenización." },
+  { icon: "shield-check", k: "CS", t: "Estrategia de control", d: "Controles en proceso y del producto terminado: pH, viscosidad, microscopía de gota, centrifugación, ciclos de temperatura y recuento microbiano." }
 ];
 
 /* ---------- QTPP (Tabla 1) ---------- */
 const QTPP = [
-  { el: "Tipo de producto", obj: "Fitoterapéutico", just: "Contiene extracto vegetal de Calendula officinalis, cuyos metabolitos (flavonoides y compuestos fenólicos) se han estudiado por su actividad antioxidante y su potencial uso tópico.", cqa: false },
-  { el: "Forma farmacéutica", obj: "Emulsión O/W", just: "Permite incorporar una fase oleosa y una acuosa en una preparación semisólida de aplicación cutánea.", cqa: false },
-  { el: "Vía de administración", obj: "Tópica", just: "Administración local en la zona cutánea afectada.", cqa: false },
-  { el: "Aspecto", obj: "Suave, homogénea, sin grumos ni separación de fases", just: "Indicador primario de estabilidad física y de ausencia de degradación; influye en la aceptación del paciente.", cqa: true },
-  { el: "Olor", obj: "Herbal, vegetal o floral suave", just: "Control de calidad y de posibles cambios durante el almacenamiento.", cqa: false },
-  { el: "Color", obj: "Amarillo pálido a amarillo anaranjado", just: "Controla la calidad, la estabilidad de fases y los cambios en almacenamiento; la pérdida de color indica oxidación de carotenoides.", cqa: true },
-  { el: "Viscosidad", obj: "15 000–17 000 cP", just: "Los cambios de viscosidad revelan cambios estructurales de la emulsión o interacciones no deseadas entre componentes.", cqa: true },
-  { el: "pH", obj: "5,0–6,0", just: "Tolerancia cutánea (manto ácido) y estabilidad de los componentes: es la zona de mínima hidrólisis de ésteres.", cqa: true },
-  { el: "Tamaño de gota", obj: "0,1–10 µm", just: "Determina la estabilidad física. Su aumento indica coalescencia; una distribución heterogénea compromete la uniformidad del activo.", cqa: true },
-  { el: "Límites microbiológicos", obj: "Ph. Eur. / USP", just: "Verifican que la contaminación microbiana esté dentro de los límites; un aumento compromete la seguridad en piel lesionada.", cqa: true },
-  { el: "Adhesividad", obj: "20–60 N·mm", just: "Permanencia en el sitio de aplicación: si es insuficiente reduce el tiempo de contacto; si es excesiva dificulta la aplicación.", cqa: true },
-  { el: "Contenido de fitoactivos", obj: "5 % de extracto hidroetanólico", just: "Verifica la uniformidad de contenido; su disminución indica degradación química y pérdida de actividad terapéutica.", cqa: true }
+  { icon: "leaf", el: "Tipo de producto", obj: "Fitoterapéutico", just: "Contiene extracto vegetal de Calendula officinalis, cuyos metabolitos (flavonoides y compuestos fenólicos) se han estudiado por su actividad antioxidante y su potencial uso tópico.", cqa: false },
+  { icon: "blend", el: "Forma farmacéutica", obj: "Emulsión O/W", just: "Permite incorporar una fase oleosa y una acuosa en una preparación semisólida de aplicación cutánea.", cqa: false },
+  { icon: "hand", el: "Vía de administración", obj: "Tópica", just: "Administración local en la zona cutánea afectada.", cqa: false },
+  { icon: "eye", el: "Aspecto", obj: "Suave, homogénea, sin grumos ni separación de fases", just: "Indicador primario de estabilidad física y de ausencia de degradación; influye en la aceptación del paciente.", cqa: true },
+  { icon: "wind", el: "Olor", obj: "Herbal, vegetal o floral suave", just: "Control de calidad y de posibles cambios durante el almacenamiento.", cqa: false },
+  { icon: "palette", el: "Color", obj: "Amarillo pálido a amarillo anaranjado", just: "Controla la calidad, la estabilidad de fases y los cambios en almacenamiento; la pérdida de color indica oxidación de carotenoides.", cqa: true },
+  { icon: "waves", el: "Viscosidad", obj: "15 000–17 000 cP", just: "Los cambios de viscosidad revelan cambios estructurales de la emulsión o interacciones no deseadas entre componentes.", cqa: true },
+  { icon: "test-tube", el: "pH", obj: "5,0–6,0", just: "Tolerancia cutánea (manto ácido) y estabilidad de los componentes: es la zona de mínima hidrólisis de ésteres.", cqa: true },
+  { icon: "circle-dot", el: "Tamaño de gota", obj: "0,1–10 µm", just: "Determina la estabilidad física. Su aumento indica coalescencia; una distribución heterogénea compromete la uniformidad del activo.", cqa: true },
+  { icon: "bug", el: "Límites microbiológicos", obj: "Ph. Eur. / USP", just: "Verifican que la contaminación microbiana esté dentro de los límites; un aumento compromete la seguridad en piel lesionada.", cqa: true },
+  { icon: "magnet", el: "Adhesividad", obj: "20–60 N·mm", just: "Permanencia en el sitio de aplicación: si es insuficiente reduce el tiempo de contacto; si es excesiva dificulta la aplicación.", cqa: true },
+  { icon: "flask-conical", el: "Contenido de fitoactivos", obj: "5 % de extracto hidroetanólico", just: "Verifica la uniformidad de contenido; su disminución indica degradación química y pérdida de actividad terapéutica.", cqa: true }
 ];
 
 /* ---------- Metabolitos ---------- */
@@ -101,7 +101,7 @@ const INTERACTIONS = [
    status: "ok" = redactado en el documento · "draft" = borrador para validar */
 const EXCIPIENTS = [
   {
-    fn: "Principio activo", icon: "✿", who: "Por asignar", status: "ok",
+    fn: "Principio activo", icon: "leaf", who: "Por asignar", status: "ok",
     sel: "Extracto hidroetanólico de Calendula officinalis 5 %", pct: "5,0 %",
     candidates: [
       { n: "Extracto acuoso", why: "No solubiliza los ésteres de faradiol ni los carotenoides: se pierden los principios antiinflamatorios y cicatrizantes." },
@@ -111,7 +111,7 @@ const EXCIPIENTS = [
     refs: [8, 10, 11, 12]
   },
   {
-    fn: "Fase oleosa / emoliente", icon: "◍", who: "Cesar Steven Diaz Suarez", status: "draft",
+    fn: "Fase oleosa / emoliente", icon: "droplet", who: "Cesar Steven Diaz Suarez", status: "draft",
     sel: "Triglicéridos de cadena media (MCT) + alcohol cetílico", pct: "8,0 % + 3,0 %",
     candidates: [
       { n: "Aceite mineral", why: "Oclusivo y no polar: solubiliza mal los triterpenos oxigenados y forma una película que puede retener exudado en la herida." },
@@ -122,7 +122,7 @@ const EXCIPIENTS = [
     refs: [13]
   },
   {
-    fn: "Sistema emulsionante", icon: "⚭", who: "Diana Estefania Argüello Cajicá", status: "ok",
+    fn: "Sistema emulsionante", icon: "blend", who: "Diana Estefania Argüello Cajicá", status: "ok",
     sel: "Tween 80 (polisorbato 80) + Span 80 (monooleato de sorbitán)", pct: "5,0 % total (ver HLB)",
     candidates: [
       { n: "Cera autoemulsionable (Polawax)", why: "HLB fijo que impide el ajuste fino de la interfase; consistencia excesivamente cerosa." },
@@ -133,7 +133,7 @@ const EXCIPIENTS = [
     refs: [13]
   },
   {
-    fn: "Modificador reológico", icon: "≋", who: "Lina Valentina Ramirez Español", status: "ok",
+    fn: "Modificador reológico", icon: "waves", who: "Lina Valentina Ramirez Español", status: "ok",
     sel: "Goma xantana", pct: "0,5 %",
     candidates: [
       { n: "Carbopol 940", why: "Colapsa y pierde viscosidad ante los iones del extracto; además exige neutralizar con una base." },
@@ -143,7 +143,7 @@ const EXCIPIENTS = [
     refs: []
   },
   {
-    fn: "Humectante", icon: "💧", who: "Cesar Steven Diaz Suarez", status: "draft",
+    fn: "Humectante", icon: "droplets", who: "Cesar Steven Diaz Suarez", status: "draft",
     sel: "Glicerina", pct: "5,0 %",
     candidates: [
       { n: "Propilenglicol", why: "Mayor potencial de irritación y sensibilización en piel comprometida; además es un promotor de penetración no deseado para un efecto local." },
@@ -153,7 +153,7 @@ const EXCIPIENTS = [
     refs: [13]
   },
   {
-    fn: "Antioxidante", icon: "⛨", who: "Lina Valentina Ramirez Español", status: "ok",
+    fn: "Antioxidante", icon: "shield", who: "Lina Valentina Ramirez Español", status: "ok",
     sel: "α-Tocoferol (vitamina E)", pct: "0,1 %",
     candidates: [
       { n: "BHT / BHA", why: "Sintéticos, con potencial de sensibilización e irritación en tejido expuesto." },
@@ -163,7 +163,7 @@ const EXCIPIENTS = [
     refs: []
   },
   {
-    fn: "Conservante", icon: "✚", who: "Juan Sebastián Roa Gamboa", status: "ok",
+    fn: "Conservante", icon: "shield-plus", who: "Juan Sebastián Roa Gamboa", status: "ok",
     sel: "Fenoxietanol + etilhexilglicerina", pct: "1,0 % (≈ 9:1)",
     candidates: [
       { n: "Mezcla de parabenos", why: "Riesgo de sensibilización en piel lesionada; parcialmente inactivados por polisorbatos." },
@@ -173,7 +173,7 @@ const EXCIPIENTS = [
     refs: []
   },
   {
-    fn: "Regulador de pH", icon: "⚖", who: "Edward Santiago Benitez Martinez", status: "draft",
+    fn: "Regulador de pH", icon: "scale", who: "Edward Santiago Benitez Martinez", status: "draft",
     sel: "Buffer ácido cítrico / citrato de sodio", pct: "c.s. pH 5,0–6,0",
     candidates: [
       { n: "Trietanolamina", why: "Base orgánica: sube el pH hacia valores alcalinos (solo es necesaria para neutralizar el carbómero, que no se usa); presenta riesgo de formar nitrosaminas y de irritar." },
@@ -182,7 +182,7 @@ const EXCIPIENTS = [
     refs: []
   },
   {
-    fn: "Fase vehicular", icon: "◌", who: "Edward Santiago Benitez Martinez", status: "draft",
+    fn: "Fase vehicular", icon: "glass-water", who: "Edward Santiago Benitez Martinez", status: "draft",
     sel: "Agua purificada USP", pct: "c.s.p. 100 %",
     candidates: [
       { n: "Agua desionizada", why: "Retira iones, pero no garantiza especificaciones microbiológicas ni de carbono orgánico total." },
@@ -234,4 +234,24 @@ const REFS = [
   'J. Zi, B. Peng y W. Yan, "Solubilities of rutin in eight solvents at T = 283.15, 298.15, 313.15, 323.15, and 333.15 K," <i>Fluid Phase Equilib.</i>, vol. 261, no. 1–2, pp. 111–114, 2007, doi: <a href="https://doi.org/10.1016/j.fluid.2007.07.030" target="_blank" rel="noopener">10.1016/j.fluid.2007.07.030</a>.',
   'M. E. Aulton y K. M. G. Taylor, Eds., <i>Aulton\'s Pharmaceutics: The Design and Manufacture of Medicines</i>, 5.ª ed. Elsevier, 2018, cap. 42, p. 763.',
   'R. C. Rowe, P. J. Sheskey y M. E. Quinn, Eds., <i>Handbook of Pharmaceutical Excipients</i>, 6.ª ed. London: Pharmaceutical Press, 2009.'
+];
+
+/* ---------- Galería de la planta (Wikimedia Commons) ---------- */
+const PLANT_IMAGES = [
+  { src: "img/planta/flor.jpg", t: "Capítulo floral", d: "Flores liguladas amarillo-anaranjadas y flores tubulosas centrales.", credit: "Ermell · CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:Ringelblume_(Calendula_officinalis)_Bl%C3%BCte_focus_stack-20220619-RM-165610.jpg" },
+  { src: "img/planta/hojas.jpg", t: "Hojas", d: "Alternas, oblongo-lanceoladas, sésiles y pubescentes.", credit: "Magnus Manske · CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Calendula_officialis_%27Marigold%27_(Asteraceae)_leaves.JPG" },
+  { src: "img/planta/planta.jpg", t: "Porte", d: "Hierba anual de 30–60 cm en floración.", credit: "Tournasol7 · CC BY 4.0", url: "https://commons.wikimedia.org/wiki/File:Calendula_officinalis_in_Catalonia_(2).jpg" },
+  { src: "img/planta/kohler.jpg", t: "Lámina botánica", d: "Köhler's Medizinal-Pflanzen (1887).", credit: "F. E. Köhler · Dominio público", url: "https://commons.wikimedia.org/wiki/File:Calendula_officinalis_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-024.jpg" },
+  { src: "img/planta/droga.jpg", t: "Droga vegetal", d: "Calendulae flos: flores desecadas.", credit: "Rillke · CC BY-SA 3.0", url: "https://commons.wikimedia.org/wiki/File:Calendulae_flos_255043.jpg" },
+  { src: "img/planta/semillas.jpg", t: "Frutos (aquenios)", d: "Aquenios curvados característicos del género.", credit: "Amada44 · CC BY 3.0", url: "https://commons.wikimedia.org/wiki/File:Calendula_seeds.jpg" }
+];
+
+/* ---------- Puntos 5–10: próxima entrega (se muestran difuminados) ---------- */
+const UPCOMING = [
+  { n: "05", t: "Formulaciones propuestas", icon: "git-branch", items: ["Fórmulas F1…Fn con variaciones lógicas a partir de la fórmula base", "Factores: HLB y % de emulsionante, % de goma xantana, relación MCT : alcohol cetílico", "Condiciones de elaboración: velocidad y tiempo de homogenización, temperatura de incorporación del extracto", "Criterio para escoger el mejor sistema"] },
+  { n: "06", t: "Productos de referencia", icon: "scale", items: ["Productos comerciales con caléndula para heridas", "Pruebas de caracterización del producto de referencia", "Comparación con el QTPP"] },
+  { n: "07", t: "Metodología de las variables respuesta", icon: "ruler", items: ["Viscosidad (viscosímetro rotacional)", "pH (potenciometría)", "Tamaño de gota (microscopía óptica)", "Adhesividad y extensibilidad", "Estabilidad acelerada: centrifugación y ciclos térmicos"] },
+  { n: "08", t: "Método de elaboración", icon: "workflow", items: ["Diagrama de proceso con todas las condiciones operacionales", "Temperaturas de las fases, orden de adición, velocidades y tiempos", "Puntos de control en proceso"] },
+  { n: "09", t: "Caracterización de la formulación final", icon: "microscope", items: ["Ensayos organolépticos y fisicoquímicos", "Ensayos microbiológicos (USP / Ph. Eur.)", "Contenido de marcadores del extracto"] },
+  { n: "10", t: "Cronograma", icon: "calendar-clock", items: ["Actividades de las dos sesiones de laboratorio", "Estudio real de tiempos y movimientos"] }
 ];

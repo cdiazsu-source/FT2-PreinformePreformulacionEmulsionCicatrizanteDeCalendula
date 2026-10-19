@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/extras.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23f39c12'%3E%3Cellipse cx='32' cy='14' rx='7' ry='12'/%3E%3Cellipse cx='32' cy='50' rx='7' ry='12'/%3E%3Cellipse cx='14' cy='32' rx='12' ry='7'/%3E%3Cellipse cx='50' cy='32' rx='12' ry='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='9' fill='%23b35400'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -54,14 +55,79 @@
 <section class="slide" data-section="Portada" data-presenter="Por asignar"
   data-notes="Presentar la ruta: (1) título y concepto, (2) TPP y QTPP según Quality by Design, (3) literatura de preformulación integrada a la propuesta, (4) selección y justificación de excipientes. Recordar que la preformulación no es un marco teórico aparte: cada dato soporta una decisión.">
   <p class="kicker">Hoja de ruta</p>
-  <h2>Cuatro puntos del preinforme</h2>
+  <h2>Introducción y cuatro puntos del preinforme</h2>
   <div class="agenda">
-    <a class="agenda-card" href="#/3"><span class="num">01</span><h3>Título y concepto</h3><p>Qué producto es, para quién y por qué una emulsión O/W.</p></a>
-    <a class="agenda-card" href="#/5"><span class="num">02</span><h3>TPP y QTPP</h3><p>Perfil objetivo del producto y atributos de calidad bajo QbD.</p></a>
-    <a class="agenda-card" href="#/8"><span class="num">03</span><h3>Preformulación</h3><p>Fitoquímica, fisicoquímica, extracción y riesgos de inestabilidad.</p></a>
-    <a class="agenda-card" href="#/14"><span class="num">04</span><h3>Excipientes</h3><p>Candidatos por función, selección y justificación del descarte.</p></a>
+    <a class="agenda-card" data-goto="Introducción"><span class="num"><i data-lucide="sprout"></i>00</span><h3>Introducción</h3><p>El problema clínico, la planta y el objetivo del producto.</p></a>
+    <a class="agenda-card" data-goto="1 · Título"><span class="num"><i data-lucide="tag"></i>01</span><h3>Título y concepto</h3><p>Qué producto es, para quién y por qué una emulsión O/W.</p></a>
+    <a class="agenda-card" data-goto="2 · TPP / QTPP"><span class="num"><i data-lucide="target"></i>02</span><h3>TPP y QTPP</h3><p>Perfil objetivo del producto y atributos de calidad bajo QbD.</p></a>
+    <a class="agenda-card" data-goto="3 · Preformulación"><span class="num"><i data-lucide="microscope"></i>03</span><h3>Preformulación</h3><p>Fitoquímica, fisicoquímica, extracción y riesgos de inestabilidad.</p></a>
+    <a class="agenda-card" data-goto="4 · Excipientes"><span class="num"><i data-lucide="flask-conical"></i>04</span><h3>Excipientes</h3><p>Candidatos por función, selección y justificación del descarte.</p></a>
   </div>
+  <p class="agenda-later-label"><i data-lucide="hourglass"></i>Próxima entrega</p>
+  <div class="agenda later" id="agendaLater"></div>
   <p class="foot-note">Entrega escrita: <strong>10 de noviembre de 2026</strong> (físico y Classroom). Esta exposición presenta el avance.</p>
+</section>
+
+<!-- ===================== INTRODUCCIÓN ===================== -->
+<section class="slide" data-section="Introducción" data-presenter="Por asignar"
+  data-notes="Plantear el problema: las heridas agudas superficiales con pérdida de tejido no se pueden suturar y cierran por segunda intención, un proceso más largo en el que la herida queda expuesta a inflamación sostenida y a contaminación. El tratamiento ideal mantiene un ambiente húmedo, controla la inflamación y la carga microbiana sin irritar ni generar resistencia. La caléndula tiene respaldo de uso tradicional (monografía HMPC de la EMA) y evidencia clínica en heridas agudas (ensayo aleatorizado de Giostri et al., 2022). El objetivo es desarrollar una emulsión O/W bajo QbD.">
+  <p class="kicker">Introducción</p>
+  <h2>Una necesidad clínica, una planta con evidencia y un enfoque QbD</h2>
+  <div class="intro">
+    <article class="intro-card">
+      <span class="intro-ico rose"><i data-lucide="bandage"></i></span>
+      <h3>El problema</h3>
+      <p>Las heridas agudas superficiales <strong>con pérdida de tejido</strong> no pueden suturarse y cierran por <strong>segunda intención</strong>: la herida se rellena de tejido de granulación y se reepiteliza desde los bordes.</p>
+      <p class="muted">Este proceso es más largo y expone la herida a inflamación sostenida, desecación y contaminación microbiana.</p>
+    </article>
+    <article class="intro-card">
+      <span class="intro-ico amber"><i data-lucide="flower-2"></i></span>
+      <h3>La alternativa fitoterapéutica</h3>
+      <p><i>Calendula officinalis</i> combina acción <strong>antiinflamatoria</strong> (triterpenoides, saponinas, flavonoides, polisacáridos) y <strong>antiséptica</strong> (flavonoides y taninos).</p>
+      <p class="muted">La EMA reconoce su uso tradicional en heridas menores <sup class="ref" data-ref="8">[8]</sup>, y un ensayo aleatorizado en heridas agudas de mano respalda su uso clínico <sup class="ref" data-ref="1">[1]</sup>.</p>
+    </article>
+    <article class="intro-card">
+      <span class="intro-ico green"><i data-lucide="shield-check"></i></span>
+      <h3>Lo que pedimos al vehículo</h3>
+      <ul class="intro-list">
+        <li><i data-lucide="droplets"></i>Ambiente húmedo, sin ocluir ni macerar</li>
+        <li><i data-lucide="layers"></i>Vehicular la fracción lipófila y la hidrófila del extracto</li>
+        <li><i data-lucide="hand"></i>Extenderse sin fricción sobre piel lesionada</li>
+        <li><i data-lucide="bug-off"></i>Mantenerse estable y libre de contaminación</li>
+      </ul>
+    </article>
+  </div>
+  <div class="objective">
+    <span class="obj-label"><i data-lucide="crosshair"></i>Objetivo</span>
+    <p>Diseñar, mediante <strong>Quality by Design</strong>, una <strong>emulsión tópica O/W con 5 % de extracto hidroetanólico de <i>C. officinalis</i></strong> que cumpla el QTPP definido, partiendo de una preformulación racional del fitoactivo y de la selección justificada de cada excipiente.</p>
+  </div>
+</section>
+
+<!-- ===================== LA PLANTA ===================== -->
+<section class="slide" data-section="Introducción" data-presenter="Por asignar"
+  data-notes="Presentar la planta. Calendula officinalis L. (Asteraceae) es una hierba anual de 30 a 60 cm, originaria de la región mediterránea y cultivada en todo el mundo, incluida Colombia (ref. 7, UNAL). Tiene hojas alternas, simples, oblongo-lanceoladas, sésiles y pubescentes, y capítulos de 4 a 7 cm con lígulas amarillo-anaranjadas. La droga oficial (EMA) es la flor, Calendulae flos; el enunciado de nuestro producto usa la parte indicada en la portada. Hacer clic en las fotos para ampliarlas.">
+  <p class="kicker">Introducción · La planta</p>
+  <h2><i>Calendula officinalis</i> L.: la caléndula o maravilla</h2>
+  <div class="plant">
+    <div class="gallery" id="gallery"></div>
+    <aside class="plant-facts">
+      <dl class="taxo">
+        <div><dt>Reino</dt><dd>Plantae</dd></div>
+        <div><dt>Orden</dt><dd>Asterales</dd></div>
+        <div><dt>Familia</dt><dd>Asteraceae</dd></div>
+        <div><dt>Género</dt><dd><i>Calendula</i></dd></div>
+        <div><dt>Especie</dt><dd><i>C. officinalis</i> L.</dd></div>
+      </dl>
+      <ul class="facts">
+        <li><i data-lucide="map-pin"></i><span><strong>Origen:</strong> región mediterránea; cultivada en todo el mundo, en Colombia en clima frío y templado <sup class="ref" data-ref="7">[7]</sup>.</span></li>
+        <li><i data-lucide="sprout"></i><span><strong>Porte:</strong> hierba anual de 30–60 cm, con tallos ramificados y pubescentes.</span></li>
+        <li><i data-lucide="leaf"></i><span><strong>Hojas:</strong> alternas, simples, oblongo-lanceoladas, sésiles, pubescentes y algo glandulosas.</span></li>
+        <li><i data-lucide="flower"></i><span><strong>Inflorescencia:</strong> capítulos de 4–7 cm, con flores liguladas amarillo-anaranjadas y flores tubulosas centrales.</span></li>
+        <li><i data-lucide="tags"></i><span><strong>Nombres comunes:</strong> caléndula, maravilla, flor de muerto, mercadela.</span></li>
+        <li><i data-lucide="book-open"></i><span><strong>Droga oficial:</strong> <i>Calendulae flos</i> (monografía HMPC/EMA) <sup class="ref" data-ref="8">[8]</sup>.</span></li>
+      </ul>
+    </aside>
+  </div>
 </section>
 
 <!-- ===================== 3. PUNTO 1 · TÍTULO ===================== -->
@@ -70,13 +136,13 @@
   <p class="kicker">Punto 1 · Título</p>
   <h2>Emulsión O/W cicatrizante de <i>Calendula officinalis</i> al 5 %</h2>
   <div class="grid-4 spec">
-    <div class="spec-card"><span class="spec-label">Forma farmacéutica</span><strong>Emulsión O/W</strong><p>Fase externa acuosa: no oclusiva, lavable, extensible sobre piel lesionada.</p></div>
-    <div class="spec-card"><span class="spec-label">Vía</span><strong>Tópica cutánea</strong><p>Acción local en el lecho de la herida.</p></div>
-    <div class="spec-card"><span class="spec-label">Principio activo</span><strong>Extracto hidroetanólico 5 %</strong><p><span class="organo-cap">Hojas</span> de <i>C. officinalis</i> (Asteraceae).</p></div>
-    <div class="spec-card"><span class="spec-label">Indicación</span><strong>Heridas agudas superficiales</strong><p>Con pérdida de tejido; cierre por segunda intención.</p></div>
+    <div class="spec-card"><i data-lucide="blend" class="card-ico"></i><span class="spec-label">Forma farmacéutica</span><strong>Emulsión O/W</strong><p>Fase externa acuosa: no oclusiva, lavable, extensible sobre piel lesionada.</p></div>
+    <div class="spec-card"><i data-lucide="hand" class="card-ico"></i><span class="spec-label">Vía</span><strong>Tópica cutánea</strong><p>Acción local en el lecho de la herida.</p></div>
+    <div class="spec-card"><i data-lucide="leaf" class="card-ico"></i><span class="spec-label">Principio activo</span><strong>Extracto hidroetanólico 5 %</strong><p><span class="organo-cap">Hojas</span> de <i>C. officinalis</i> (Asteraceae).</p></div>
+    <div class="spec-card"><i data-lucide="bandage" class="card-ico"></i><span class="spec-label">Indicación</span><strong>Heridas agudas superficiales</strong><p>Con pérdida de tejido; cierre por segunda intención.</p></div>
   </div>
   <div class="why-ow">
-    <h3>¿Por qué O/W y no W/O, gel o ungüento?</h3>
+    <h3><i data-lucide="help-circle"></i>¿Por qué O/W y no W/O, gel o ungüento?</h3>
     <div class="compare" id="compareForms"></div>
   </div>
 </section>
@@ -98,19 +164,19 @@
   <div class="tpp">
     <div class="tpp-main">
       <dl class="tpp-list">
-        <div><dt>Indicación</dt><dd>Tratamiento cicatrizante de heridas cutáneas con efecto antiinflamatorio y antiséptico <sup class="ref" data-ref="1">[1]</sup>.</dd></div>
-        <div><dt>Población</dt><dd>Pacientes con heridas agudas superficiales con pérdida de tejido cutáneo que cicatrizan por segunda intención.</dd></div>
-        <div><dt>Administración</dt><dd>Aplicación tópica de una emulsión O/W sobre la zona afectada.</dd></div>
-        <div><dt>Seguridad</dt><dd>No irritante, apta para piel sensible; perfil de seguridad favorable en tratamientos prolongados y sin generar resistencia bacteriana <sup class="ref" data-ref="3">[3]</sup>.</dd></div>
+        <div><dt><i data-lucide="stethoscope"></i>Indicación</dt><dd>Tratamiento cicatrizante de heridas cutáneas con efecto antiinflamatorio y antiséptico <sup class="ref" data-ref="1">[1]</sup>.</dd></div>
+        <div><dt><i data-lucide="users"></i>Población</dt><dd>Pacientes con heridas agudas superficiales con pérdida de tejido cutáneo que cicatrizan por segunda intención.</dd></div>
+        <div><dt><i data-lucide="hand"></i>Administración</dt><dd>Aplicación tópica de una emulsión O/W sobre la zona afectada.</dd></div>
+        <div><dt><i data-lucide="shield-check"></i>Seguridad</dt><dd>No irritante, apta para piel sensible; perfil de seguridad favorable en tratamientos prolongados y sin generar resistencia bacteriana <sup class="ref" data-ref="3">[3]</sup>.</dd></div>
       </dl>
     </div>
     <div class="tpp-side">
       <div class="moa amber">
-        <h3>Modulación de la inflamación</h3>
+        <h3><i data-lucide="flame"></i>Modulación de la inflamación</h3>
         <p>Triterpenoides, saponinas, micronutrientes, flavonoides y polisacáridos regulan los mediadores inflamatorios <sup class="ref" data-ref="2">[2]</sup>.</p>
       </div>
       <div class="moa green">
-        <h3>Antiséptico y antibacteriano</h3>
+        <h3><i data-lucide="shield-plus"></i>Antiséptico y antibacteriano</h3>
         <p>Flavonoides y taninos <sup class="ref" data-ref="2">[2]</sup>.</p>
       </div>
     </div>
@@ -253,8 +319,8 @@
     </div>
   </div>
   <div class="mini-cards">
-    <div><strong>Floculación / coalescencia</strong><span>Película interfacial mixta Tween 80 / Span 80 con impedimento estérico.</span></div>
-    <div><strong>Maduración de Ostwald</strong><span>MCT con muy baja solubilidad acuosa: limita la difusión entre gotas (ec. de Kelvin).</span></div>
+    <div><strong><i data-lucide="git-merge"></i>Floculación / coalescencia</strong><span>Película interfacial mixta Tween 80 / Span 80 con impedimento estérico.</span></div>
+    <div><strong><i data-lucide="circle-dot"></i>Maduración de Ostwald</strong><span>MCT con muy baja solubilidad acuosa: limita la difusión entre gotas (ec. de Kelvin).</span></div>
   </div>
 </section>
 
@@ -265,9 +331,9 @@
   <h2>Cadena de degradación y puntos de control</h2>
   <div class="chain" id="chain"></div>
   <div class="grid-3 risk-grid">
-    <article class="risk"><h3>Hidrólisis de ésteres</h3><p>Span 80, Tween 80 y ésteres de faradiol se hidrolizan a pH &lt; 4 o &gt; 8 y a temperatura alta.</p><p class="ctrl">Control: buffer cítrico/citrato, pH 5,0–6,0</p></article>
-    <article class="risk"><h3>Riesgo microbiológico</h3><p>Azúcares, polisacáridos y aminoácidos del extracto son nutrientes; las esterasas y polisacaridasas microbianas rompen la goma xantana.</p><p class="ctrl">Control: fenoxietanol + etilhexilglicerina</p></article>
-    <article class="risk"><h3>Límites farmacopeicos (uso cutáneo)</h3><p>TAMC ≤ 10² UFC/g · TYMC ≤ 10¹ UFC/g · ausencia de <i>S. aureus</i> y <i>P. aeruginosa</i>.</p><p class="ctrl">USP &lt;1111&gt; · Ph. Eur. 5.1.4</p></article>
+    <article class="risk"><h3><i data-lucide="droplet"></i>Hidrólisis de ésteres</h3><p>Span 80, Tween 80 y ésteres de faradiol se hidrolizan a pH &lt; 4 o &gt; 8 y a temperatura alta.</p><p class="ctrl">Control: buffer cítrico/citrato, pH 5,0–6,0</p></article>
+    <article class="risk"><h3><i data-lucide="bug"></i>Riesgo microbiológico</h3><p>Azúcares, polisacáridos y aminoácidos del extracto son nutrientes; las esterasas y polisacaridasas microbianas rompen la goma xantana.</p><p class="ctrl">Control: fenoxietanol + etilhexilglicerina</p></article>
+    <article class="risk"><h3><i data-lucide="book-open-check"></i>Límites farmacopeicos (uso cutáneo)</h3><p>TAMC ≤ 10² UFC/g · TYMC ≤ 10¹ UFC/g · ausencia de <i>S. aureus</i> y <i>P. aeruginosa</i>.</p><p class="ctrl">USP &lt;1111&gt; · Ph. Eur. 5.1.4</p></article>
   </div>
 </section>
 
@@ -281,9 +347,9 @@
     <div class="matrix-detail" id="matrixDetail"><p class="muted">Selecciona una celda coloreada para ver la interacción.</p></div>
   </div>
   <div class="pcc">
-    <div><span class="pcc-ico">🌡</span><strong>15–25 °C</strong><span>Sin congelar ni superar 40 °C</span></div>
-    <div><span class="pcc-ico">◐</span><strong>Envase opaco</strong><span>Tubo de aluminio o HDPE opaco</span></div>
-    <div><span class="pcc-ico">⬚</span><strong>Mínimo espacio de cabeza</strong><span>Menos O₂ disponible</span></div>
+    <div><span class="pcc-ico"><i data-lucide="thermometer"></i></span><strong>15–25 °C</strong><span>Sin congelar ni superar 40 °C</span></div>
+    <div><span class="pcc-ico"><i data-lucide="package"></i></span><strong>Envase opaco</strong><span>Tubo de aluminio o HDPE opaco</span></div>
+    <div><span class="pcc-ico"><i data-lucide="wind"></i></span><strong>Mínimo espacio de cabeza</strong><span>Menos O₂ disponible</span></div>
   </div>
 </section>
 
@@ -352,7 +418,7 @@
   <h2>Cada excipiente responde a un riesgo de preformulación</h2>
   <div class="trace" id="trace"></div>
   <div class="next">
-    <h3>Siguientes puntos del preinforme</h3>
+    <h3><i data-lucide="hourglass"></i>Siguientes puntos del preinforme</h3>
     <ol start="5">
       <li>Formulaciones propuestas y variables de ensayo</li>
       <li>Productos de referencia y su caracterización</li>
@@ -375,11 +441,21 @@
 </main>
 
 <!-- ===================== CONTROLES ===================== -->
-<nav class="pager" aria-label="Navegación de diapositivas">
-  <button id="prev" class="nav-btn" aria-label="Anterior">‹</button>
-  <span class="counter"><span id="cur">1</span> / <span id="tot">1</span></span>
-  <button id="next" class="nav-btn" aria-label="Siguiente">›</button>
-</nav>
+<footer class="banner" role="contentinfo">
+  <div class="banner-id">
+    <span class="escudo"><img src="img/escudo-unal.png" alt="Escudo de la Universidad Nacional de Colombia" width="44" height="44"></span>
+    <div class="banner-text">
+      <strong>Universidad Nacional de Colombia</strong>
+      <span>Facultad de Ciencias · Departamento de Farmacia · Farmacotecnia II · 2026-2 · Grupo 1</span>
+    </div>
+  </div>
+  <span class="banner-sec" id="bannerSec"></span>
+  <nav class="pager" aria-label="Navegación de diapositivas">
+    <button id="prev" class="nav-btn" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
+    <span class="counter"><span id="cur">1</span> / <span id="tot">1</span></span>
+    <button id="next" class="nav-btn" aria-label="Siguiente"><i data-lucide="chevron-right"></i></button>
+  </nav>
+</footer>
 
 <aside class="notes" id="notes" aria-label="Notas del expositor" hidden>
   <div class="notes-head"><span>Notas del expositor</span><strong id="notesPresenter"></strong><button class="icon-btn" id="notesClose" aria-label="Cerrar notas">×</button></div>
@@ -393,6 +469,12 @@
 
 <div class="ref-pop" id="refPop" role="tooltip" hidden></div>
 
+<div class="lightbox" id="lightbox" hidden>
+  <button class="icon-btn lb-close" id="lbClose" aria-label="Cerrar imagen"><i data-lucide="x"></i></button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
 </body>

@@ -27,6 +27,27 @@
   $$(".organo").forEach((el) => (el.textContent = CONFIG.organo));
   $$(".organo-cap").forEach((el) => (el.textContent = CONFIG.organo[0].toUpperCase() + CONFIG.organo.slice(1)));
   $("#team").innerHTML = TEAM.map((n) => `<li>${n}</li>`).join("");
+  const icons = () => window.lucide?.createIcons({ attrs: { "aria-hidden": "true" } });
+
+  /* ---------------- Puntos 5–10 (próxima entrega, difuminados) ---------------- */
+  const UPCOMING_SEC = "5–10 · Próximamente";
+  const refsSlide = $("#refs").closest(".slide");
+  UPCOMING.forEach((u) => {
+    const s = h("section", {
+      class: "slide upcoming", "data-section": UPCOMING_SEC, "data-presenter": "Próxima entrega",
+      "data-notes": `Punto ${+u.n} · ${u.t}. Se desarrollará en la siguiente entrega del preinforme.`
+    }, `
+      <p class="kicker">Punto ${+u.n} · Próxima entrega</p>
+      <h2>${u.t}</h2>
+      <div class="upcoming-body" aria-hidden="true">
+        <div class="up-ico"><i data-lucide="${u.icon}"></i></div>
+        <ul>${u.items.map((t) => `<li>${t}</li>`).join("")}</ul>
+      </div>
+      <div class="up-badge"><i data-lucide="hourglass"></i><span>En desarrollo · se presentará en la siguiente entrega</span></div>`);
+    refsSlide.before(s);
+  });
+  $("#agendaLater").innerHTML = UPCOMING.map((u) =>
+    `<a class="agenda-card" data-goto-title="${u.t}"><span class="num"><i data-lucide="${u.icon}"></i>${u.n}</span><h3>${u.t}</h3></a>`).join("");
 
   /* =========================================================
      NAVEGACIÓN DE DIAPOSITIVAS
@@ -44,9 +65,12 @@
   });
   const secNav = $("#sectionNav");
   sections.forEach((s) => {
-    const a = h("a", { href: `#/${s.first + 1}`, "data-sec": s.name }, s.name);
+    const a = h("a", { href: `#/${s.first + 1}`, "data-sec": s.name, class: s.name === UPCOMING_SEC ? "later" : "" }, s.name);
     secNav.appendChild(a);
   });
+  // Tarjetas de la agenda: saltan a la primera diapositiva de su sección o título
+  $$("[data-goto]").forEach((a) => (a.href = `#/${sections.find((s) => s.name === a.dataset.goto).first + 1}`));
+  $$("[data-goto-title]").forEach((a) => (a.href = `#/${slides.findIndex((s) => $("h2", s)?.textContent === a.dataset.gotoTitle) + 1}`));
 
   function go(n, push = true) {
     n = Math.max(0, Math.min(total - 1, n));
@@ -60,6 +84,7 @@
     $("#cur").textContent = n + 1;
     $("#progressBar").style.width = `${((n + 1) / total) * 100}%`;
     $$("#sectionNav a").forEach((a) => a.classList.toggle("active", a.dataset.sec === slides[n].dataset.section));
+    $("#bannerSec").textContent = slides[n].dataset.section;
     slides[n].scrollTop = 0;
     updateNotes();
     if (push && location.hash !== `#/${n + 1}`) history.replaceState(null, "", `#/${n + 1}`);
@@ -119,7 +144,7 @@
   const ovGrid = $("#overviewGrid");
   slides.forEach((s, i) => {
     const title = $("h1, h2", s)?.textContent.replace(/\s+/g, " ").trim() || `Diapositiva ${i + 1}`;
-    const b = h("button", { class: "ov-card" }, `<span class="ov-num">${i + 1}</span><span class="ov-sec">${s.dataset.section}</span><span class="ov-title">${title}</span><span class="ov-who">${s.dataset.presenter || ""}</span>`);
+    const b = h("button", { class: `ov-card${s.classList.contains("upcoming") ? " later" : ""}` }, `<span class="ov-num">${i + 1}</span><span class="ov-sec">${s.dataset.section}</span><span class="ov-title">${title}</span><span class="ov-who">${s.dataset.presenter || ""}</span>`);
     b.addEventListener("click", () => { go(i); closeOverview(); });
     ovGrid.appendChild(b);
   });
@@ -192,7 +217,7 @@
   const phasesEl = $("#phases");
   PHASES.forEach((p, i) => {
     const b = h("button", { class: `phase${p.hot ? " hot" : ""}`, role: "tab", "aria-selected": "false" },
-      `<span class="phase-n">${i + 1}</span><span class="phase-name">${p.name}</span><span class="phase-time">${p.time}</span>`);
+      `<span class="phase-n"><i data-lucide="${p.icon}"></i>${i + 1}</span><span class="phase-name">${p.name}</span><span class="phase-time">${p.time}</span>`);
     b.addEventListener("click", () => selectPhase(i));
     phasesEl.appendChild(b);
   });
@@ -201,7 +226,8 @@
     $$(".phase", phasesEl).forEach((b, j) => { b.classList.toggle("active", i === j); b.setAttribute("aria-selected", i === j); });
     $("#phaseDetail").innerHTML = `
       <div><h3>${p.name} <small>${p.time}</small></h3><p>${p.text}</p><p class="role">${p.role}</p></div>
-      <div>${p.actors.length ? `<h4>Metabolitos que actúan</h4><ul class="actors">${p.actors.map((a) => `<li>${a}</li>`).join("")}</ul>` : `<p class="muted">Sin acción directa del fitocomplejo.</p>`}</div>`;
+      <div>${p.actors.length ? `<h4><i data-lucide="leaf"></i>Metabolitos que actúan</h4><ul class="actors">${p.actors.map((a) => `<li>${a}</li>`).join("")}</ul>` : `<p class="muted">Sin acción directa del fitocomplejo.</p>`}</div>`;
+    icons();
   }
   selectPhase(1);
 
@@ -210,13 +236,14 @@
      ========================================================= */
   const qbd = $("#qbdFlow");
   QBD.forEach((q, i) => {
-    const li = h("li", {}, `<button><span class="qk">${q.k}</span><span class="qt">${q.t}</span></button>`);
+    const li = h("li", {}, `<button><i data-lucide="${q.icon}" class="q-ico"></i><span class="qk">${q.k}</span><span class="qt">${q.t}</span></button>`);
     $("button", li).addEventListener("click", () => selectQbd(i));
     qbd.appendChild(li);
   });
   function selectQbd(i) {
     $$("li", qbd).forEach((li, j) => li.classList.toggle("active", j === i));
-    $("#qbdDetail").innerHTML = `<span class="qk big">${QBD[i].k}</span><div><h3>${QBD[i].t}</h3><p>${QBD[i].d}</p></div>`;
+    $("#qbdDetail").innerHTML = `<span class="qk big"><i data-lucide="${QBD[i].icon}"></i>${QBD[i].k}</span><div><h3>${QBD[i].t}</h3><p>${QBD[i].d}</p></div>`;
+    icons();
   }
   selectQbd(0);
 
@@ -226,7 +253,7 @@
   const qtppEl = $("#qtpp");
   QTPP.forEach((q) => {
     const d = h("details", { class: `qtpp-row${q.cqa ? " cqa" : ""}` },
-      `<summary><span class="q-el">${q.el}</span><span class="q-obj">${q.obj}</span>${q.cqa ? '<span class="badge">CQA</span>' : ""}</summary><p>${q.just}</p>`);
+      `<summary><span class="q-el"><i data-lucide="${q.icon}"></i>${q.el}</span><span class="q-obj">${q.obj}</span>${q.cqa ? '<span class="badge">CQA</span>' : ""}</summary><p>${q.just}</p>`);
     qtppEl.appendChild(d);
   });
   $$("[data-filter]").forEach((b) => b.addEventListener("click", () => {
@@ -418,7 +445,7 @@
   };
   const tabs = $("#excipTabs");
   EXCIPIENTS.forEach((x, i) => {
-    const b = h("button", { role: "tab", class: "excip-tab", "aria-selected": "false" }, `<span class="ico">${x.icon}</span><span>${x.fn}</span>${x.status === "draft" ? '<i class="dot" title="Borrador"></i>' : ""}`);
+    const b = h("button", { role: "tab", class: "excip-tab", "aria-selected": "false" }, `<span class="ico"><i data-lucide="${x.icon}"></i></span><span>${x.fn}</span>${x.status === "draft" ? '<i class="dot" title="Borrador"></i>' : ""}`);
     b.addEventListener("click", () => selectExcip(i));
     tabs.appendChild(b);
   });
@@ -435,7 +462,8 @@
         </div>
         ${structs.length ? `<div class="ep-structs">${structs.map((s) => `<figure><img loading="lazy" src="${pubchem(s)}" alt="Estructura de ${s}" onerror="this.closest('figure').remove()"><figcaption>${s}</figcaption></figure>`).join("")}</div>` : ""}
       </div>
-      <ul class="cands">${x.candidates.map((c) => `<li class="${c.pick ? "pick" : "discard"}"><span class="mark">${c.pick ? "✓" : "✕"}</span><div><strong>${c.n}</strong><p>${c.why}</p></div></li>`).join("")}</ul>`;
+      <ul class="cands">${x.candidates.map((c) => `<li class="${c.pick ? "pick" : "discard"}"><span class="mark"><i data-lucide="${c.pick ? "check" : "x"}"></i></span><div><strong>${c.n}</strong><p>${c.why}</p></div></li>`).join("")}</ul>`;
+    icons();
   }
   selectExcip(0);
 
@@ -488,9 +516,30 @@
   /* =========================================================
      DIAPOSITIVA: trazabilidad y referencias
      ========================================================= */
-  $("#trace").innerHTML = TRACE.map((t, i) => `<div class="tr-row" style="--d:${i * 0.06}s"><span class="tr-r">${t.r}</span><span class="tr-arrow">→</span><span class="tr-e">${t.e}</span></div>`).join("");
+  $("#trace").innerHTML = TRACE.map((t, i) => `<div class="tr-row" style="--d:${i * 0.06}s"><span class="tr-r"><i data-lucide="triangle-alert"></i>${t.r}</span><span class="tr-arrow"><i data-lucide="arrow-right"></i></span><span class="tr-e"><i data-lucide="shield-check"></i>${t.e}</span></div>`).join("");
   $("#refs").innerHTML = REFS.map((r) => `<li>${r}</li>`).join("");
 
+  /* =========================================================
+     DIAPOSITIVA: galería de la planta + visor
+     ========================================================= */
+  $("#gallery").innerHTML = PLANT_IMAGES.map((p, i) => `
+    <figure class="g-item${i === 0 ? " big" : ""}">
+      <button data-i="${i}" aria-label="Ampliar: ${p.t}"><img src="${p.src}" alt="Calendula officinalis: ${p.t.toLowerCase()}" loading="lazy"></button>
+      <figcaption><strong>${p.t}</strong><span>${p.credit}</span></figcaption>
+    </figure>`).join("");
+  const lb = $("#lightbox");
+  $$("#gallery button").forEach((b) => b.addEventListener("click", () => {
+    const p = PLANT_IMAGES[+b.dataset.i];
+    $("#lbImg").src = p.src; $("#lbImg").alt = b.querySelector("img").alt;
+    $("#lbCap").innerHTML = `<strong>${p.t}.</strong> ${p.d} <a href="${p.url}" target="_blank" rel="noopener">${p.credit} · Wikimedia Commons</a>`;
+    lb.hidden = false;
+  }));
+  const closeLb = () => (lb.hidden = true);
+  $("#lbClose").addEventListener("click", closeLb);
+  lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLb(); });
+
   /* ---------------- Inicio ---------------- */
+  icons();
   go(fromHash(), false);
 })();
