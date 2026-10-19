@@ -114,7 +114,8 @@ const EXCIPIENTS = [
       { n: "Tween 60 / Span 60", why: "Ésteres de ácido esteárico saturado: sólidos cerosos que exigen emulsionar a mayor temperatura y arriesgan los termolábiles del extracto." },
       { n: "Tween 80 / Span 80", why: "No iónicos, compatibles con extractos complejos, estables en un amplio intervalo de pH y con electrolitos. Al ser oleatos cis son líquidos y permiten procesar a temperatura moderada. El HLB se ajusta por aligación (4,3 ↔ 15,0).", pick: true }
     ],
-    refs: [13]
+    refs: [{ n: 13, p: "p. 678" }, 14],
+    extra: {"t":"Compatibilidad con el fitocomplejo","d":"Al no tener carga eléctrica, el par Tween 80 / Span 80 no forma sales ni complejos electrostáticos insolubles con los flavonoides polares (rutina, quercetina, hiperósido), lo que evita su floculación o precipitación durante el almacenamiento. Además, sus micelas mixtas alojan los ésteres de faradiol en el núcleo de cadenas oleicas: distribuyen el activo cicatrizante de forma uniforme en la emulsión y lo protegen de la hidrólisis en la interfase acuosa.","refs":[14]}
   },
   {
     fn: "Modificador reológico", icon: "waves", who: "Lina Valentina Ramirez Español", status: "ok",
@@ -124,7 +125,7 @@ const EXCIPIENTS = [
       { n: "Hidroxietilcelulosa (HEC)", why: "Menor pseudoplasticidad y menor rendimiento de viscosidad a igual concentración." },
       { n: "Goma xantana", why: "Heteropolisacárido aniónico que forma una red 3D en reposo (inmoviliza gotas según Stokes); es pseudoplástica y tixotrópica, por lo que se extiende sin trauma y luego recupera viscosidad. Tolera electrolitos y es estable a pH 5–6.", pick: true }
     ],
-    refs: []
+    refs: [{ n: 13, p: "pp. 782–784" }, 15]
   },
   {
     fn: "Humectante", icon: "droplets", who: "Cesar Steven Diaz Suarez", status: "draft",
@@ -144,7 +145,7 @@ const EXCIPIENTS = [
       { n: "Metabisulfito de sodio", why: "Hidrosoluble: no protege la fase oleosa ni la interfase, y es un alérgeno conocido." },
       { n: "α-Tocoferol", why: "Antioxidante lipófilo primario que rompe la cadena radicalaria: cede el H del cromanol al radical ROO· y forma un radical tocoferilo estable. Protege el Tween 80 (POE), los carotenoides y el faradiol; es biocompatible.", pick: true }
     ],
-    refs: []
+    refs: [{ n: 13, p: "pp. 31–32" }, 16]
   },
   {
     fn: "Conservante", icon: "shield-plus", who: "Juan Sebastián Roa Gamboa", status: "ok",
@@ -217,7 +218,10 @@ const REFS = [
   'PubChem, "Faradiol," National Library of Medicine. [En línea]. Disponible: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/Faradiol" target="_blank" rel="noopener">pubchem.ncbi.nlm.nih.gov</a>',
   'J. Zi, B. Peng y W. Yan, "Solubilities of rutin in eight solvents at T = 283.15, 298.15, 313.15, 323.15, and 333.15 K," <i>Fluid Phase Equilib.</i>, vol. 261, no. 1–2, pp. 111–114, 2007, doi: <a href="https://doi.org/10.1016/j.fluid.2007.07.030" target="_blank" rel="noopener">10.1016/j.fluid.2007.07.030</a>.',
   'M. E. Aulton y K. M. G. Taylor, Eds., <i>Aulton\'s Pharmaceutics: The Design and Manufacture of Medicines</i>, 5.ª ed. Elsevier, 2018, cap. 42, p. 763.',
-  'R. C. Rowe, P. J. Sheskey y M. E. Quinn, Eds., <i>Handbook of Pharmaceutical Excipients</i>, 6.ª ed. London: Pharmaceutical Press, 2009.'
+  'R. C. Rowe, P. J. Sheskey y M. E. Quinn, Eds., <i>Handbook of Pharmaceutical Excipients</i>, 6.ª ed. London: Pharmaceutical Press, 2009.',
+  'A. Taraba, K. Szymczyk, A. Zdziennicka y B. Jańczuk, "Mutual influence of some flavonoids and classical nonionic surfactants on their adsorption and volumetric properties at different temperatures," <i>Molecules</i>, vol. 27, no. 9, art. 2842, 2022, doi: <a href="https://doi.org/10.3390/molecules27092842" target="_blank" rel="noopener">10.3390/molecules27092842</a>.',
+  'V. Krstonošić, L. Dokić y M. Milanović, "Influence of xanthan gum on oil-in-water emulsion characteristics stabilized by OSA starch," <i>Food Hydrocolloids</i>, vol. 45, pp. 9–17, 2015.',
+  'A. F. Vega y C. T. Quirino, "Evaluación de la influencia de agentes antioxidantes en la estabilidad de las dispersiones líquido-cristalinas," Proyecto de servicio social, Universidad Autónoma Metropolitana, Unidad Xochimilco, Ciudad de México, México.'
 ];
 
 /* ---------- Galería de la planta (Wikimedia Commons) ---------- */

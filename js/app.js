@@ -435,6 +435,11 @@
     "Conservante": ["phenoxyethanol", "ethylhexylglycerin"],
     "Regulador de pH": ["citric acid"]
   };
+  // Citas: número simple (13) o con páginas ({ n: 13, p: "pp. 782–784" })
+  const cite = (refs = []) => refs.map((r) => {
+    const n = r.n ?? r;
+    return `<sup class="ref" data-ref="${n}">[${n}${r.p ? `, ${r.p}` : ""}]</sup>`;
+  }).join("");
   const tabs = $("#excipTabs");
   EXCIPIENTS.forEach((x, i) => {
     const b = h("button", { role: "tab", class: "excip-tab", "aria-selected": "false" }, `<span class="ico"><i data-lucide="${x.icon}"></i></span><span>${x.fn}</span>${x.status === "draft" ? '<i class="dot" title="Borrador"></i>' : ""}`);
@@ -450,10 +455,11 @@
         <div>
           <span class="spec-label">${x.fn}</span>
           <h3>${x.sel}</h3>
-          <div class="ep-meta"><span class="tag amber">${x.pct}</span><span class="tag">Expone: ${x.who}</span>${x.status === "draft" ? '<span class="tag draft">Borrador · validar con el grupo</span>' : ""}${x.refs.map((r) => `<sup class="ref" data-ref="${r}">[${r}]</sup>`).join("")}</div>
+          <div class="ep-meta"><span class="tag amber">${x.pct}</span><span class="tag">Expone: ${x.who}</span>${x.status === "draft" ? '<span class="tag draft">Borrador · validar con el grupo</span>' : ""}${cite(x.refs)}</div>
         </div>
         ${structs.length ? `<div class="ep-structs">${structs.map((s) => `<figure><img loading="lazy" src="${pubchem(s)}" alt="Estructura de ${s}" onerror="this.closest('figure').remove()"><figcaption>${s}</figcaption></figure>`).join("")}</div>` : ""}
       </div>
+      ${x.extra ? `<div class="pd-block ep-extra"><span class="pd-label"><i data-lucide="link"></i>${x.extra.t}</span><p>${x.extra.d} ${cite(x.extra.refs)}</p></div>` : ""}
       <ul class="cands">${x.candidates.map((c) => `<li class="${c.pick ? "pick" : "discard"}"><span class="mark"><i data-lucide="${c.pick ? "check" : "x"}"></i></span><div><strong>${c.n}</strong><p>${c.why}</p></div></li>`).join("")}</ul>`;
     icons();
   }
