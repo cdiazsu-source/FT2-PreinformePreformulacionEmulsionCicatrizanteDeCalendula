@@ -248,6 +248,12 @@
   selectQbd(0);
 
   /* =========================================================
+     DIAPOSITIVA: TPP (flor dibujada)
+     ========================================================= */
+  $("#tppxPetals").innerHTML = Array.from({ length: 18 }, (_, i) =>
+    `<ellipse cx="100" cy="52" rx="9" ry="30" transform="rotate(${i * 20} 100 90)"/>`).join("");
+
+  /* =========================================================
      DIAPOSITIVA: matriz fitoquímica
      ========================================================= */
   const wheel = $("#phytoWheel");

@@ -48,7 +48,7 @@ Todo el contenido editable está en **`js/data.js`**, sin necesidad de tocar el 
 - `CONFIG.organo`: órgano vegetal del extracto (`"hojas"` o `"flores"`); se actualiza en toda la presentación.
 - `EXCIPIENTS`: por cada función, `who` (quién expone), `status` (`"ok"` o `"draft"` = borrador) y la justificación de cada candidato.
 - `FORMULA`, `REFS`: fórmula base y bibliografía.
-- Las diapositivas de TPP y QTPP son el diseño original de una compañera y se muestran tal cual desde `img/tpp/`; para cambiarlas, reemplaza esas imágenes.
+- Las diapositivas de TPP y QTPP reproducen el texto y la distribución definidos por el grupo; se editan directamente en `index.html`.
 - `PLANT_IMAGES`: galería de la planta (con autor y licencia de cada imagen).
 - Iconos: nombres de [Lucide](https://lucide.dev/icons/) en los campos `icon` o en `<i data-lucide="...">`.
 
