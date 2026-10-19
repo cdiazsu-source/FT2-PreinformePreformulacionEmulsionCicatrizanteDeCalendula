@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emulsión Cicatrizante de Caléndula · Preinforme</title>
+  <meta name="description" content="Preinforme de preformulación (Farmacotecnia II, 2026-2): emulsión tópica O/W cicatrizante con 5 % de extracto hidroetanólico de Calendula officinalis. Título, TPP/QTPP, preformulación y selección de excipientes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23f39c12'%3E%3Cellipse cx='32' cy='14' rx='7' ry='12'/%3E%3Cellipse cx='32' cy='50' rx='7' ry='12'/%3E%3Cellipse cx='14' cy='32' rx='12' ry='7'/%3E%3Cellipse cx='50' cy='32' rx='12' ry='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='9' fill='%23b35400'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ===================== BARRA SUPERIOR ===================== -->
+<header class="topbar" role="banner">
+  <a class="brand" href="#/1" aria-label="Ir a la portada">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><g class="petal"><ellipse cx="32" cy="13" rx="6.5" ry="11"/><ellipse cx="32" cy="51" rx="6.5" ry="11"/><ellipse cx="13" cy="32" rx="11" ry="6.5"/><ellipse cx="51" cy="32" rx="11" ry="6.5"/><ellipse cx="18.5" cy="18.5" rx="6" ry="10" transform="rotate(-45 18.5 18.5)"/><ellipse cx="45.5" cy="45.5" rx="6" ry="10" transform="rotate(-45 45.5 45.5)"/><ellipse cx="45.5" cy="18.5" rx="6" ry="10" transform="rotate(45 45.5 18.5)"/><ellipse cx="18.5" cy="45.5" rx="6" ry="10" transform="rotate(45 18.5 45.5)"/></g><circle cx="32" cy="32" r="9" class="core"/></svg>
+    <span>Caléndula O/W</span>
+  </a>
+  <nav class="sections" aria-label="Puntos del preinforme" id="sectionNav"></nav>
+  <div class="tools">
+    <button class="icon-btn" id="btnOverview" title="Vista general (O)" aria-label="Vista general"><svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg></button>
+    <button class="icon-btn" id="btnNotes" title="Notas del expositor (N)" aria-label="Notas del expositor"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/></svg></button>
+    <button class="icon-btn" id="btnTheme" title="Tema claro/oscuro (T)" aria-label="Cambiar tema"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+    <button class="icon-btn" id="btnFull" title="Pantalla completa (F)" aria-label="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+</header>
+
+<main id="deck" class="deck" aria-live="polite">
+
+<!-- ===================== 1. PORTADA ===================== -->
+<section class="slide cover" data-section="Portada" data-presenter="Por asignar"
+  data-notes="Saludo y presentación del grupo. Enunciar el producto: emulsión tópica O/W con 5 % de extracto hidroetanólico de caléndula, para heridas agudas superficiales con pérdida de tejido que cicatrizan por segunda intención. Anunciar que se presentan los 4 primeros puntos del preinforme.">
+  <div class="cover-art" aria-hidden="true">
+    <div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div><div class="drop d4"></div><div class="drop d5"></div>
+  </div>
+  <div class="cover-text">
+    <p class="kicker">Farmacotecnia II · 2026-2 · Preinforme del producto final · Grupo 1</p>
+    <h1>Emulsión cicatrizante<br><em>con caléndula</em></h1>
+    <p class="lead">Emulsión tópica <strong>O/W</strong> con <strong>5 % de extracto hidroetanólico de <span class="organo">hojas</span> de <i>Calendula officinalis</i></strong>, para heridas agudas superficiales con pérdida de tejido que cicatrizan por <strong>segunda intención</strong>.</p>
+    <div class="pill-row">
+      <span class="pill amber">Antiinflamatoria · triterpenoides, saponinas, flavonoides, polisacáridos</span>
+      <span class="pill green">Antiséptica · flavonoides y taninos</span>
+    </div>
+    <ul class="team" id="team"></ul>
+    <p class="hint">Usa <kbd>←</kbd> <kbd>→</kbd> o desliza para avanzar · <kbd>O</kbd> vista general · <kbd>N</kbd> notas</p>
+  </div>
+</section>
+
+<!-- ===================== 2. AGENDA ===================== -->
+<section class="slide" data-section="Portada" data-presenter="Por asignar"
+  data-notes="Presentar la ruta: (1) título y concepto, (2) TPP y QTPP según Quality by Design, (3) literatura de preformulación integrada a la propuesta, (4) selección y justificación de excipientes. Recordar que la preformulación no es un marco teórico aparte: cada dato soporta una decisión.">
+  <p class="kicker">Hoja de ruta</p>
+  <h2>Cuatro puntos del preinforme</h2>
+  <div class="agenda">
+    <a class="agenda-card" href="#/3"><span class="num">01</span><h3>Título y concepto</h3><p>Qué producto es, para quién y por qué una emulsión O/W.</p></a>
+    <a class="agenda-card" href="#/5"><span class="num">02</span><h3>TPP y QTPP</h3><p>Perfil objetivo del producto y atributos de calidad bajo QbD.</p></a>
+    <a class="agenda-card" href="#/8"><span class="num">03</span><h3>Preformulación</h3><p>Fitoquímica, fisicoquímica, extracción y riesgos de inestabilidad.</p></a>
+    <a class="agenda-card" href="#/14"><span class="num">04</span><h3>Excipientes</h3><p>Candidatos por función, selección y justificación del descarte.</p></a>
+  </div>
+  <p class="foot-note">Entrega escrita: <strong>10 de noviembre de 2026</strong> (físico y Classroom). Esta exposición presenta el avance.</p>
+</section>
+
+<!-- ===================== 3. PUNTO 1 · TÍTULO ===================== -->
+<section class="slide" data-section="1 · Título" data-presenter="Por asignar"
+  data-notes="Desglosar el título. Cada palabra es una decisión: 'emulsión O/W' porque la fase externa acuosa no es oclusiva, se lava fácil y no macera la herida; 'cicatrizante' es el objetivo clínico; 'caléndula 5 %' es el principio activo fitoterapéutico.">
+  <p class="kicker">Punto 1 · Título</p>
+  <h2>Emulsión O/W cicatrizante de <i>Calendula officinalis</i> al 5 %</h2>
+  <div class="grid-4 spec">
+    <div class="spec-card"><span class="spec-label">Forma farmacéutica</span><strong>Emulsión O/W</strong><p>Fase externa acuosa: no oclusiva, lavable, extensible sobre piel lesionada.</p></div>
+    <div class="spec-card"><span class="spec-label">Vía</span><strong>Tópica cutánea</strong><p>Acción local en el lecho de la herida.</p></div>
+    <div class="spec-card"><span class="spec-label">Principio activo</span><strong>Extracto hidroetanólico 5 %</strong><p><span class="organo-cap">Hojas</span> de <i>C. officinalis</i> (Asteraceae).</p></div>
+    <div class="spec-card"><span class="spec-label">Indicación</span><strong>Heridas agudas superficiales</strong><p>Con pérdida de tejido; cierre por segunda intención.</p></div>
+  </div>
+  <div class="why-ow">
+    <h3>¿Por qué O/W y no W/O, gel o ungüento?</h3>
+    <div class="compare" id="compareForms"></div>
+  </div>
+</section>
+
+<!-- ===================== 4. CICATRIZACIÓN ===================== -->
+<section class="slide" data-section="1 · Título" data-presenter="Por asignar"
+  data-notes="Contexto clínico: en segunda intención la herida queda abierta y se llena de tejido de granulación. Hacer clic en cada fase y mostrar dónde actúa cada grupo de metabolitos. La caléndula actúa sobre todo en inflamación y proliferación.">
+  <p class="kicker">Contexto clínico</p>
+  <h2>Cicatrización por segunda intención: ¿dónde actúa la caléndula?</h2>
+  <div class="phases" id="phases" role="tablist" aria-label="Fases de la cicatrización"></div>
+  <div class="phase-detail" id="phaseDetail" role="tabpanel"></div>
+</section>
+
+<!-- ===================== 5. TPP ===================== -->
+<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="El TPP describe el producto desde la perspectiva del paciente y del uso clínico. Leer indicación, población y mecanismos. Resaltar el perfil de seguridad: apto para pieles sensibles, sin irritación y sin generar resistencia bacteriana como los antibióticos tópicos. Refs [1-3].">
+  <p class="kicker">Punto 2 · Perfil objetivo del producto (TPP)</p>
+  <h2>Lo que el producto debe lograr</h2>
+  <div class="tpp">
+    <div class="tpp-main">
+      <dl class="tpp-list">
+        <div><dt>Indicación</dt><dd>Tratamiento cicatrizante de heridas cutáneas con efecto antiinflamatorio y antiséptico <sup class="ref" data-ref="1">[1]</sup>.</dd></div>
+        <div><dt>Población</dt><dd>Pacientes con heridas agudas superficiales con pérdida de tejido cutáneo que cicatrizan por segunda intención.</dd></div>
+        <div><dt>Administración</dt><dd>Aplicación tópica de una emulsión O/W sobre la zona afectada.</dd></div>
+        <div><dt>Seguridad</dt><dd>No irritante, apta para piel sensible; perfil de seguridad favorable en tratamientos prolongados y sin generar resistencia bacteriana <sup class="ref" data-ref="3">[3]</sup>.</dd></div>
+      </dl>
+    </div>
+    <div class="tpp-side">
+      <div class="moa amber">
+        <h3>Modulación de la inflamación</h3>
+        <p>Triterpenoides, saponinas, micronutrientes, flavonoides y polisacáridos regulan los mediadores inflamatorios <sup class="ref" data-ref="2">[2]</sup>.</p>
+      </div>
+      <div class="moa green">
+        <h3>Antiséptico y antibacteriano</h3>
+        <p>Flavonoides y taninos <sup class="ref" data-ref="2">[2]</sup>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. QbD ===================== -->
+<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="Explicar el flujo QbD (ICH Q8): el QTPP se traduce en atributos críticos de calidad (CQA); estos dependen de atributos de materiales (CMA) y parámetros de proceso (CPP); con experimentación se define un espacio de diseño y una estrategia de control. Hacer clic en cada paso para ver qué significa en nuestro producto.">
+  <p class="kicker">Punto 2 · Quality by Design (ICH Q8)</p>
+  <h2>Del QTPP a la estrategia de control</h2>
+  <ol class="qbd-flow" id="qbdFlow"></ol>
+  <div class="qbd-detail" id="qbdDetail"></div>
+</section>
+
+<!-- ===================== 7. QTPP ===================== -->
+<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="Recorrer la tabla del QTPP. Los atributos con etiqueta CQA son los que se medirán como variables respuesta: viscosidad, pH, tamaño de gota, adhesividad, contenido de fitoactivos y límites microbianos. Hacer clic en cada fila para mostrar la justificación.">
+  <p class="kicker">Punto 2 · QTPP</p>
+  <h2>Perfil objetivo de calidad del producto</h2>
+  <div class="filter-row" role="group" aria-label="Filtro">
+    <button class="chip active" data-filter="all">Todos</button>
+    <button class="chip" data-filter="cqa">Solo CQA medibles</button>
+  </div>
+  <div class="qtpp" id="qtpp"></div>
+  <p class="foot-note">Tabla 1. Haz clic en un atributo para ver la justificación.</p>
+</section>
+
+<!-- ===================== 8. PREFORMULACIÓN · PLANTA ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Por asignar"
+  data-notes="Calendula officinalis, familia Asteraceae. La monografía HMPC de la EMA la cataloga como medicamento tradicional para inflamaciones cutáneas leves y coadyuvante en la cicatrización de heridas menores. Recorrer las familias de metabolitos con clic y relacionar cada una con su papel terapéutico y con el reto de formulación que impone. Refs [7-9].">
+  <p class="kicker">Punto 3 · Preformulación · El fitoactivo</p>
+  <h2>Matriz fitoquímica de <i>Calendula officinalis</i></h2>
+  <div class="phyto">
+    <div class="phyto-wheel" id="phytoWheel" aria-label="Familias de metabolitos"></div>
+    <div class="phyto-detail" id="phytoDetail"></div>
+  </div>
+  <p class="foot-note">Monografía HMPC/EMA: uso tradicional en inflamaciones cutáneas leves y como coadyuvante en heridas menores <sup class="ref" data-ref="8">[8]</sup>.</p>
+</section>
+
+<!-- ===================== 9. MECANISMO ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Por asignar"
+  data-notes="Mecanismo sinérgico: los ésteres de faradiol (3-O-palmitato y 3-O-miristato) inhiben COX-2 y LOX, disminuyen la infiltración leucocitaria y estimulan fibroblastos. Rutina, hiperósido y quercetina atrapan ROS y reducen la permeabilidad capilar (menos edema). Carotenoides y saponinas favorecen la reepitelización. Ref [8,9].">
+  <p class="kicker">Punto 3 · Preformulación · Mecanismo</p>
+  <h2>Acción sinérgica sobre la reparación tisular</h2>
+  <div class="mech">
+    <svg class="mech-svg" viewBox="0 0 900 380" role="img" aria-labelledby="mechTitle">
+      <title id="mechTitle">Diagrama: metabolitos de caléndula y sus dianas en la herida</title>
+      <defs>
+        <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="arw"/></marker>
+      </defs>
+      <!-- fuentes -->
+      <g class="node src amber"><rect x="20" y="30" width="230" height="78" rx="14"/><text x="135" y="62">Ésteres de faradiol</text><text x="135" y="86" class="sub">3-O-palmitato · 3-O-miristato</text></g>
+      <g class="node src green"><rect x="20" y="150" width="230" height="78" rx="14"/><text x="135" y="182">Flavonoides</text><text x="135" y="206" class="sub">rutina · hiperósido · quercetina</text></g>
+      <g class="node src rose"><rect x="20" y="270" width="230" height="78" rx="14"/><text x="135" y="302">Carotenoides · saponinas</text><text x="135" y="326" class="sub">luteína · licopeno</text></g>
+      <!-- dianas -->
+      <g class="node tgt"><rect x="340" y="18" width="240" height="56" rx="12"/><text x="460" y="52">↓ COX-2 y LOX</text></g>
+      <g class="node tgt"><rect x="340" y="88" width="240" height="56" rx="12"/><text x="460" y="122">↓ Infiltración leucocitaria</text></g>
+      <g class="node tgt"><rect x="340" y="160" width="240" height="56" rx="12"/><text x="460" y="194">Captura de ROS</text></g>
+      <g class="node tgt"><rect x="340" y="230" width="240" height="56" rx="12"/><text x="460" y="264">↓ Permeabilidad capilar</text></g>
+      <g class="node tgt"><rect x="340" y="300" width="240" height="56" rx="12"/><text x="460" y="334">Reepitelización</text></g>
+      <!-- resultado -->
+      <g class="node out"><rect x="660" y="60" width="220" height="100" rx="16"/><text x="770" y="102">Antiinflamatorio</text><text x="770" y="128" class="sub">menos edema y dolor</text></g>
+      <g class="node out"><rect x="660" y="210" width="220" height="100" rx="16"/><text x="770" y="252">Cicatrizante</text><text x="770" y="278" class="sub">fibroblastos y queratinocitos</text></g>
+      <g class="links">
+        <path d="M250 60 C300 50 300 46 338 46" marker-end="url(#arw)"/>
+        <path d="M250 80 C300 100 300 116 338 116" marker-end="url(#arw)"/>
+        <path d="M250 180 C300 186 300 188 338 188" marker-end="url(#arw)"/>
+        <path d="M250 200 C300 220 300 258 338 258" marker-end="url(#arw)"/>
+        <path d="M250 310 C300 316 300 328 338 328" marker-end="url(#arw)"/>
+        <path d="M580 46 C620 46 620 100 658 100" marker-end="url(#arw)"/>
+        <path d="M580 116 C620 116 620 110 658 110" marker-end="url(#arw)"/>
+        <path d="M580 188 C620 188 620 130 658 130" marker-end="url(#arw)"/>
+        <path d="M580 258 C620 258 620 140 658 140" marker-end="url(#arw)"/>
+        <path d="M580 328 C620 328 620 270 658 270" marker-end="url(#arw)"/>
+        <path d="M250 70 C320 160 600 220 658 240" marker-end="url(#arw)" class="dash"/>
+      </g>
+    </svg>
+  </div>
+  <p class="foot-note">Los ésteres de faradiol también estimulan proliferación y migración de fibroblastos en la matriz extracelular (línea punteada) <sup class="ref" data-ref="8">[8]</sup><sup class="ref" data-ref="9">[9]</sup>.</p>
+</section>
+
+<!-- ===================== 10. FISICOQUÍMICA + EXTRACCIÓN ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Por asignar"
+  data-notes="Dato clave de preformulación: el faradiol (C30H50O2, log P > 5) es muy lipófilo e insoluble en agua; la rutina (C27H30O16) es un glicósido polar, poco soluble en agua fría pero muy soluble en mezclas hidroetanólicas. Usar el control deslizante: con agua se pierde el faradiol; con aceite se pierden los flavonoides; con etanol 60-70 % v/v se extraen ambos. Maceración agitada o percolación en frío a 20-25 °C. Refs [10-12].">
+  <p class="kicker">Punto 3 · Preformulación · Solubilidad y extracción</p>
+  <h2>Dos marcadores, dos polaridades: ¿qué solvente?</h2>
+  <div class="extract">
+    <div class="molecules">
+      <figure class="mol">
+        <img loading="lazy" src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/faradiol/PNG?image_size=300x300" alt="Estructura química del faradiol">
+        <figcaption><strong>Faradiol</strong> · C<sub>30</sub>H<sub>50</sub>O<sub>2</sub><br>Triterpeno pentacíclico, OH en C-3 y C-16<br><span class="tag amber">log P &gt; 5 · insoluble en agua</span> <sup class="ref" data-ref="10">[10]</sup></figcaption>
+      </figure>
+      <figure class="mol">
+        <img loading="lazy" src="https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/rutin/PNG?image_size=300x300" alt="Estructura química de la rutina">
+        <figcaption><strong>Rutina</strong> · C<sub>27</sub>H<sub>30</sub>O<sub>16</sub><br>Glicósido flavonoide, polaridad intermedia-alta<br><span class="tag green">Soluble en mezclas hidroetanólicas</span> <sup class="ref" data-ref="11">[11]</sup></figcaption>
+      </figure>
+    </div>
+    <div class="solvent-lab">
+      <label for="ethanol" class="lab-label">Proporción de etanol en el solvente: <output id="ethanolOut">65</output> % v/v</label>
+      <input type="range" id="ethanol" min="0" max="100" step="5" value="65">
+      <div class="scale-labels"><span>Agua</span><span>Hidroetanólico</span><span>Etanol / aceite</span></div>
+      <div class="bars">
+        <div class="bar-row"><span>Triterpenos (faradiol)</span><div class="bar"><i id="barTri"></i></div></div>
+        <div class="bar-row"><span>Flavonoides (rutina)</span><div class="bar"><i id="barFla"></i></div></div>
+        <div class="bar-row"><span>Carotenoides</span><div class="bar"><i id="barCar"></i></div></div>
+        <div class="bar-row"><span>Polisacáridos</span><div class="bar"><i id="barPol"></i></div></div>
+      </div>
+      <p class="verdict" id="solventVerdict"></p>
+      <p class="mini">Modelo cualitativo con fines didácticos, basado en las tendencias de solubilidad descritas en [10-12].</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11. INESTABILIDAD FÍSICA (STOKES) ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Juan Sebastián Roa Gamboa"
+  data-notes="Las emulsiones son termodinámicamente inestables. La fase oleosa (MCT y alcohol cetílico) es menos densa que la acuosa, así que el riesgo predominante es el cremado ascendente (Ley de Stokes). Mover los controles: al subir la viscosidad a 15 000-17 000 cP con goma xantana, o al bajar el tamaño de gota, la velocidad de cremado cae varios órdenes de magnitud. Mencionar también floculación/coalescencia (controladas por la película mixta Tween 80/Span 80) y maduración de Ostwald (frenada por la baja solubilidad acuosa de los MCT).">
+  <p class="kicker">Punto 3 · Preformulación · Riesgos físicos</p>
+  <h2>Cremado: la Ley de Stokes como criterio de diseño</h2>
+  <div class="stokes">
+    <div class="stokes-controls">
+      <p class="formula">v = <span class="frac"><span>2 r² (ρ<sub>agua</sub> − ρ<sub>aceite</sub>) g</span><span>9 η</span></span></p>
+      <label>Diámetro de gota: <output id="dOut"></output> µm<input type="range" id="dRange" min="0" max="100" value="50"></label>
+      <label>Viscosidad de la fase continua: <output id="etaOut"></output> cP<input type="range" id="etaRange" min="0" max="100" value="92"></label>
+      <label>Δρ (agua − aceite): <output id="rhoOut"></output> g/cm³<input type="range" id="rhoRange" min="2" max="15" value="5"></label>
+      <div class="result">
+        <span class="result-label">Velocidad de cremado</span>
+        <strong id="vOut"></strong>
+        <span id="tOut" class="result-sub"></span>
+      </div>
+      <div class="preset-row">
+        <button class="chip" data-preset="water">Sin viscosante</button>
+        <button class="chip" data-preset="target">Objetivo QTPP</button>
+        <button class="chip" data-preset="coarse">Gota gruesa</button>
+      </div>
+    </div>
+    <div class="stokes-vis">
+      <canvas id="stokesCanvas" width="360" height="420" aria-label="Simulación de cremado de gotas de aceite"></canvas>
+      <div class="cream-meter"><span>Capa de crema estimada a 30 días</span><div class="bar"><i id="creamBar"></i></div><output id="creamOut"></output></div>
+    </div>
+  </div>
+  <div class="mini-cards">
+    <div><strong>Floculación / coalescencia</strong><span>Película interfacial mixta Tween 80 / Span 80 con impedimento estérico.</span></div>
+    <div><strong>Maduración de Ostwald</strong><span>MCT con muy baja solubilidad acuosa: limita la difusión entre gotas (ec. de Kelvin).</span></div>
+  </div>
+</section>
+
+<!-- ===================== 12. QUÍMICA + MICRO ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Juan Sebastián Roa Gamboa"
+  data-notes="Inestabilidad química: el Tween 80 (cadenas POE + oleato cis) se autooxida con luz, O2 y trazas metálicas y forma hidroperóxidos, luego aldehídos y ácidos. Consecuencias: el pH cae por debajo de 4,5, se alteran el HLB y la CMC y se degradan carotenoides y faradiol. Hidrólisis de ésteres a pH < 4 o > 8. Riesgo microbiológico: fase acuosa rica en nutrientes del extracto; las enzimas microbianas degradan la goma xantana y los tensoactivos. Límites USP/Ph. Eur. para uso cutáneo: TAMC ≤ 10² UFC/g, TYMC ≤ 10¹ UFC/g, ausencia de S. aureus y P. aeruginosa.">
+  <p class="kicker">Punto 3 · Preformulación · Riesgos químicos y microbiológicos</p>
+  <h2>Cadena de degradación y puntos de control</h2>
+  <div class="chain" id="chain"></div>
+  <div class="grid-3 risk-grid">
+    <article class="risk"><h3>Hidrólisis de ésteres</h3><p>Span 80, Tween 80 y ésteres de faradiol se hidrolizan a pH &lt; 4 o &gt; 8 y a temperatura alta.</p><p class="ctrl">Control: buffer cítrico/citrato, pH 5,0–6,0</p></article>
+    <article class="risk"><h3>Riesgo microbiológico</h3><p>Azúcares, polisacáridos y aminoácidos del extracto son nutrientes; las esterasas y polisacaridasas microbianas rompen la goma xantana.</p><p class="ctrl">Control: fenoxietanol + etilhexilglicerina</p></article>
+    <article class="risk"><h3>Límites farmacopeicos (uso cutáneo)</h3><p>TAMC ≤ 10² UFC/g · TYMC ≤ 10¹ UFC/g · ausencia de <i>S. aureus</i> y <i>P. aeruginosa</i>.</p><p class="ctrl">USP &lt;1111&gt; · Ph. Eur. 5.1.4</p></article>
+  </div>
+</section>
+
+<!-- ===================== 13. INTERACCIONES + PCC ===================== -->
+<section class="slide" data-section="3 · Preformulación" data-presenter="Juan Sebastián Roa Gamboa"
+  data-notes="Matriz de interacciones: la goma xantana tolera las sales del extracto (el Carbopol colapsaría); el Tween 80 puede solubilizar el fenoxietanol en micelas y la etilhexilglicerina lo compensa; la glicerina y la goma xantana forman puentes de hidrógeno (sinergia); el tocoferol protege los lípidos en los MCT. Cerrar con los PCC de almacenamiento: 15-25 °C, envase opaco o tubo de aluminio y mínimo espacio de cabeza.">
+  <p class="kicker">Punto 3 · Preformulación · Compatibilidad</p>
+  <h2>Matriz de interacciones y puntos críticos de control</h2>
+  <div class="matrix-wrap">
+    <table class="matrix" id="matrix"></table>
+    <div class="matrix-detail" id="matrixDetail"><p class="muted">Selecciona una celda coloreada para ver la interacción.</p></div>
+  </div>
+  <div class="pcc">
+    <div><span class="pcc-ico">🌡</span><strong>15–25 °C</strong><span>Sin congelar ni superar 40 °C</span></div>
+    <div><span class="pcc-ico">◐</span><strong>Envase opaco</strong><span>Tubo de aluminio o HDPE opaco</span></div>
+    <div><span class="pcc-ico">⬚</span><strong>Mínimo espacio de cabeza</strong><span>Menos O₂ disponible</span></div>
+  </div>
+</section>
+
+<!-- ===================== 14. EXCIPIENTES ===================== -->
+<section class="slide" data-section="4 · Excipientes" data-presenter="Varios (ver cada función)"
+  data-notes="Tabla 2 interactiva. Cada función tiene candidatos evaluados, el excipiente seleccionado y por qué se descartaron los demás. Cada integrante presenta su función. La justificación siempre vuelve a un dato de preformulación o a un atributo del QTPP.">
+  <p class="kicker">Punto 4 · Selección de excipientes</p>
+  <h2>Candidatos, selección y justificación</h2>
+  <div class="excip">
+    <div class="excip-tabs" id="excipTabs" role="tablist" aria-label="Funciones farmacéuticas"></div>
+    <div class="excip-panel" id="excipPanel" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ===================== 15. HLB ===================== -->
+<section class="slide" data-section="4 · Excipientes" data-presenter="Diana Estefania Argüello Cajicá"
+  data-notes="Ecuación de aligación de Griffin: el HLB requerido por la fase oleosa es el promedio ponderado de los HLB requeridos de cada componente. Con esa cifra se calcula qué fracción de Tween 80 (HLB 15,0) y de Span 80 (HLB 4,3) se usa. Mover los controles de MCT y alcohol cetílico para mostrar cómo se recalcula la mezcla. Los HLB requeridos son valores de literatura y deben confirmarse experimentalmente con una serie de HLB.">
+  <p class="kicker">Punto 4 · Sistema emulsionante</p>
+  <h2>Calculadora HLB: mezcla Tween 80 / Span 80</h2>
+  <div class="hlb">
+    <div class="hlb-inputs">
+      <label>Triglicéridos de cadena media (HLB req. ≈ <output id="mctReqOut">11</output>) · <output id="mctOut"></output> %<input type="range" id="mctRange" min="0" max="20" step="0.5" value="8"></label>
+      <label>Alcohol cetílico (HLB req. ≈ 15,5) · <output id="cetOut"></output> %<input type="range" id="cetRange" min="0" max="8" step="0.5" value="3"></label>
+      <label>Emulsionante total · <output id="emTotOut"></output> %<input type="range" id="emTotRange" min="1" max="10" step="0.5" value="5"></label>
+      <p class="formula small">HLB<sub>req</sub> = Σ (fᵢ · HLBᵢ) &nbsp;·&nbsp; f<sub>Tween</sub> = (HLB<sub>req</sub> − 4,3) / (15,0 − 4,3)</p>
+    </div>
+    <div class="hlb-out">
+      <div class="gauge">
+        <svg viewBox="0 0 200 120" aria-hidden="true">
+          <path d="M20 100 A80 80 0 0 1 180 100" class="gauge-track"/>
+          <path d="M20 100 A80 80 0 0 1 180 100" class="gauge-fill" id="gaugeFill"/>
+          <line x1="100" y1="100" x2="100" y2="34" class="gauge-needle" id="gaugeNeedle"/>
+          <circle cx="100" cy="100" r="5" class="gauge-hub"/>
+          <text x="20" y="116">0</text><text x="172" y="116">20</text>
+        </svg>
+        <div class="gauge-val"><span>HLB requerido</span><strong id="hlbOut">—</strong></div>
+      </div>
+      <div class="split">
+        <div class="split-bar"><i id="tweenBar"></i><b id="spanBar"></b></div>
+        <div class="split-legend">
+          <span><i class="sw tween"></i>Tween 80 (HLB 15,0): <strong id="tweenOut"></strong></span>
+          <span><i class="sw span"></i>Span 80 (HLB 4,3): <strong id="spanOut"></strong></span>
+        </div>
+      </div>
+      <p class="verdict" id="hlbVerdict"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 16. FÓRMULA BASE ===================== -->
+<section class="slide" data-section="4 · Excipientes" data-presenter="Por asignar"
+  data-notes="Fórmula base de partida, solo para dimensionar. Los valores sólidos (extracto 5 %, goma xantana 0,5 %, glicerina 5 %, tocoferol 0,1 %) vienen del documento; los punteados son propuestas a confirmar. Esta fórmula es el punto central sobre el que se plantearán las variaciones lógicas del punto 5 (factores: % de emulsionante y HLB, % de goma xantana, proporción de MCT y alcohol cetílico, velocidad y tiempo de homogenización).">
+  <p class="kicker">Punto 4 → puente al punto 5</p>
+  <h2>Fórmula base tentativa (100 g)</h2>
+  <div class="formula-grid">
+    <div class="stack" id="stack" aria-label="Composición porcentual"></div>
+    <table class="ftable" id="ftable"></table>
+  </div>
+  <p class="foot-note"><span class="legend-solid"></span> Valor definido en el documento del grupo &nbsp; <span class="legend-dash"></span> Propuesta a validar por el grupo. Sobre esta base se diseñarán las variaciones (punto 5).</p>
+</section>
+
+<!-- ===================== 17. CIERRE ===================== -->
+<section class="slide" data-section="4 · Excipientes" data-presenter="Por asignar"
+  data-notes="Síntesis: el QTPP define los objetivos medibles; la preformulación identifica los riesgos (polaridad dual del extracto, cremado, oxidación de POE, hidrólisis, contaminación); y cada excipiente se eligió para mitigar un riesgo concreto. Siguientes pasos: formulaciones propuestas con variables, productos de referencia, metodología, proceso, caracterización y cronograma.">
+  <p class="kicker">Síntesis</p>
+  <h2>Cada excipiente responde a un riesgo de preformulación</h2>
+  <div class="trace" id="trace"></div>
+  <div class="next">
+    <h3>Siguientes puntos del preinforme</h3>
+    <ol start="5">
+      <li>Formulaciones propuestas y variables de ensayo</li>
+      <li>Productos de referencia y su caracterización</li>
+      <li>Metodología para las variables respuesta</li>
+      <li>Método de elaboración (diagrama de proceso)</li>
+      <li>Caracterización de la formulación final</li>
+      <li>Cronograma con estudio de tiempos y movimientos</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== 18. BIBLIOGRAFÍA ===================== -->
+<section class="slide" data-section="Bibliografía" data-presenter="—"
+  data-notes="Bibliografía en formato IEEE. Recordar el límite de máximo 3 referencias de páginas web: hoy hay 3 (EMA [8], PubChem [10] y el repositorio UNAL [7]) más dos libros de referencia (Aulton y Handbook).">
+  <p class="kicker">Referencias</p>
+  <h2>Bibliografía</h2>
+  <ol class="refs" id="refs"></ol>
+</section>
+
+</main>
+
+<!-- ===================== CONTROLES ===================== -->
+<nav class="pager" aria-label="Navegación de diapositivas">
+  <button id="prev" class="nav-btn" aria-label="Anterior">‹</button>
+  <span class="counter"><span id="cur">1</span> / <span id="tot">1</span></span>
+  <button id="next" class="nav-btn" aria-label="Siguiente">›</button>
+</nav>
+
+<aside class="notes" id="notes" aria-label="Notas del expositor" hidden>
+  <div class="notes-head"><span>Notas del expositor</span><strong id="notesPresenter"></strong><button class="icon-btn" id="notesClose" aria-label="Cerrar notas">×</button></div>
+  <p id="notesText"></p>
+</aside>
+
+<div class="overview" id="overview" hidden>
+  <div class="overview-head"><h2>Vista general</h2><button class="icon-btn" id="overviewClose" aria-label="Cerrar vista general">×</button></div>
+  <div class="overview-grid" id="overviewGrid"></div>
+</div>
+
+<div class="ref-pop" id="refPop" role="tooltip" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
