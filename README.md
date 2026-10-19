@@ -33,7 +33,6 @@ Cada diapositiva tiene una URL propia (`#/7` = QTPP), útil para compartir.
 
 - Fases de la cicatrización y dónde actúa cada metabolito
 - Flujo QbD (QTPP → CQA → CMA/CPP → espacio de diseño → control)
-- Tabla QTPP expandible con filtro de CQA
 - Rueda fitoquímica: papel terapéutico frente a la implicación en la formulación
 - Selector de solvente de extracción (agua → hidroetanólico → apolar)
 - Simulador de la Ley de Stokes (cremado frente a viscosidad y tamaño de gota)
@@ -48,7 +47,8 @@ Todo el contenido editable está en **`js/data.js`**, sin necesidad de tocar el 
 
 - `CONFIG.organo`: órgano vegetal del extracto (`"hojas"` o `"flores"`); se actualiza en toda la presentación.
 - `EXCIPIENTS`: por cada función, `who` (quién expone), `status` (`"ok"` o `"draft"` = borrador) y la justificación de cada candidato.
-- `QTPP`, `FORMULA`, `REFS`: tabla QTPP, fórmula base y bibliografía.
+- `FORMULA`, `REFS`: fórmula base y bibliografía.
+- Las diapositivas de TPP y QTPP son el diseño original de una compañera y se muestran tal cual desde `img/tpp/`; para cambiarlas, reemplaza esas imágenes.
 - `PLANT_IMAGES`: galería de la planta (con autor y licencia de cada imagen).
 - Iconos: nombres de [Lucide](https://lucide.dev/icons/) en los campos `icon` o en `<i data-lucide="...">`.
 
@@ -69,7 +69,7 @@ js/app.js         navegación e interactividad (Vanilla JS)
 
 ## Créditos de imágenes
 
-Escudo: Universidad Nacional de Colombia. Iconos: [Lucide](https://lucide.dev) (licencia ISC). Fotografías de *Calendula officinalis* tomadas de Wikimedia Commons:
+Tipografía: [Ancizar Sans](https://fonts.google.com/specimen/Ancizar+Sans) (Universidad Nacional de Colombia, SIL OFL). Escudo: Universidad Nacional de Colombia. Iconos: [Lucide](https://lucide.dev) (licencia ISC). Fotografías de *Calendula officinalis* tomadas de Wikimedia Commons:
 
 | Archivo | Autor | Licencia |
 | --- | --- | --- |

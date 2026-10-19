@@ -248,20 +248,6 @@
   selectQbd(0);
 
   /* =========================================================
-     DIAPOSITIVA: QTPP
-     ========================================================= */
-  const qtppEl = $("#qtpp");
-  QTPP.forEach((q) => {
-    const d = h("details", { class: `qtpp-row${q.cqa ? " cqa" : ""}` },
-      `<summary><span class="q-el"><i data-lucide="${q.icon}"></i>${q.el}</span><span class="q-obj">${q.obj}</span>${q.cqa ? '<span class="badge">CQA</span>' : ""}</summary><p>${q.just}</p>`);
-    qtppEl.appendChild(d);
-  });
-  $$("[data-filter]").forEach((b) => b.addEventListener("click", () => {
-    $$("[data-filter]").forEach((x) => x.classList.toggle("active", x === b));
-    qtppEl.classList.toggle("only-cqa", b.dataset.filter === "cqa");
-  }));
-
-  /* =========================================================
      DIAPOSITIVA: matriz fitoquímica
      ========================================================= */
   const wheel = $("#phytoWheel");

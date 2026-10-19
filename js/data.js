@@ -45,22 +45,6 @@ const QBD = [
   { icon: "shield-check", k: "CS", t: "Estrategia de control", d: "Controles en proceso y del producto terminado: pH, viscosidad, microscopía de gota, centrifugación, ciclos de temperatura y recuento microbiano." }
 ];
 
-/* ---------- QTPP (Tabla 1) ---------- */
-const QTPP = [
-  { icon: "leaf", el: "Tipo de producto", obj: "Fitoterapéutico", just: "Contiene extracto vegetal de Calendula officinalis, cuyos metabolitos (flavonoides y compuestos fenólicos) se han estudiado por su actividad antioxidante y su potencial uso tópico.", cqa: false },
-  { icon: "blend", el: "Forma farmacéutica", obj: "Emulsión O/W", just: "Permite incorporar una fase oleosa y una acuosa en una preparación semisólida de aplicación cutánea.", cqa: false },
-  { icon: "hand", el: "Vía de administración", obj: "Tópica", just: "Administración local en la zona cutánea afectada.", cqa: false },
-  { icon: "eye", el: "Aspecto", obj: "Suave, homogénea, sin grumos ni separación de fases", just: "Indicador primario de estabilidad física y de ausencia de degradación; influye en la aceptación del paciente.", cqa: true },
-  { icon: "wind", el: "Olor", obj: "Herbal, vegetal o floral suave", just: "Control de calidad y de posibles cambios durante el almacenamiento.", cqa: false },
-  { icon: "palette", el: "Color", obj: "Amarillo pálido a amarillo anaranjado", just: "Controla la calidad, la estabilidad de fases y los cambios en almacenamiento; la pérdida de color indica oxidación de carotenoides.", cqa: true },
-  { icon: "waves", el: "Viscosidad", obj: "15 000–17 000 cP", just: "Los cambios de viscosidad revelan cambios estructurales de la emulsión o interacciones no deseadas entre componentes.", cqa: true },
-  { icon: "test-tube", el: "pH", obj: "5,0–6,0", just: "Tolerancia cutánea (manto ácido) y estabilidad de los componentes: es la zona de mínima hidrólisis de ésteres.", cqa: true },
-  { icon: "circle-dot", el: "Tamaño de gota", obj: "0,1–10 µm", just: "Determina la estabilidad física. Su aumento indica coalescencia; una distribución heterogénea compromete la uniformidad del activo.", cqa: true },
-  { icon: "bug", el: "Límites microbiológicos", obj: "Ph. Eur. / USP", just: "Verifican que la contaminación microbiana esté dentro de los límites; un aumento compromete la seguridad en piel lesionada.", cqa: true },
-  { icon: "magnet", el: "Adhesividad", obj: "20–60 N·mm", just: "Permanencia en el sitio de aplicación: si es insuficiente reduce el tiempo de contacto; si es excesiva dificulta la aplicación.", cqa: true },
-  { icon: "flask-conical", el: "Contenido de fitoactivos", obj: "5 % de extracto hidroetanólico", just: "Verifica la uniformidad de contenido; su disminución indica degradación química y pérdida de actividad terapéutica.", cqa: true }
-];
-
 /* ---------- Metabolitos ---------- */
 const PHYTO = [
   { name: "Triterpenoides", color: "amber", ex: "Ésteres de faradiol (3-O-palmitato, 3-O-miristato), arnidiol", act: "Antiinflamatorio principal (↓ COX-2/LOX) y estímulo de fibroblastos.", form: "Muy lipófilos (log P > 5): requieren una fase oleosa o un solvente con etanol. Sus ésteres son sensibles a la hidrólisis." },

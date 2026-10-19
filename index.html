@@ -7,7 +7,7 @@
   <meta name="description" content="Preinforme de preformulación (Farmacotecnia II, 2026-2): emulsión tópica O/W cicatrizante con 5 % de extracto hidroetanólico de Calendula officinalis. Título, TPP/QTPP, preformulación y selección de excipientes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/extras.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23f39c12'%3E%3Cellipse cx='32' cy='14' rx='7' ry='12'/%3E%3Cellipse cx='32' cy='50' rx='7' ry='12'/%3E%3Cellipse cx='14' cy='32' rx='12' ry='7'/%3E%3Cellipse cx='50' cy='32' rx='12' ry='7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='9' fill='%23b35400'/%3E%3C/svg%3E">
@@ -130,6 +130,15 @@
   </div>
 </section>
 
+<!-- ===================== QbD (enfoque del proyecto) ===================== -->
+<section class="slide" data-section="Introducción" data-presenter="Por asignar"
+  data-notes="Explicar el flujo QbD (ICH Q8): el QTPP se traduce en atributos críticos de calidad (CQA); estos dependen de atributos de materiales (CMA) y parámetros de proceso (CPP); con experimentación se define un espacio de diseño y una estrategia de control. Hacer clic en cada paso para ver qué significa en nuestro producto.">
+  <p class="kicker">Introducción · Enfoque Quality by Design (ICH Q8)</p>
+  <h2>Del QTPP a la estrategia de control</h2>
+  <ol class="qbd-flow" id="qbdFlow"></ol>
+  <div class="qbd-detail" id="qbdDetail"></div>
+</section>
+
 <!-- ===================== 3. PUNTO 1 · TÍTULO ===================== -->
 <section class="slide" data-section="1 · Título" data-presenter="Por asignar"
   data-notes="Desglosar el título. Cada palabra es una decisión: 'emulsión O/W' porque la fase externa acuosa no es oclusiva, se lava fácil y no macera la herida; 'cicatrizante' es el objetivo clínico; 'caléndula 5 %' es el principio activo fitoterapéutico.">
@@ -156,53 +165,23 @@
   <div class="phase-detail" id="phaseDetail" role="tabpanel"></div>
 </section>
 
-<!-- ===================== 5. TPP ===================== -->
-<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
-  data-notes="El TPP describe el producto desde la perspectiva del paciente y del uso clínico. Leer indicación, población y mecanismos. Resaltar el perfil de seguridad: apto para pieles sensibles, sin irritación y sin generar resistencia bacteriana como los antibióticos tópicos. Refs [1-3].">
-  <p class="kicker">Punto 2 · Perfil objetivo del producto (TPP)</p>
-  <h2>Lo que el producto debe lograr</h2>
-  <div class="tpp">
-    <div class="tpp-main">
-      <dl class="tpp-list">
-        <div><dt><i data-lucide="stethoscope"></i>Indicación</dt><dd>Tratamiento cicatrizante de heridas cutáneas con efecto antiinflamatorio y antiséptico <sup class="ref" data-ref="1">[1]</sup>.</dd></div>
-        <div><dt><i data-lucide="users"></i>Población</dt><dd>Pacientes con heridas agudas superficiales con pérdida de tejido cutáneo que cicatrizan por segunda intención.</dd></div>
-        <div><dt><i data-lucide="hand"></i>Administración</dt><dd>Aplicación tópica de una emulsión O/W sobre la zona afectada.</dd></div>
-        <div><dt><i data-lucide="shield-check"></i>Seguridad</dt><dd>No irritante, apta para piel sensible; perfil de seguridad favorable en tratamientos prolongados y sin generar resistencia bacteriana <sup class="ref" data-ref="3">[3]</sup>.</dd></div>
-      </dl>
-    </div>
-    <div class="tpp-side">
-      <div class="moa amber">
-        <h3><i data-lucide="flame"></i>Modulación de la inflamación</h3>
-        <p>Triterpenoides, saponinas, micronutrientes, flavonoides y polisacáridos regulan los mediadores inflamatorios <sup class="ref" data-ref="2">[2]</sup>.</p>
-      </div>
-      <div class="moa green">
-        <h3><i data-lucide="shield-plus"></i>Antiséptico y antibacteriano</h3>
-        <p>Flavonoides y taninos <sup class="ref" data-ref="2">[2]</sup>.</p>
-      </div>
-    </div>
-  </div>
+<!-- ===================== 2. TPP / QTPP (diseño de la compañera, sin modificar) ===================== -->
+<section class="slide image-slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="Perfil del Producto Objetivo (TPP): tratamiento fitoterapéutico por segunda intención. Indicación clínica: heridas agudas superficiales en la piel con pérdida de tejido cutáneo. Acción: antiinflamatorio y antiséptico. Forma farmacéutica: emulsión O/W.">
+  <h2 class="sr-only">Perfil del Producto Objetivo (TPP)</h2>
+  <figure class="designed"><img src="img/tpp/tpp-general.jpg" alt="Perfil del Producto Objetivo (TPP). Tratamiento fitoterapéutico por segunda intención. Indicación clínica: heridas agudas superficiales en la piel con pérdida de tejido cutáneo. Acción: antiinflamatorio y antiséptico. Forma farmacéutica: emulsión O/W."></figure>
 </section>
 
-<!-- ===================== 6. QbD ===================== -->
-<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
-  data-notes="Explicar el flujo QbD (ICH Q8): el QTPP se traduce en atributos críticos de calidad (CQA); estos dependen de atributos de materiales (CMA) y parámetros de proceso (CPP); con experimentación se define un espacio de diseño y una estrategia de control. Hacer clic en cada paso para ver qué significa en nuestro producto.">
-  <p class="kicker">Punto 2 · Quality by Design (ICH Q8)</p>
-  <h2>Del QTPP a la estrategia de control</h2>
-  <ol class="qbd-flow" id="qbdFlow"></ol>
-  <div class="qbd-detail" id="qbdDetail"></div>
+<section class="slide image-slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="TPP, mecanismos y seguridad. Supresión de citoquinas y macrófagos (reduce la inflamación): triterpenoides, saponinas, polisacáridos y micronutrientes. Barrera antiséptica y antibacteriana: flavonoides y taninos. Apto para pieles sensibles (perfil no irritante); protege la barrera cutánea en tratamientos prolongados; previene activamente la resistencia bacteriana.">
+  <h2 class="sr-only">Perfil del Producto Objetivo (TPP): acción y seguridad</h2>
+  <figure class="designed"><img src="img/tpp/tpp-mecanismo.jpg" alt="Perfil del Producto Objetivo (TPP). Supresión de citoquinas y macrófagos (reduce la inflamación): triterpenoides, saponinas, polisacáridos y micronutrientes. Barrera antiséptica y antibacteriana: flavonoides y taninos. Apto para pieles sensibles (perfil no irritante). Protege la barrera cutánea en tratamientos prolongados. Previene activamente la resistencia bacteriana."></figure>
 </section>
 
-<!-- ===================== 7. QTPP ===================== -->
-<section class="slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
-  data-notes="Recorrer la tabla del QTPP. Los atributos con etiqueta CQA son los que se medirán como variables respuesta: viscosidad, pH, tamaño de gota, adhesividad, contenido de fitoactivos y límites microbianos. Hacer clic en cada fila para mostrar la justificación.">
-  <p class="kicker">Punto 2 · QTPP</p>
-  <h2>Perfil objetivo de calidad del producto</h2>
-  <div class="filter-row" role="group" aria-label="Filtro">
-    <button class="chip active" data-filter="all">Todos</button>
-    <button class="chip" data-filter="cqa">Solo CQA medibles</button>
-  </div>
-  <div class="qtpp" id="qtpp"></div>
-  <p class="foot-note">Tabla 1. Haz clic en un atributo para ver la justificación.</p>
+<section class="slide image-slide" data-section="2 · TPP / QTPP" data-presenter="Por asignar"
+  data-notes="QTPP: tipo de producto fitoterapéutico; emulsión O/W; vía tópica; aspecto suave, homogéneo, sin grumos ni separación de fases; olor herbal, vegetal o floral suave; color amarillo pálido a anaranjado; viscosidad 15.000-17.000 cP; pH 5.0-6.0; tamaño de gota 0,1-10 µm; límites microbiológicos Eur. Ph/USP; adhesividad 20-60 N·mm; contenido de fitoactivos 5 % de extracto hidroetanólico de flores de Calendula officinalis.">
+  <h2 class="sr-only">Perfil de Calidad del Producto Objetivo (QTPP)</h2>
+  <figure class="designed"><img src="img/tpp/qtpp.jpg" alt="Perfil de Calidad del Producto Objetivo (QTPP). Tipo de producto: fitoterapéutico. Forma farmacéutica: emulsión O/W. Vía de administración: tópica. Aspecto: emulsión suave, homogénea, sin grumos ni separación de fases. Olor: herbal, vegetal o floral suave. Color: amarillo pálido o amarillo anaranjado. Viscosidad: 15.000-17.000 cP. pH: 5.0-6.0. Tamaño de gota: 0,1-10 µm. Límites microbiológicos: Eur. Ph/USP. Adhesividad: 20-60 N·mm. Contenido de fitoactivos: 5 % de extracto hidroetanólico de flores de Calendula officinalis."></figure>
 </section>
 
 <!-- ===================== 8. PREFORMULACIÓN · PLANTA ===================== -->
@@ -446,7 +425,7 @@
     <span class="escudo"><img src="img/escudo-unal.png" alt="Escudo de la Universidad Nacional de Colombia" width="44" height="44"></span>
     <div class="banner-text">
       <strong>Universidad Nacional de Colombia</strong>
-      <span>Facultad de Ciencias · Departamento de Farmacia · Farmacotecnia II · 2026-2 · Grupo 1</span>
+      <span>Facultad de Ciencias · Departamento de Farmacia · Farmacotecnia II</span>
     </div>
   </div>
   <span class="banner-sec" id="bannerSec"></span>
