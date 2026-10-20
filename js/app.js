@@ -78,6 +78,7 @@
 
   function go(n, push = true) {
     n = Math.max(0, Math.min(total - 1, n));
+    setSteps(slides[n], n < idx ? Infinity : 0);
     slides.forEach((s, i) => {
       s.classList.toggle("active", i === n);
       s.classList.toggle("before", i < n);
@@ -100,21 +101,47 @@
   };
   window.addEventListener("hashchange", () => go(fromHash(), false));
 
-  $("#prev").addEventListener("click", () => go(idx - 1));
-  $("#next").addEventListener("click", () => go(idx + 1));
+  /* ---------- Revelado progresivo: los elementos con data-step aparecen uno a uno ---------- */
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let stepsOn = store.get("steps") !== "off";
+  const stepEls = (s) => (s ? [...s.querySelectorAll("[data-step]")] : []);
+  function setSteps(s, shown) {
+    stepEls(s).forEach((el, i) => el.classList.toggle("step-hidden", stepsOn && !reduced && i >= shown));
+  }
+  const shownSteps = (s) => stepEls(s).filter((el) => !el.classList.contains("step-hidden")).length;
+  function forward() {
+    const st = stepEls(slides[idx]), n = shownSteps(slides[idx]);
+    if (n < st.length) st[n].classList.remove("step-hidden");
+    else go(idx + 1);
+  }
+  function back() {
+    const st = stepEls(slides[idx]), n = shownSteps(slides[idx]);
+    if (stepsOn && !reduced && n > 0) st[n - 1].classList.add("step-hidden");
+    else go(idx - 1);
+  }
+  function toggleSteps() {
+    stepsOn = !stepsOn;
+    store.set("steps", stepsOn ? "on" : "off");
+    setSteps(slides[idx], stepsOn ? 0 : Infinity);
+  }
+  window.addEventListener("beforeprint", () => slides.forEach((s) => setSteps(s, Infinity)));
+
+  $("#prev").addEventListener("click", back);
+  $("#next").addEventListener("click", forward);
 
   document.addEventListener("keydown", (e) => {
     const tag = (e.target.tagName || "").toLowerCase();
     if (tag === "input" || tag === "textarea" || e.metaKey || e.ctrlKey || e.altKey) return;
     const k = e.key;
-    if (["ArrowRight", "PageDown", " "].includes(k)) { e.preventDefault(); go(idx + 1); }
-    else if (["ArrowLeft", "PageUp"].includes(k)) { e.preventDefault(); go(idx - 1); }
+    if (["ArrowRight", "PageDown", " "].includes(k)) { e.preventDefault(); forward(); }
+    else if (["ArrowLeft", "PageUp"].includes(k)) { e.preventDefault(); back(); }
     else if (k === "Home") go(0);
     else if (k === "End") go(total - 1);
     else if (k === "o" || k === "O") toggleOverview();
     else if (k === "n" || k === "N") toggleNotes();
     else if (k === "t" || k === "T") toggleTheme();
     else if (k === "f" || k === "F") toggleFull();
+    else if (k === "r" || k === "R") toggleSteps();
     else if (k === "Escape") { closeOverview(); }
   });
 
@@ -125,7 +152,7 @@
   deck.addEventListener("touchend", (e) => {
     const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
     if (e.target.closest("input[type=range], canvas, .matrix-wrap, .excip-tabs")) return;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(idx + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) (dx < 0 ? forward : back)();
   }, { passive: true });
 
   /* ---------------- Notas del expositor ---------------- */
@@ -254,7 +281,8 @@
   /* =========================================================
      DIAPOSITIVA: TPP (flor dibujada)
      ========================================================= */
-  $("#tppxPetals").innerHTML = Array.from({ length: 18 }, (_, i) =>
+  const petals = $("#tppxPetals");
+  if (petals) petals.innerHTML = Array.from({ length: 18 }, (_, i) =>
     `<ellipse cx="100" cy="52" rx="9" ry="30" transform="rotate(${i * 20} 100 90)"/>`).join("");
 
   /* =========================================================
@@ -659,6 +687,14 @@
     }
     svg.appendChild(el("path", { class: "bk-glass", d: "M18 22h104M22 22v124c0 8 6 14 14 14h68c8 0 14-6 14-14V22" }));
   });
+
+  /* ---------------- Capturas del Canva (carga diferida) ---------------- */
+  const loadShots = (list) => list.forEach((s) => s?.querySelectorAll("img[data-src]").forEach((img) => {
+    img.src = img.dataset.src;
+    img.removeAttribute("data-src");
+  }));
+  document.addEventListener("slidechange", (e) => loadShots([slides[e.detail - 1], slides[e.detail], slides[e.detail + 1]]));
+  window.addEventListener("beforeprint", () => loadShots(slides));
 
   /* ---------------- Inicio ---------------- */
   icons();
