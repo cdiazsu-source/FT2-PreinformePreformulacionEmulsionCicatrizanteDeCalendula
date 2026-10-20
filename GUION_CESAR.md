@@ -196,4 +196,11 @@ El humectante cumple dos funciones.
 | ¿Por qué no Tween 60 / Span 60 desde el inicio? | Tween 80 / Span 80 es el sistema del curso; proponemos la comparación. | Diapositiva 18 |
 | ¿La glicerina conserva? | No a 5 %; solo por encima de 20 %. El conservante es fenoxietanol + etilhexilglicerina. | Diapositiva 28 |
 
+**"¿De dónde salió eso?"** Haz clic en el número de la cita, por ejemplo **[26]**:
+1. Te lleva a la diapositiva de bibliografía que la contiene. En la 39 la referencia queda resaltada en amarillo.
+2. Al pasar el cursor sobre el número, verás la referencia completa sin salir de la diapositiva.
+3. Abajo aparece **"Volver a la diapositiva N"**: púlsalo para regresar.
+
+**Anexo:** está oculto. Para mostrarlo, pulsa el **+** discreto al final del menú superior; con **−** se vuelve a ocultar.
+
 Para saltar rápido a una diapositiva: **O** y clic en ella.

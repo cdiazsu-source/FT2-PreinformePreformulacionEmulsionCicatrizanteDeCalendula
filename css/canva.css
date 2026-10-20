@@ -630,3 +630,17 @@
 }
 .slide.pre-cz::after { opacity: .4; filter: blur(1.4px); }
 @media print { .slide.cz::after, .slide.pre-cz::after { display: none; } }
+
+/* ---------- Citas enlazadas (solo diapositivas de César) ---------- */
+.slide.cz .cz-cite { color: var(--cv-purple); text-decoration: underline dotted; text-underline-offset: 2px; cursor: pointer; font-weight: 600; }
+.slide.cz .cz-cite:hover, .slide.cz .cz-cite:focus-visible { background: var(--cv-purple-soft); border-radius: 3px; outline: none; }
+.ref-back { position: fixed; z-index: 45; left: 50%; bottom: calc(var(--banner) + 14px); transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: none; border-radius: 999px; background: #6a0dad; color: #fff; font: 600 .95rem "Times New Roman", Times, serif; box-shadow: 0 4px 16px rgba(80, 40, 140, .35); cursor: pointer; }
+.ref-back .lucide { width: 18px; height: 18px; }
+.ref-back[hidden] { display: none; }
+.refs li.ref-hit { background: #fff3c4; outline: 2px solid #f5b941; border-radius: 6px; }
+@media print { .ref-back { display: none !important; } }
+
+/* ---------- Anexo oculto tras el botón "+" ---------- */
+body:not(.annex-open) #sectionNav a[data-sec="Anexo"], body:not(.annex-open) .ov-card.annex { display: none; }
+.annex-toggle { flex: none; width: 24px; height: 24px; margin-left: 4px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 600 15px/1 var(--sans); opacity: .45; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
+.annex-toggle:hover, .annex-toggle:focus-visible { opacity: 1; }

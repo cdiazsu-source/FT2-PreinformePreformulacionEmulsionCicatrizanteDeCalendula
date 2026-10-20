@@ -47,7 +47,7 @@
         <ul>${u.items.map((t) => `<li>${t}</li>`).join("")}</ul>
       </div>
       <div class="up-badge"><i data-lucide="hourglass"></i><span>En desarrollo · se presentará en la siguiente entrega</span></div>`);
-    $("#deck").appendChild(s);
+    $("#deck").insertBefore(s, $(".annex-cover"));
   });
   $("#agendaLater").innerHTML = UPCOMING.map((u) =>
     `<a class="agenda-card" data-goto-title="${u.t}"><span class="num"><i data-lucide="${u.icon}"></i>${u.n}</span><h3>${u.t}</h3></a>`).join("");
@@ -60,7 +60,23 @@
   // Estrella de ubicación: marca la diapositiva anterior a cada bloque de César
   slides.forEach((s, i) => { if (s.classList.contains("cz") && i > 0 && !slides[i - 1].classList.contains("cz")) slides[i - 1].classList.add("pre-cz"); });
   let idx = 0;
-  $("#tot").textContent = total;
+
+  // Anexo oculto: solo aparece al pulsar "+" en la barra superior (o al llegar por enlace directo)
+  const annexStart = slides.findIndex((s) => s.dataset.section === "Anexo");
+  let annexOpen = false;
+  const visTotal = () => (annexOpen || annexStart < 0 ? total : annexStart);
+  function setAnnex(open) {
+    annexOpen = open;
+    document.body.classList.toggle("annex-open", open);
+    $("#tot").textContent = visTotal();
+    const b = $("#annexToggle");
+    if (b) {
+      b.textContent = open ? "−" : "+";
+      b.title = open ? "Ocultar el anexo" : "Mostrar el anexo";
+      b.setAttribute("aria-expanded", open);
+    }
+  }
+  $("#tot").textContent = visTotal();
 
   // Navegación por secciones en la barra superior
   const sections = [];
@@ -73,6 +89,14 @@
     const a = h("a", { href: `#/${s.first + 1}`, "data-sec": s.name, class: s.name === UPCOMING_SEC ? "later" : "" }, s.name);
     secNav.appendChild(a);
   });
+  if (annexStart >= 0) {
+    const plus = h("button", { class: "annex-toggle", id: "annexToggle", type: "button", title: "Mostrar el anexo", "aria-expanded": "false" }, "+");
+    plus.addEventListener("click", () => {
+      if (annexOpen) { setAnnex(false); if (idx >= annexStart) go(annexStart - 1); }
+      else { setAnnex(true); go(annexStart); }
+    });
+    secNav.appendChild(plus);
+  }
   // Tarjetas de la agenda: saltan a la primera diapositiva de su sección o título
   $$("[data-goto]").forEach((a) => { const sec = sections.find((s) => s.name === a.dataset.goto); if (sec) a.href = `#/${sec.first + 1}`; });
   $$("[data-goto-sub]").forEach((a) => { const i = slides.findIndex((s) => s.dataset.sub === a.dataset.gotoSub); if (i >= 0) a.href = `#/${i + 1}`; });
@@ -80,6 +104,7 @@
 
   function go(n, push = true) {
     n = Math.max(0, Math.min(total - 1, n));
+    if (!annexOpen && annexStart >= 0 && n >= annexStart) setAnnex(true);
     setSteps(slides[n], n < idx ? Infinity : 0);
     slides.forEach((s, i) => {
       s.classList.toggle("active", i === n);
@@ -89,7 +114,7 @@
     });
     idx = n;
     $("#cur").textContent = n + 1;
-    $("#progressBar").style.width = `${((n + 1) / total) * 100}%`;
+    $("#progressBar").style.width = `${Math.min(100, ((n + 1) / visTotal()) * 100)}%`;
     $$("#sectionNav a").forEach((a) => a.classList.toggle("active", a.dataset.sec === slides[n].dataset.section));
     $("#bannerSec").textContent = slides[n].dataset.section;
     slides[n].scrollTop = 0;
@@ -114,7 +139,7 @@
   function forward() {
     const st = stepEls(slides[idx]), n = shownSteps(slides[idx]);
     if (n < st.length) st[n].classList.remove("step-hidden");
-    else go(idx + 1);
+    else if (idx + 1 < visTotal()) go(idx + 1);
   }
   function back() {
     const st = stepEls(slides[idx]), n = shownSteps(slides[idx]);
@@ -138,7 +163,7 @@
     if (["ArrowRight", "PageDown", " "].includes(k)) { e.preventDefault(); forward(); }
     else if (["ArrowLeft", "PageUp"].includes(k)) { e.preventDefault(); back(); }
     else if (k === "Home") go(0);
-    else if (k === "End") go(total - 1);
+    else if (k === "End") go(visTotal() - 1);
     else if (k === "o" || k === "O") toggleOverview();
     else if (k === "n" || k === "N") toggleNotes();
     else if (k === "t" || k === "T") toggleTheme();
@@ -177,7 +202,7 @@
   const ovGrid = $("#overviewGrid");
   slides.forEach((s, i) => {
     const title = $("h1, h2", s)?.textContent.replace(/\s+/g, " ").trim() || `Diapositiva ${i + 1}`;
-    const b = h("button", { class: `ov-card${s.classList.contains("upcoming") ? " later" : ""}` }, `<span class="ov-num">${i + 1}</span><span class="ov-sec">${s.dataset.section}</span><span class="ov-title">${title}</span><span class="ov-who">${s.dataset.presenter || ""}</span>`);
+    const b = h("button", { class: `ov-card${s.classList.contains("upcoming") ? " later" : ""}${s.dataset.section === "Anexo" ? " annex" : ""}` }, `<span class="ov-num">${i + 1}</span><span class="ov-sec">${s.dataset.section}</span><span class="ov-title">${title}</span><span class="ov-who">${s.dataset.presenter || ""}</span>`);
     b.addEventListener("click", () => { go(i); closeOverview(); });
     ovGrid.appendChild(b);
   });
@@ -234,6 +259,37 @@
     else if (!e.target.closest(".ref-pop")) pop.hidden = true;
   });
   pop.addEventListener("mouseleave", () => (pop.hidden = true));
+
+  const bibSlides = slides.map((s, i) => {
+    const [a, b] = (s.dataset.refs || "").split("-").map(Number);
+    return a ? { i, a, b } : null;
+  }).filter(Boolean);
+  const bibFor = (n) => bibSlides.find((x) => n >= x.a && n <= x.b);
+  $$(".slide.cz .cz-ref").forEach((el) => {
+    el.innerHTML = el.textContent.replace(/\d+/g, (d) => {
+      const t = bibFor(+d);
+      return t ? `<a class="ref cz-cite" data-ref="${d}" href="#/${t.i + 1}" title="Ver la referencia ${d} en la diapositiva ${t.i + 1}">${d}</a>` : d;
+    });
+  });
+  let backTo = -1;
+  const backBtn = $("#refBack");
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest(".cz-cite");
+    if (!a) return;
+    e.preventDefault();
+    const n = +a.dataset.ref, t = bibFor(n);
+    backTo = idx;
+    pop.hidden = true;
+    go(t.i);
+    $$("ol.refs li", slides[t.i]).forEach((li, k) => li.classList.toggle("ref-hit", t.a + k === n));
+    $("#refBackN").textContent = backTo + 1;
+    backBtn.hidden = false;
+  });
+  backBtn.addEventListener("click", () => { backBtn.hidden = true; if (backTo >= 0) go(backTo); backTo = -1; });
+  document.addEventListener("slidechange", (e) => {
+    if (backTo >= 0 && !bibSlides.some((x) => x.i === e.detail)) { backBtn.hidden = true; backTo = -1; }
+    if (backTo < 0) $$(".ref-hit").forEach((li) => li.classList.remove("ref-hit"));
+  });
 
   /* =========================================================
      DIAPOSITIVA: comparación de formas farmacéuticas
