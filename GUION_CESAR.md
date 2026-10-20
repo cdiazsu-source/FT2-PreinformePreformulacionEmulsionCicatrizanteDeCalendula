@@ -16,7 +16,9 @@ Emulsión cicatrizante con caléndula · Farmacotecnia II · Grupo 1
 | **C · Humectante** | **27 y 28** | 26 · Antioxidantes descartados · **Lina** | 29 · Buffer cítrico/citrato · **Edward** |
 | Bibliografía | 39 (referencias 21 a 31) | 38 · Bibliografía 14–20 | 40 · Gracias |
 
-**Cómo reconocer mis diapositivas:** las de mis compañeros son capturas del Canva. Las mías tienen el mismo fondo lila, pero las tarjetas aparecen una por una.
+**Cómo reconocer mis diapositivas:**
+- Tienen una **estrella dorada** en la esquina superior derecha y las tarjetas aparecen una por una.
+- La diapositiva **anterior** a cada bloque (7, 13 y 26) lleva la misma estrella pero **tenue**: es la señal de que sigo yo.
 
 ---
 
