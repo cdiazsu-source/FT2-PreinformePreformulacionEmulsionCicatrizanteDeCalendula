@@ -18,20 +18,23 @@
     get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
     set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* sin almacenamiento */ } }
   };
-  const pubchem = (name) => {
-    const cid = { "polysorbate 80": 5281955 }[name];
-    return `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/${cid ? `cid/${cid}` : `name/${encodeURIComponent(name)}`}/PNG?image_size=240x240`;
+  // Estructuras químicas desde PubChem: por nombre o "cid:NNN"
+  const pubchem = (name, size = 240) => {
+    const cid = name.startsWith("cid:") ? name.slice(4) : { "polysorbate 80": 5281955 }[name];
+    return `https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/${cid ? `cid/${cid}` : `name/${encodeURIComponent(name)}`}/PNG?image_size=${size}x${size}`;
   };
 
   /* ---------------- Contenido configurable ---------------- */
   $$(".organo").forEach((el) => (el.textContent = CONFIG.organo));
   $$(".organo-cap").forEach((el) => (el.textContent = CONFIG.organo[0].toUpperCase() + CONFIG.organo.slice(1)));
-  $("#team").innerHTML = TEAM.map((n) => `<li>${n}</li>`).join("");
+  $("#team").innerHTML = TEAM.map((n) => {
+    const ini = n.split(" ").filter((w) => w.length > 2).slice(0, 2).map((w) => w[0]).join("");
+    return `<li><span class="av">${ini}</span><span>${n}</span></li>`;
+  }).join("");
   const icons = () => window.lucide?.createIcons({ attrs: { "aria-hidden": "true" } });
 
   /* ---------------- Puntos 5–10 (próxima entrega, difuminados) ---------------- */
   const UPCOMING_SEC = "5–10 · Próximamente";
-  const refsSlide = $("#refs").closest(".slide");
   UPCOMING.forEach((u) => {
     const s = h("section", {
       class: "slide upcoming", "data-section": UPCOMING_SEC, "data-presenter": "Próxima entrega",
@@ -44,7 +47,7 @@
         <ul>${u.items.map((t) => `<li>${t}</li>`).join("")}</ul>
       </div>
       <div class="up-badge"><i data-lucide="hourglass"></i><span>En desarrollo · se presentará en la siguiente entrega</span></div>`);
-    refsSlide.before(s);
+    $("#deck").appendChild(s);
   });
   $("#agendaLater").innerHTML = UPCOMING.map((u) =>
     `<a class="agenda-card" data-goto-title="${u.t}"><span class="num"><i data-lucide="${u.icon}"></i>${u.n}</span><h3>${u.t}</h3></a>`).join("");
@@ -69,7 +72,8 @@
     secNav.appendChild(a);
   });
   // Tarjetas de la agenda: saltan a la primera diapositiva de su sección o título
-  $$("[data-goto]").forEach((a) => (a.href = `#/${sections.find((s) => s.name === a.dataset.goto).first + 1}`));
+  $$("[data-goto]").forEach((a) => { const sec = sections.find((s) => s.name === a.dataset.goto); if (sec) a.href = `#/${sec.first + 1}`; });
+  $$("[data-goto-sub]").forEach((a) => { const i = slides.findIndex((s) => s.dataset.sub === a.dataset.gotoSub); if (i >= 0) a.href = `#/${i + 1}`; });
   $$("[data-goto-title]").forEach((a) => (a.href = `#/${slides.findIndex((s) => $("h2", s)?.textContent === a.dataset.gotoTitle) + 1}`));
 
   function go(n, push = true) {
@@ -515,7 +519,11 @@
      DIAPOSITIVA: trazabilidad y referencias
      ========================================================= */
   $("#trace").innerHTML = TRACE.map((t, i) => `<div class="tr-row" style="--d:${i * 0.06}s"><span class="tr-r"><i data-lucide="triangle-alert"></i>${t.r}</span><span class="tr-arrow"><i data-lucide="arrow-right"></i></span><span class="tr-e"><i data-lucide="shield-check"></i>${t.e}</span></div>`).join("");
-  $("#refs").innerHTML = REFS.map((r) => `<li>${r}</li>`).join("");
+  $$("ol.refs").forEach((ol) => {
+    const from = +ol.dataset.from, to = +ol.dataset.to;
+    ol.start = from;
+    ol.innerHTML = REFS.slice(from - 1, to).map((r) => `<li>${r}</li>`).join("");
+  });
 
   /* =========================================================
      DIAPOSITIVA: galería de la planta + visor
@@ -536,6 +544,121 @@
   $("#lbClose").addEventListener("click", closeLb);
   lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLb(); });
+
+  /* =========================================================
+     ILUSTRACIONES (interpretación de las imágenes del Canva)
+     ========================================================= */
+  // Estructuras químicas (PubChem, guardadas en img/struct para funcionar sin conexión)
+  $$("img[data-pc]").forEach((img) => {
+    const slug = img.dataset.pc.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    img.src = `img/struct/${slug}.png`;
+    img.addEventListener("error", () => { img.src = pubchem(img.dataset.pc, 300); }, { once: true });
+  });
+
+  // Pseudoaleatorio reproducible: los dibujos no cambian entre recargas
+  const rng = (seed) => () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const el = (tag, attrs) => {
+    const e = document.createElementNS(svgNS, tag);
+    Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v));
+    return e;
+  };
+
+  // Percolador: material vegetal dentro del cono
+  const plant = $("#percPlant");
+  if (plant) {
+    const r = rng(7);
+    for (let i = 0; i < 70; i++) {
+      const y = 124 + r() * 170, half = 44 - ((y - 98) / 220) * 26;
+      const x = 74 + (r() * 2 - 1) * (half - 6);
+      plant.appendChild(el("ellipse", {
+        cx: x.toFixed(1), cy: y.toFixed(1), rx: (2 + r() * 3).toFixed(1), ry: (1.5 + r() * 2).toFixed(1),
+        transform: `rotate(${Math.round(r() * 180)} ${x.toFixed(1)} ${y.toFixed(1)})`
+      }));
+    }
+  }
+
+  // Polawax: perlas de cera en el tazón
+  const pel = $("#polawaxPellets");
+  if (pel) {
+    const r = rng(3);
+    for (let i = 0; i < 46; i++) {
+      const x = 180 + r() * 110, y = 106 + r() * 26 + Math.abs(x - 235) * 0.16;
+      pel.appendChild(el("circle", { cx: x.toFixed(1), cy: y.toFixed(1), r: (4.5 + r() * 1.5).toFixed(1) }));
+    }
+  }
+
+  // Escala HLB: regla de 0 a 18
+  const ruler = $("#hlbRuler");
+  if (ruler) {
+    const y = (v) => 330 - v * (300 / 18);
+    ruler.appendChild(el("path", { d: `M140 ${y(0)}V${y(18)}`, class: "hs-line" }));
+    for (let v = 0; v <= 18; v++) {
+      ruler.appendChild(el("path", { d: `M${v % 3 ? 140 : 134} ${y(v)}h${v % 3 ? 6 : 12}`, class: "hs-tick" }));
+      if (v % 3 === 0) {
+        const t = el("text", { x: 128, y: y(v) + 4, "text-anchor": "end", class: "hs-num" });
+        t.textContent = v;
+        ruler.appendChild(t);
+      }
+    }
+  }
+
+  // Bicapa lipídica (conservante)
+  $$(".membrane").forEach((g) => {
+    const [g0, g1] = g.dataset.gap.split(",").map(Number);
+    const r = rng(g0);
+    for (let x = 6; x < 320; x += 12) {
+      if (x > g0 && x < g1) continue;
+      const wob = (r() - 0.5) * 3;
+      [[112, 1], [164, -1]].forEach(([yh, dir]) => {
+        g.appendChild(el("path", { class: "tail", d: `M${x - 2} ${yh + 5 * dir}v${16 * dir}M${x + 2} ${yh + 5 * dir}v${16 * dir}` }));
+        g.appendChild(el("circle", { class: "head", cx: x + wob, cy: yh, r: 5.5 }));
+      });
+    }
+  });
+  const ehg = $("#ehgChains");
+  if (ehg) {
+    [[96, 30, 35], [150, 22, 70], [190, 36, 110], [236, 26, 140]].forEach(([x, y, rot]) => {
+      const gg = el("g", { transform: `translate(${x} ${y}) rotate(${rot})` });
+      for (let i = 0; i < 4; i++) gg.appendChild(el("circle", { class: "ehg-b", cx: i * 11, cy: (i % 2) * 6, r: 5 }));
+      ehg.appendChild(gg);
+    });
+    ehg.appendChild(el("path", { class: "m-arrow", d: "M150 64c4 14 6 26 6 36" }));
+    ehg.appendChild(el("path", { class: "m-arrow", d: "M186 74c-6 10-10 18-12 28" }));
+  }
+  const phe = $("#pheBalls");
+  if (phe) {
+    [[60, 40], [104, 26], [146, 50], [196, 30], [246, 46], [282, 24], [160, 92], [150, 132], [168, 150], [120, 190], [190, 196], [222, 186], [96, 206]]
+      .forEach(([x, y]) => phe.appendChild(el("circle", { class: "phe-b", cx: x, cy: y, r: 7 })));
+    phe.appendChild(el("path", { class: "m-arrow", d: "M130 56c10 14 18 26 22 40" }));
+    phe.appendChild(el("path", { class: "m-arrow", d: "M210 52c-10 14-20 30-28 46" }));
+  }
+
+  // Dibujos reutilizados (copia real para que conserven sus estilos)
+  $$("svg[data-clone]").forEach((svg) => {
+    const src = document.getElementById(svg.dataset.clone);
+    if (src) { const c = src.cloneNode(true); c.removeAttribute("id"); svg.appendChild(c); }
+  });
+
+  // Vasos de inestabilidad física
+  $$(".beaker").forEach((fig, k) => {
+    const svg = $("svg", fig), mode = fig.dataset.mode, r = rng(11 + k);
+    svg.appendChild(el("rect", { class: "bk-water", x: 22, y: 38, width: 96, height: 112, rx: 8 }));
+    const drop = (x, y, rad) => svg.appendChild(el("circle", { class: "bk-drop", cx: x.toFixed(1), cy: y.toFixed(1), r: rad.toFixed(1) }));
+    if (mode === "disp") for (let i = 0; i < 26; i++) drop(32 + r() * 76, 48 + r() * 94, 3 + r() * 3);
+    if (mode === "floc") [[48, 62], [92, 72], [60, 112], [96, 126]].forEach(([cx, cy]) => {
+      for (let i = 0; i < 6; i++) drop(cx + (r() - 0.5) * 16, cy + (r() - 0.5) * 14, 4 + r() * 1.5);
+    });
+    if (mode === "coal") {
+      [[50, 70, 12], [92, 94, 10], [62, 124, 14], [98, 132, 7]].forEach(([x, y, rr]) => drop(x, y, rr));
+      for (let i = 0; i < 6; i++) drop(32 + r() * 76, 50 + r() * 90, 2 + r() * 2);
+    }
+    if (mode === "cream") {
+      for (let i = 0; i < 16; i++) drop(30 + (i % 8) * 11 + r() * 3, 46 + Math.floor(i / 8) * 10 + r() * 3, 6 + r() * 2);
+      for (let i = 0; i < 8; i++) drop(32 + r() * 76, 80 + r() * 62, 1.6 + r() * 1.6);
+    }
+    svg.appendChild(el("path", { class: "bk-glass", d: "M18 22h104M22 22v124c0 8 6 14 14 14h68c8 0 14-6 14-14V22" }));
+  });
 
   /* ---------------- Inicio ---------------- */
   icons();

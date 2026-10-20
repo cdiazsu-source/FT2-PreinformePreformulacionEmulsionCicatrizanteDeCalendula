@@ -1,0 +1,364 @@
+/* =========================================================
+   Diapositivas reconstruidas desde el Canva del grupo:
+   misma distribución y contenido, con el estilo del proyecto.
+   ========================================================= */
+:root { --pink: #f8d7dd; --pink-soft: #fdeef0; --x-red: #e5484d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --pink: #4a2a33; --pink-soft: #2e2226; } }
+:root[data-theme="dark"] { --pink: #4a2a33; --pink-soft: #2e2226; }
+
+.center-title.compact { font-size: clamp(1.3rem, 1rem + 1.4vw, 2rem); margin-bottom: .8rem; }
+.tpp-sub.caps { text-transform: uppercase; letter-spacing: .08em; font-size: 1rem; }
+.title-ico { width: 1em; height: 1em; margin-right: .3em; color: var(--amber); vertical-align: -.12em; }
+
+/* Tarjeta genérica del Canva (fondo rosado) */
+.ccard { background: var(--pink-soft); border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; text-align: center; box-shadow: var(--shadow); }
+.ccard h3 { color: var(--amber-ink); font-size: 1.15rem; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.ccard p, .ccard li { font-size: 1.02rem; margin: 0; }
+.ccard ul { text-align: left; margin: 0; padding-left: 20px; }
+.nb { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--amber-ink); color: var(--amber-ink); font-size: .78rem; font-weight: 700; flex: none; }
+.nb.big { width: 34px; height: 34px; font-size: 1rem; background: var(--ink); color: var(--bg); border: none; }
+
+/* Marca de descarte */
+.xbadge { width: 56px; height: 56px; border-radius: 50%; background: var(--x-red); color: #fff; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(229, 72, 77, .35); flex: none; z-index: 2; }
+.xbadge .lucide { width: 34px; height: 34px; stroke-width: 3.5; }
+
+/* ---------- Integrantes ---------- */
+.members { list-style: none; padding: 0; margin: 24px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; max-width: 900px; }
+.members li { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow); font-size: 1.12rem; font-weight: 500; }
+.members .av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--amber-soft); color: var(--amber-ink); font-weight: 700; flex: none; }
+
+/* ---------- Índice ---------- */
+.toc { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: start; }
+.toc-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.toc-list a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); padding: 10px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); transition: .2s; font-weight: 600; }
+.toc-list a:hover { border-color: var(--amber); transform: translateX(4px); }
+.toc-list a .lucide { color: var(--amber); }
+.toc-n { font: 700 1.1rem var(--sans); color: var(--amber); min-width: 2ch; }
+.toc-sub { list-style: none; margin: 6px 0 4px 36px; padding: 0; display: grid; gap: 4px; }
+.toc-sub a { font-weight: 500; font-size: .92rem; padding: 6px 12px; background: transparent; border-color: transparent; }
+.toc-sub a:hover { background: var(--surface); }
+.toc-later .agenda.later { grid-template-columns: 1fr 1fr; }
+
+/* ---------- Ilustraciones de las tarjetas del TPP ---------- */
+.tpp3-tile.art { background: #fff; }
+.tpp3-tile.art svg { width: 84%; height: 84%; }
+.art-wound .epi { fill: #e9f1ea; stroke: #6b8f71; stroke-width: 2; }
+.art-wound .bed { fill: #f6c7c0; stroke: #c8553d; stroke-width: 1.5; }
+.art-wound .vessel path, .art-wound .derm { fill: none; stroke: #6b8f71; stroke-width: 2; stroke-linecap: round; }
+.art-wound .fat circle { fill: none; stroke: #6b8f71; stroke-width: 1.6; }
+.art-wound .glow path { stroke: #e08a0b; stroke-width: 2.5; stroke-linecap: round; }
+.art-shield .sh-out { fill: none; stroke: #2a3a2f; stroke-width: 4; }
+.art-shield .sh-in { fill: none; stroke: #6b8f71; stroke-width: 3; }
+.art-shield .cross { fill: #fdebc8; stroke: #e08a0b; stroke-width: 3; stroke-linejoin: round; }
+.art-shield .swirl { fill: none; stroke: #e08a0b; stroke-width: 3; stroke-linecap: round; }
+.art-drop .drop { fill: #fff6e5; stroke: #2a3a2f; stroke-width: 3; }
+.art-drop .shine { fill: none; stroke: #e6b34a; stroke-width: 3; stroke-linecap: round; }
+.art-drop .ripple { fill: none; stroke: #2a3a2f; stroke-width: 2.5; }
+.art-drop .ripple.r2 { stroke: #c9b9a0; }
+
+/* ---------- Tablas ---------- */
+.ctable-wrap { overflow-x: auto; border-radius: 14px; box-shadow: var(--shadow); max-width: 1240px; }
+.ctable { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .9rem; }
+.ctable th, .ctable td { border: 1px solid var(--line); padding: 8px 12px; text-align: center; vertical-align: middle; }
+.ctable thead th { background: var(--surface-2); font-weight: 700; }
+.ctable.pink thead th { background: var(--pink); }
+.ctable.pink tbody td:first-child { background: var(--pink-soft); }
+.ctable tbody td:first-child { font-weight: 600; }
+.ctable.spec { font-size: 1rem; box-shadow: var(--shadow); border-radius: 14px; overflow: hidden; }
+.ctable.spec th { background: var(--pink-soft); width: 40%; font-weight: 600; }
+.ctable.spec th .lucide { color: var(--amber); margin-right: 6px; }
+.ctable.spec td, .ctable.spec th { padding: 18px 16px; }
+
+/* ---------- Principio activo ---------- */
+.pa { display: grid; grid-template-columns: 1fr 1.25fr; gap: 28px; align-items: center; }
+.pa-photo { margin: 0; }
+.pa-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow); display: block; }
+.pa-photo figcaption { font-size: .7rem; color: var(--muted); margin-top: 6px; }
+.pa-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.pa-cards .wide { grid-column: 1 / -1; }
+.pa-cards p { font-size: 1.15rem; }
+
+/* ---------- Estructuras químicas ---------- */
+.struct-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: end; }
+.struct { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.struct img, .struct > svg { width: 100%; max-width: 340px; aspect-ratio: 1; object-fit: contain; background: #fff; border-radius: 14px; box-shadow: var(--shadow); padding: 8px; }
+.struct.small img, .struct.small > svg { max-width: 220px; }
+.struct.wide-s img { max-width: 300px; }
+.struct figcaption { font-size: .85rem; color: var(--muted); }
+.cap-pill { display: inline-block; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 10px 22px; color: var(--amber-ink) !important; font-size: 1.05rem !important; text-align: center; box-shadow: var(--shadow); margin: 0; }
+.pc-missing img { visibility: hidden; }
+.pc-missing::before { content: "Estructura no disponible sin conexión"; font-size: .8rem; color: var(--muted); }
+
+/* ---------- Método de extracción ---------- */
+.extr { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.perc { margin: 0; background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 10px; }
+.perc svg { width: 100%; max-height: 52vh; display: block; }
+.perc .p-inlet, .perc .p-tube { fill: none; stroke: #2a3a2f; stroke-width: 2.5; }
+.perc .p-arrow { fill: #3c78a8; }
+.perc .p-glass { fill: none; stroke: #2a3a2f; stroke-width: 2.5; }
+.perc .p-body { fill: #f3f8f3; stroke: #2a3a2f; stroke-width: 2.5; }
+.perc .p-beads circle { fill: #2a3a2f; }
+.perc .p-filter { stroke: #2a3a2f; stroke-width: 3; }
+.perc .p-plant ellipse { fill: #4f7a3a; opacity: .85; }
+.perc .hatch { stroke: #2a3a2f; stroke-width: 1.4; }
+.perc .p-sieve { stroke: #2a3a2f; stroke-width: 1.5; }
+.perc .p-cotton { fill: #fff; stroke: #2a3a2f; stroke-width: 1.5; }
+.perc .p-valve { fill: #fff; stroke: #2a3a2f; stroke-width: 2; }
+.perc .p-drops circle { fill: #e6b34a; animation: drip 1.8s ease-in infinite; }
+.perc .p-drops circle:nth-child(2) { animation-delay: .6s; }
+.perc .p-drops circle:nth-child(3) { animation-delay: 1.2s; }
+@keyframes drip { 0% { opacity: 0; transform: translateY(-8px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(10px); } }
+.perc .p-lab path { stroke: #5f6b63; stroke-width: 1.2; fill: none; }
+.perc .p-lab text { font: 600 13px var(--sans); fill: #1f2a24; }
+.extr-cards { display: grid; gap: 24px; }
+.extr-cards p { font-size: 1.15rem; }
+
+/* ---------- HLB ---------- */
+.hlbs { display: grid; grid-template-columns: .9fr 1.4fr; gap: 24px; align-items: start; }
+.hlbs-title { font-size: clamp(1.1rem, .9rem + .8vw, 1.6rem); text-align: center; max-width: none; margin-bottom: 12px; }
+.hlb-scale { margin: 0; background: #fff; border-radius: 14px; box-shadow: var(--shadow); padding: 8px; }
+.hlb-scale svg { width: 100%; display: block; }
+.hlb-scale .hs-axis path { stroke: #1f2a24; stroke-width: 2.5; }
+.hlb-scale .hs-head { fill: #1f2a24; stroke: none; }
+.hlb-scale .hs-side { font: 700 11px var(--sans); fill: #1f2a24; text-anchor: middle; letter-spacing: .1em; }
+.hlb-scale .hs-line, .hlb-scale .hs-tick { stroke: #1f2a24; stroke-width: 1.6; }
+.hlb-scale .hs-num { font: 600 11px var(--sans); fill: #5f6b63; }
+.hlb-scale .hs-bands .b1 { fill: #b9b9b9; } .hlb-scale .b2 { fill: #c99a3c; } .hlb-scale .b3 { fill: #8fb6d9; }
+.hlb-scale .b4 { fill: #2f7d4f; } .hlb-scale .b5 { fill: #7b5ea7; } .hlb-scale .b6 { fill: #3c78a8; }
+.hlb-scale .hs-labels text { font: 500 12.5px var(--sans); fill: #1f2a24; }
+.hlb-scale .hs-labels text.hi { font-weight: 700; fill: #2f7d4f; }
+.hlb-scale .hs-marks path { stroke: #e08a0b; stroke-width: 1.6; stroke-dasharray: 3 3; }
+.hlb-scale .hs-marks circle { fill: #e08a0b; }
+.hlb-scale .hs-marks text { font: 600 11.5px var(--sans); fill: #8a4f00; }
+.hlb-scale .hs-marks .mix { stroke: #c8553d; fill: #c8553d; }
+.hlb-scale .hs-marks text.mix { fill: #c8553d; stroke: none; font-weight: 700; }
+.hlbs-right { display: grid; gap: 16px; }
+.eq-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow); display: grid; gap: 12px; }
+.eq-row { display: grid; grid-template-columns: minmax(150px, .8fr) 1.6fr; gap: 12px; align-items: center; }
+.eq-row.top { align-items: start; }
+.eq-lab { font-weight: 600; font-size: .92rem; }
+.eq { font: 500 1.02rem "Cambria Math", "Times New Roman", serif; background: var(--surface-2); border-radius: 8px; padding: 6px 10px; display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap; justify-self: start; }
+.eq sub { font-size: .7em; }
+.eq-stack { display: grid; gap: 8px; justify-items: center; }
+.eq .frac span:first-child { border-bottom-width: 1.2px; }
+
+/* ---------- Emulsionantes descartados ---------- */
+.rej13 { display: grid; grid-template-columns: 1fr 1.15fr; grid-template-rows: auto auto; gap: 10px 28px; }
+.rej13-a { display: flex; gap: 12px; align-items: flex-start; }
+.rej13-b { grid-column: 2; grid-row: 2; display: flex; gap: 12px; align-items: center; }
+.rej13-b > div { display: grid; gap: 12px; justify-items: center; }
+.art-card { margin: 0; background: #fff; border-radius: 14px; box-shadow: var(--shadow); padding: 10px; display: grid; gap: 6px; justify-items: center; }
+.art-card svg { width: 100%; display: block; }
+.art-card figcaption { font-size: .82rem; color: #5f6b63; }
+.art-card .bag { fill: #d9b48a; stroke: #9c7448; stroke-width: 2; }
+.art-card .bag-top { fill: #c79e70; }
+.art-card .bag-label { fill: #fffdf7; stroke: #9c7448; stroke-width: 1; }
+.art-card .bag-t1 { font: 600 12px Georgia, serif; fill: #3b2b1a; text-anchor: middle; }
+.art-card .bag-t2 { font: 700 16px Georgia, serif; fill: #3b2b1a; text-anchor: middle; }
+.art-card .bag-line { stroke: #9c7448; stroke-width: 1; }
+.art-card .bowl { fill: #a46a3f; stroke: #7b4c2a; stroke-width: 2; }
+.art-card .pellets circle { fill: #fbfbf7; stroke: #d9d6cc; stroke-width: 1; }
+.struct-duo { display: flex; gap: 12px; justify-content: center; }
+.struct-duo.tight .struct img { max-width: 170px; }
+.art-t60 .ring, .art-t60 .bond, .art-t60 .tail { fill: none; stroke: #1f2a24; stroke-width: 1.8; stroke-linejoin: round; }
+.struct.t60 > svg { max-width: 260px; }
+.art-t60 .atom { font: 600 13px var(--sans); fill: #c8553d; }
+.art-t60 .lab { font: 600 13px var(--sans); fill: #1f2a24; }
+.art-t60 .lab .sub { font-size: 10px; baseline-shift: sub; }
+.art-t60 .lab.hl { fill: #c8553d; font-weight: 700; }
+
+/* ---------- Goma xantana (notación de símbolos de monosacáridos) ---------- */
+.xg { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; }
+.blob { background: var(--pink-soft); border-radius: 46% 54% 50% 50% / 30% 30% 70% 70%; padding: 34px 40px; box-shadow: var(--shadow); }
+.blob ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 1.05rem; text-align: justify; }
+.art-xan { max-height: 52vh; }
+.art-xan .link { stroke: #1f2a24; stroke-width: 2; fill: none; }
+.art-xan .br { stroke: #1f2a24; stroke-width: 2; fill: none; }
+.art-xan .n { font: italic 600 13px var(--sans); fill: #1f2a24; }
+.art-xan .glc { fill: #0072bc; stroke: #1f2a24; stroke-width: 1.5; }
+.art-xan .man { fill: #00a651; stroke: #1f2a24; stroke-width: 1.5; }
+.art-xan .glca-a { fill: #fff; stroke: #1f2a24; stroke-width: 1.5; }
+.art-xan .glca-b { fill: #0072bc; }
+.art-xan .lk { font: 600 11px var(--sans); fill: #5f6b63; text-anchor: middle; }
+.art-xan .tag { font: 600 11.5px var(--sans); fill: #c8553d; }
+.art-xan .legend text { font: 500 11.5px var(--sans); fill: #1f2a24; }
+.art-xan .mm { font: 500 11px var(--sans); fill: #5f6b63; }
+
+/* ---------- Tres columnas (reología) ---------- */
+.tri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.tri article { display: grid; gap: 16px; align-content: start; }
+.tri-h { background: var(--pink); border-radius: 14px; padding: 18px; text-align: center; color: var(--amber-ink); font-size: 1.3rem; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: var(--shadow); }
+.tri-b { background: var(--pink-soft); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; text-align: center; min-height: 190px; display: grid; align-content: center; gap: 10px; box-shadow: var(--shadow); }
+.tri-b p { margin: 0; font-size: 1.05rem; }
+
+/* ---------- Filas de descarte (estructura + texto) ---------- */
+.rej-row { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: center; margin-bottom: 26px; }
+.rej-row.rev { grid-template-columns: 1.2fr .8fr; }
+.rej-fig { position: relative; display: flex; justify-content: center; }
+.rej-fig .xbadge { position: absolute; top: -18px; left: -6px; }
+.rej-fig .art-card { width: 100%; max-width: 320px; }
+.rej-text h3 { color: var(--amber-ink); font-size: 1.35rem; margin-bottom: 8px; }
+.rej-text p, .rej-text li { font-size: 1.08rem; }
+.rej-text.right { text-align: right; }
+.rej-text ul { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.art-chem .bond, .art-chem .br { stroke: #1f2a24; stroke-width: 2; fill: none; }
+.art-chem .atom { font: 600 15px var(--sans); fill: #1f2a24; }
+.art-chem .n { font: italic 600 13px var(--sans); fill: #1f2a24; }
+
+/* ---------- α-tocoferol ---------- */
+.toco { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; margin-bottom: 14px; }
+.toco-mech { text-align: center; }
+.toco-mech h3 { color: var(--amber-ink); font-size: 1.3rem; margin-bottom: 6px; }
+.num-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px; }
+.ccard.num { text-align: left; }
+.ccard.num h3 { justify-content: flex-start; }
+.ccard.num.center { grid-column: 1 / -1; justify-self: center; max-width: 560px; }
+
+/* ---------- Antioxidantes descartados ---------- */
+.rej2 { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: center; padding-left: 40px; }
+.rej2 .xbadge.abs { position: absolute; left: -10px; top: -6px; }
+.rej2 h3 { color: var(--amber-ink); font-size: 1.35rem; margin-bottom: 6px; }
+.rej2 article { display: grid; gap: 12px; justify-items: center; align-content: start; }
+.rej2 p { font-size: 1.05rem; margin: 0; }
+.rej2 .con { color: var(--bad); font-weight: 500; }
+
+/* ---------- Buffer ---------- */
+.buf { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
+.buf-structs { display: grid; justify-items: center; gap: 4px; }
+.buf-eq { display: flex; align-items: center; gap: 8px; color: var(--amber-ink); font-weight: 700; }
+.buf-right { display: grid; gap: 16px; }
+.plain-block { text-align: center; }
+.plain-block h3 { color: var(--amber-ink); font-size: 1.3rem; margin-bottom: 6px; }
+
+/* ---------- Trietanolamina / agua desionizada ---------- */
+.tea { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: center; }
+.tea .rej-fig .struct img { max-width: 280px; }
+.tea-bottom { margin: 26px 0 0; padding-left: 22px; display: grid; gap: 8px; font-size: 1.08rem; }
+.art-can .can { fill: #1e4fd1; stroke: #173c9e; stroke-width: 2; }
+.art-can .ribs path { stroke: #173c9e; stroke-width: 6; stroke-linecap: round; }
+.art-can .handle { fill: #2a5ee6; stroke: #173c9e; stroke-width: 2; }
+.art-can .lbl { fill: #fff; }
+.art-can .lbl-t1 { font: 800 18px var(--sans); fill: #173c9e; text-anchor: middle; }
+.art-can .lbl-t2 { font: 700 10px var(--sans); fill: #173c9e; text-anchor: middle; }
+.art-can .wave { fill: none; stroke: #8fb6d9; stroke-width: 2.5; }
+
+/* ---------- Agua purificada ---------- */
+.water { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+.water-cards { display: grid; gap: 14px; }
+
+/* ---------- Conservante ---------- */
+.cons { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; background: #23214f; border-radius: 22px; padding: 16px; box-shadow: var(--shadow); }
+.cons-panel { margin: 0; background: #2f2d6b; border-radius: 16px; padding: 14px; color: #fff; display: grid; gap: 8px; }
+.cons-panel figcaption { display: flex; gap: 12px; align-items: flex-start; }
+.cons-panel figcaption .nb.big { background: #fff; color: #23214f; }
+.cons-panel figcaption strong { display: block; font-size: 1.15rem; }
+.cons-panel figcaption span:last-child { font-size: .95rem; opacity: .9; }
+.cons-arrow { color: #c9c6ff; }
+.cons-arrow .lucide { width: 34px; height: 34px; }
+.art-mem { width: 100%; display: block; }
+.art-mem .cell { fill: #3b3a85; }
+.art-mem .head { fill: #a78bfa; stroke: #7c5ccf; stroke-width: 1; }
+.art-mem .tail { stroke: #c4b5fd; stroke-width: 1.4; }
+.art-mem .ehg-b { fill: #60c3f0; stroke: #2e8fc1; stroke-width: 1; }
+.art-mem .phe-b { fill: #f0a6f0; stroke: #c04fc0; stroke-width: 1; }
+.art-mem .m-arrow { fill: none; stroke: #9fd8ff; stroke-width: 2.5; stroke-linecap: round; marker-end: none; }
+.art-mem .m-lab { font: 600 11px var(--sans); fill: #e6e3ff; }
+.art-mem .m-lab.right { text-anchor: end; }
+
+/* ---------- Inestabilidad física ---------- */
+.inst { display: grid; grid-template-columns: 1.7fr 1fr; gap: 24px; align-items: center; }
+.beakers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: #23214f; border-radius: 22px; padding: 14px; box-shadow: var(--shadow); position: relative; }
+.beaker { margin: 0; background: #2f2d6b; border-radius: 14px; padding: 10px 8px; color: #fff; display: grid; gap: 6px; justify-items: center; text-align: center; }
+.beaker figcaption { font-weight: 700; font-size: .9rem; display: grid; gap: 4px; justify-items: center; min-height: 3.2em; }
+.beaker figcaption .nb { background: #fff; color: #23214f; border: none; }
+.beaker svg { width: 100%; max-width: 140px; }
+.beaker p { margin: 0; font-size: .76rem; border: 1px solid #6c69c9; border-radius: 8px; padding: 6px; background: #3b3a85; }
+.bk-water { fill: #dbeaf7; opacity: .9; }
+.bk-drop { fill: #f5c542; stroke: #c9951a; stroke-width: 1; }
+.bk-glass { fill: none; stroke: #e6ecff; stroke-width: 3; stroke-linecap: round; }
+.inst-ctrl { text-align: center; }
+.inst-ctrl h3 { color: var(--amber-ink); font-size: 1.5rem; margin-bottom: 8px; }
+.inst-ctrl svg { width: 100%; max-height: 40vh; background: #fff; border-radius: 14px; box-shadow: var(--shadow); }
+.xg-dose { font-size: 1.4rem; font-weight: 700; margin-top: 10px; }
+
+/* ---------- PCC ---------- */
+.pcc3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1000px; }
+.pcc3 figure { margin: 0; background: color-mix(in srgb, var(--violet) 14%, var(--surface)); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: grid; gap: 8px; box-shadow: var(--shadow); }
+.pcc3 figcaption { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.05rem; }
+.art-pcc { width: 100%; max-height: 40vh; }
+.art-pcc .th-glass { fill: #fff; stroke: #8a8aa8; stroke-width: 3; }
+.art-pcc .th-red { fill: #e5484d; } .art-pcc .th-green { fill: #46b35b; } .art-pcc .th-empty { fill: #e6e3f5; }
+.art-pcc .th-bulb { fill: #e5484d; stroke: #8a8aa8; stroke-width: 3; }
+.art-pcc .th-ticks path { stroke: #1f2a24; stroke-width: 2; }
+.art-pcc .th-ticks text { font: 600 13px var(--sans); fill: var(--ink); }
+.art-pcc .th-brace { fill: none; stroke: #2f7d4f; stroke-width: 2; }
+.art-pcc .th-safe { font: 700 12px var(--sans); fill: #2f7d4f; }
+.pcc-note { text-align: center; color: var(--green); font-weight: 700; margin: 0; }
+.art-pcc .tube { fill: #ececf6; stroke: #8a8aa8; stroke-width: 2.5; }
+.art-pcc .tube-crimp { fill: #d4d4e4; stroke: #8a8aa8; stroke-width: 2; }
+.art-pcc .tube-band { fill: #7b5ea7; }
+.art-pcc .tube-cap { fill: #9a9aac; stroke: #6f6f84; stroke-width: 2; }
+.art-pcc .ns-bg { fill: #fff; }
+.art-pcc .sun circle { fill: #f5b941; } .art-pcc .sun path { stroke: #f5b941; stroke-width: 4; stroke-linecap: round; }
+.art-pcc .ns-ring, .art-pcc .ns-slash { fill: none; stroke: #e5484d; stroke-width: 7; }
+.art-pcc .lid { fill: #6b54b8; stroke: #4c3a8f; stroke-width: 2; }
+.art-pcc .lid-arrow { fill: none; stroke: #23214f; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.art-pcc .jar { fill: #e7e4f6; stroke: #8a8aa8; stroke-width: 2.5; }
+.art-pcc .jar-rim { fill: #d6d2ee; stroke: #8a8aa8; stroke-width: 2; }
+.art-pcc .cream { fill: #fffdf7; stroke: #d9d6cc; stroke-width: 1.5; }
+
+/* ---------- Bibliografía (tres diapositivas) ---------- */
+.slide .refs { max-width: 1200px; font-size: .9rem; text-align: justify; }
+
+/* ---------- Cierre ---------- */
+.slide.thanks { display: flex; align-items: center; justify-content: center; }
+.thanks-card { position: relative; background: var(--pink-soft); border-radius: 48% 52% 46% 54% / 55% 45% 55% 45%; padding: clamp(40px, 8vw, 90px) clamp(40px, 10vw, 140px); text-align: center; box-shadow: var(--shadow); max-width: 900px; }
+.thanks-card h2 { font-size: clamp(2.2rem, 1.2rem + 5vw, 4.6rem); max-width: 12ch; margin: 0 auto 12px; color: var(--amber-ink); }
+.thanks-card p { color: var(--muted); margin: 0; }
+.t-ico { position: absolute; width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; background: var(--surface); box-shadow: var(--shadow); color: var(--amber); }
+.t-ico .lucide { width: 34px; height: 34px; }
+.t-ico.i1 { left: -24px; top: 12%; color: var(--rose); } .t-ico.i2 { right: -24px; top: 10%; color: var(--violet); }
+.t-ico.i3 { left: -12px; bottom: 12%; color: var(--green); } .t-ico.i4 { right: -18px; bottom: 14%; color: var(--rose); }
+
+.annex-cover { display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1000px) {
+  .toc, .pa, .extr, .hlbs, .xg, .buf, .tea, .water, .inst, .toco { grid-template-columns: 1fr; }
+  .rej13 { grid-template-columns: 1fr; } .rej13-b { grid-column: 1; grid-row: auto; }
+  .cons { grid-template-columns: 1fr; } .cons-arrow { justify-self: center; transform: rotate(90deg); }
+  .beakers { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .members, .struct-pair, .pa-cards, .tri, .num-cards, .rej2, .pcc3 { grid-template-columns: 1fr; }
+  .rej-row, .rej-row.rev { grid-template-columns: 1fr; }
+  .rej-row.rev .rej-fig { order: -1; }
+  .rej-text.right { text-align: left; }
+  .eq-row { grid-template-columns: 1fr; }
+  .eq { font-size: .85rem; }
+  .ctable { font-size: .78rem; } .ctable th, .ctable td { padding: 6px; }
+  .blob { border-radius: 24px; padding: 20px 22px; }
+  .rej2 { padding-left: 0; padding-top: 50px; }
+  .toc-later .agenda.later { grid-template-columns: 1fr 1fr; }
+  .thanks-card { padding: 40px 28px; } .t-ico { display: none; }
+  .tri-b { min-height: 0; }
+}
+@media print { .perc .p-drops circle { animation: none; } }
+
+/* Ajustes de altura para pantallas de proyector (1366×768) */
+.toc-list { gap: 6px; }
+.toc-list a { padding: 7px 12px; font-size: .95rem; }
+.toc-sub { margin: 4px 0 2px 34px; gap: 1px; }
+.toc-sub a { padding: 3px 10px; font-size: .86rem; }
+.toco .struct.wide-s img { aspect-ratio: 2 / 1; object-fit: cover; max-width: 440px; }
+.num-cards { gap: 12px 24px; }
+.num-cards .ccard { padding: 12px 18px; }
+.ctable { font-size: .82rem; }
+.ctable th, .ctable td { padding: 5px 10px; }
+.buf .struct.small img { max-width: 170px; }
+.water .ctable.spec td, .water .ctable.spec th { padding: 14px; }
+/* El paginador vive en el banner: ya no hace falta reservar espacio inferior */
+.slide { padding-top: clamp(18px, 3vh, 40px); padding-bottom: 24px; }
+.slide .center-title { margin-bottom: .6rem; }
+.slide .tpp-sub { margin-bottom: 1.2rem; }
+.refs li { overflow-wrap: anywhere; }
