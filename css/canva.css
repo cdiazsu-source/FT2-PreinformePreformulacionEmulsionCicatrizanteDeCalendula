@@ -513,3 +513,34 @@
 [data-step] { transition: opacity .35s ease, transform .35s ease, visibility .35s; }
 .step-hidden { opacity: 0; visibility: hidden; transform: translateY(8px); }
 @media print { .step-hidden { opacity: 1; visibility: visible; transform: none; } }
+
+/* ---------- Diapositivas de César con la identidad del Canva del grupo ----------
+   Fondo de cuadrícula lila, Times New Roman, títulos morados y tarjetas rosa pálido.
+   Los tokens se redefinen solo dentro de estas diapositivas; se ven igual en ambos temas,
+   como las capturas de los compañeros. */
+.slide.cz {
+  --cv-purple: #6a0dad; --cv-purple-soft: #efe4fb;
+  --ink: #111111; --muted: #4a3b5e; --surface: #ffffff; --surface-2: #f6f0fd; --line: #c9b5ee;
+  --amber: var(--cv-purple); --amber-ink: var(--cv-purple); --amber-soft: var(--cv-purple-soft);
+  --pink: #f8d7dd; --pink-soft: #fde8ec;
+  --green: #2f7d4f; --green-soft: #dcefe2; --bad: #c0392b; --blue: #3c78a8; --water: #e3f0f8;
+  --rose: #c8553d; --rose-soft: #f8ddd6; --oil: #f7c55a; --oil-edge: #c98d12;
+  --shadow: 0 2px 10px rgba(80, 40, 140, .12);
+  --sans: "Times New Roman", Times, "Liberation Serif", serif;
+  --serif: var(--sans);
+  font-family: var(--sans);
+  color: var(--ink);
+  background: url("../img/fondo-canva.jpg") center / cover no-repeat;
+}
+.slide.cz .center-title { color: var(--cv-purple); font-family: var(--sans); font-weight: 400; font-size: clamp(1.45rem, 1rem + 1.6vw, 2.3rem); line-height: 1.12; }
+.slide.cz .tpp-sub { color: var(--cv-purple); font-weight: 400; font-size: 1.3rem; }
+.slide.cz .ccard { border: none; border-radius: 22px; }
+.slide.cz .ccard.cz-card h3 { font-weight: 400; font-size: 1.2rem; color: var(--cv-purple); }
+.slide.cz .ccard.cz-card p { font-size: 1.04rem; }
+.slide.cz .cz-ini { font-weight: 700; }
+.slide.cz .cz-foot, .slide.cz .cz-polar, .slide.cz .cz-note { color: var(--ink); }
+.slide.cz .cz-ref { color: var(--muted); }
+.slide.cz .art-card.cz-art { border: none; border-radius: 18px; }
+.slide.cz .cz-chain span { border-color: var(--line); font-weight: 400; }
+.slide.cz .cap-pill { font-weight: 400; }
+.slide.cz .nb { border-color: var(--cv-purple); color: var(--cv-purple); }
