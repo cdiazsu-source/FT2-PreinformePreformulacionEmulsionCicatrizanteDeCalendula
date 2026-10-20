@@ -362,3 +362,144 @@
 .slide .center-title { margin-bottom: .6rem; }
 .slide .tpp-sub { margin-bottom: 1.2rem; }
 .refs li { overflow-wrap: anywhere; }
+
+/* =========================================================
+   Diapositivas de César: tipo de emulsión, fase oleosa y humectante
+   ========================================================= */
+.slide.cz .center-title { font-size: clamp(1.3rem, .9rem + 1.5vw, 2.05rem); max-width: 40ch; }
+.slide.cz .tpp-sub { margin-bottom: 1rem; }
+.cz-ref { color: var(--muted); font-size: .78em; font-weight: 500; white-space: nowrap; }
+.cz-ini { color: var(--amber); font-size: 1.15em; }
+.ccard.cz-card { text-align: left; padding: 12px 16px; }
+.ccard.cz-card h3 { justify-content: flex-start; font-size: 1.05rem; margin-bottom: 4px; }
+.ccard.cz-card h3 .lucide { color: var(--amber); width: 20px; height: 20px; flex: none; margin: 0; }
+.ccard.cz-card p { font-size: .95rem; }
+.ccard.cz-card.ok { background: var(--green-soft); border-color: var(--green); }
+.ccard.cz-card.ok h3 .lucide { color: var(--green); }
+.ccard.cz-card.no h3 .lucide { color: var(--bad); }
+.cz-card .eq { font-size: .92rem; margin: 2px 0; }
+.cz-split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 26px; align-items: center; }
+.cz-grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.cz-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+.cz-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.cz-grid2.cz-narrow { max-width: 900px; }
+.cz-stack { display: grid; gap: 14px; }
+.cz-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 26px; margin: 12px auto 0; font-size: .88rem; color: var(--muted); }
+.cz-foot span { display: inline-flex; align-items: center; gap: 6px; }
+.cz-foot .lucide { width: 16px; height: 16px; color: var(--amber); }
+.cz-foot .no .lucide { color: var(--bad); }
+.cz-relay { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 16px auto 0; font-weight: 600; color: var(--amber-ink); }
+
+/* Dibujos: solo tokens, para que se lean en modo oscuro */
+.art-card.cz-art { background: var(--surface); border: 1px solid var(--line); }
+.cz-svg text { font-family: var(--sans); fill: var(--ink); }
+.cz-svg .t-b { font-size: 15px; font-weight: 700; }
+.cz-svg .t-s { font-size: 12px; fill: var(--muted); }
+.cz-svg .t-v { font-size: 12.5px; font-weight: 700; }
+.cz-svg .t-ok { font-size: 13px; font-weight: 700; fill: var(--green); }
+.cz-svg .t-no { font-size: 13px; font-weight: 700; fill: var(--bad); }
+.cz-svg .t-w { font-size: 12px; font-weight: 600; fill: var(--blue); }
+.cz-svg .t-x { font-size: 11px; font-weight: 600; fill: var(--rose); }
+.cz-svg .oil-d circle { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 1; }
+.cz-svg .water-d circle { fill: var(--water); stroke: var(--blue); stroke-width: 1; }
+.cz-a1 .c-out { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 2.5; }
+.cz-a1 .c-in { fill: var(--water); stroke: var(--blue); stroke-width: 2; }
+.cz-svg .bar-w { fill: var(--water); stroke: var(--blue); stroke-width: 1; }
+.cz-svg .bar-o { fill: var(--oil); }
+.cz-svg .bar-x { fill: var(--line); }
+.cz-a1 .bar-f { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.cz-a2-fig svg { max-height: 25vh; }
+.cz-a2 .skin { fill: var(--rose-soft); stroke: var(--rose); stroke-width: 2; }
+.cz-a2 .dome-w { fill: var(--water); stroke: var(--blue); stroke-width: 2; }
+.cz-a2 .dome-o { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 2; }
+.cz-a2 .exu path { fill: none; stroke: var(--rose); stroke-width: 3; stroke-linecap: round; }
+.cz-a2 .arr-h { fill: var(--rose); }
+.cz-c2 .in-h { fill: var(--blue); }
+
+.cz-structs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: end; }
+.cz-st { position: relative; }
+.cz-st img { max-width: 170px; }
+.cz-st .xbadge { position: absolute; top: -12px; left: calc(50% - 100px); width: 40px; height: 40px; }
+.cz-st .xbadge .lucide { width: 24px; height: 24px; }
+.cz-st.pick img { outline: 3px solid var(--green); outline-offset: 2px; }
+.cz-st.pick .cap-pill { border-color: var(--green); color: var(--green) !important; font-weight: 700; }
+.cz-st .cap-pill { font-size: .95rem !important; padding: 8px 16px; }
+.cz-polar { display: flex; align-items: center; gap: 10px; margin: 12px auto 14px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+.cz-polar-line { flex: 1; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--muted), var(--green)); }
+.cz-polar .lucide { color: var(--green); margin-left: -10px; }
+.cz-humect { margin-top: 18px; }
+.cz-humect .cz-st img { max-width: 150px; }
+.cz-oh { position: absolute; top: -10px; right: calc(50% - 96px); background: var(--blue); color: var(--surface); font-weight: 700; font-size: .8rem; border-radius: 999px; padding: 3px 10px; z-index: 2; }
+.cz-note { margin: 0; font-size: .88rem; color: var(--muted); text-align: center; }
+.cz-st.pick .cz-note { color: var(--green); font-weight: 700; }
+
+.cz-b2 .w-bg { fill: var(--water); }
+.cz-b2 .oil-drop, .cz-b5s .oil-drop { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 1.5; }
+.cz-b2 .tl { stroke: var(--muted); stroke-width: 1.6; }
+.cz-b2 .hd-s { fill: var(--blue); }
+.cz-b2 .hd-c { fill: var(--surface); stroke: var(--green); stroke-width: 2; }
+.cz-chain { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+.cz-chain span { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 8px 16px; font-weight: 600; box-shadow: var(--shadow); }
+.cz-chain .lucide { color: var(--amber); }
+
+.cz-ruler-fig { padding: 6px 12px; }
+.cz-ruler-fig svg { max-height: 16vh; }
+.cz-ruler .z-wo { fill: var(--amber-soft); stroke: var(--amber); }
+.cz-ruler .z-ow { fill: var(--water); stroke: var(--blue); }
+.cz-ruler .t-z { font-size: 13px; font-weight: 600; }
+.cz-ruler .axis, .cz-ruler .ticks path { stroke: var(--ink); stroke-width: 1.6; }
+.cz-ruler .ticks text { font-size: 12px; fill: var(--muted); }
+.cz-ruler .mk { stroke: var(--green); stroke-width: 3; }
+.cz-ruler .mk-h { fill: var(--green); }
+.cz-ruler .t-mk { font-size: 16px; font-weight: 800; fill: var(--green); }
+.cz-phi .b-w { fill: var(--water); stroke: var(--line); }
+.cz-phi .b-o { fill: var(--oil); }
+.cz-phi .m-ok { stroke: var(--green); stroke-width: 3; }
+.cz-phi .m-max { stroke: var(--amber); stroke-width: 3; stroke-dasharray: 6 4; }
+.cz-phi .t-max { font-size: 13px; font-weight: 700; fill: var(--amber-ink); }
+.cz-phi .span { stroke: var(--muted); stroke-width: 1.5; }
+.cz-phi .span-h { fill: var(--muted); }
+.slide.cz .cz-ruler-fig + .cz-grid4 { margin-top: 14px; }
+
+.cz-two { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
+.cz-col { display: grid; gap: 12px; }
+.cz-colh { display: flex; align-items: center; gap: 8px; font-size: 1.15rem; margin: 0; }
+.cz-colh.no, .cz-colh.no .lucide { color: var(--bad); }
+.cz-colh.ok, .cz-colh.ok .lucide { color: var(--green); }
+.cz-b5c .ch { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; }
+.cz-b5c .ch-d { stroke: var(--bad); stroke-width: 2.4; }
+.cz-b5c .t-no { font-size: 12px; }
+.cz-shield-fig svg { max-height: 40vh; }
+.cz-b5s .s1 { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 2.5; }
+.cz-b5s .s2 { fill: var(--green-soft); stroke: var(--green); stroke-width: 2.5; }
+.cz-b5s .s3 { fill: var(--water); stroke: var(--blue); stroke-width: 2.5; }
+.cz-b5s .t-l { font-size: 12.5px; font-weight: 700; }
+.cz-b5s .ring circle { fill: var(--blue); }
+
+.cz-c2 .film { fill: var(--oil); opacity: .45; }
+.cz-c2 .g circle, .cz-c2 circle.g { fill: var(--green); }
+.cz-c2 .brick rect { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1; }
+.cz-c2 .kc { fill: var(--rose-soft); stroke: var(--rose); stroke-width: 1.5; }
+.cz-c2 .nuc { fill: var(--rose); opacity: .45; }
+.cz-c2 .aqp { fill: var(--water); stroke: var(--blue); stroke-width: 1.5; }
+.cz-c2 .in { stroke: var(--blue); stroke-width: 2; }
+.cz-c2 .tewl { stroke: var(--blue); stroke-width: 2; stroke-dasharray: 5 4; }
+.cz-c2 .ldr { stroke: var(--muted); stroke-width: 1; fill: none; }
+
+@media (max-width: 1000px) {
+  .cz-split, .cz-two { grid-template-columns: 1fr; }
+  .cz-grid4, .cz-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .cz-grid2, .cz-grid3, .cz-grid4 { grid-template-columns: 1fr; }
+  .cz-structs { gap: 10px; }
+  .cz-st .cap-pill { font-size: .78rem !important; padding: 5px 8px; }
+  .cz-st .xbadge { left: -4px; width: 30px; height: 30px; }
+  .cz-st .xbadge .lucide { width: 18px; height: 18px; }
+  .cz-oh { right: -2px; font-size: .7rem; }
+  .cz-note { font-size: .75rem; }
+}
+/* Ajustes de alto (1366×768) */
+.cz-a1 { max-height: 50vh; }
+.cz-b5c { max-height: 27vh; }
+.toc-sub a { padding-top: 2px; padding-bottom: 2px; }
