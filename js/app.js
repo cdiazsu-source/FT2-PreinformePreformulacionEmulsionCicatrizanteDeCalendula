@@ -57,6 +57,8 @@
      ========================================================= */
   const slides = $$(".slide");
   const total = slides.length;
+  // Estrella de ubicación: marca la diapositiva anterior a cada bloque de César
+  slides.forEach((s, i) => { if (s.classList.contains("cz") && i > 0 && !slides[i - 1].classList.contains("cz")) slides[i - 1].classList.add("pre-cz"); });
   let idx = 0;
   $("#tot").textContent = total;
 

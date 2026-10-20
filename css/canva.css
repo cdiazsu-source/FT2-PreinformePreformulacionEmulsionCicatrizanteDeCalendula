@@ -571,3 +571,62 @@
 .slide .members li { background: var(--surface); border: none; border-radius: 12px; box-shadow: none; color: var(--cv-purple); font-size: 1.35rem; font-weight: 400; padding: 10px 18px; }
 .slide .members .av { background: var(--cv-purple-soft); color: var(--cv-purple); font-family: var(--sans); }
 .slide .cz-colh { background: var(--surface); width: fit-content; padding: 4px 14px; border-radius: 999px; }
+
+/* ---------- Portada (estilo de la portada del Canva) ---------- */
+.slide.cv-cover {
+  --cv-orange: #f29a1f; --cv-orange-deep: #d9700f; --cv-disc: #8a4a12; --cv-leaf: #4f8a3a; --cv-leaf-deep: #2f6a2a;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.cv-decor { position: absolute; inset: 0; z-index: 2; pointer-events: none; max-width: none; margin: 0; }
+.cv-deco { position: absolute; display: block; }
+.cv-jar { top: 3%; left: 2%; width: clamp(150px, 20vw, 290px); }
+.cv-flowers { bottom: 0; left: 0; width: clamp(170px, 22vw, 320px); }
+.cv-flask { bottom: 4%; right: 3%; width: clamp(120px, 14vw, 210px); }
+.cv-jar .lid { fill: var(--cv-purple-soft); stroke: var(--line); stroke-width: 3; }
+.cv-jar .lid-top { fill: var(--surface); stroke: var(--line); stroke-width: 3; }
+.cv-jar .body { fill: var(--surface-2); stroke: var(--line); stroke-width: 3; }
+.cv-jar .rim { fill: var(--cv-purple-soft); stroke: var(--line); stroke-width: 3; }
+.cv-jar .cream { fill: var(--surface); }
+.cv-jar .swirl { fill: none; stroke: var(--line); stroke-width: 3; stroke-linecap: round; }
+.cv-jar .shine { stroke: var(--surface); stroke-width: 6; stroke-linecap: round; opacity: .9; }
+.cv-flowers .stem { fill: none; stroke: var(--cv-leaf-deep); stroke-width: 5; stroke-linecap: round; }
+.cv-flowers .leaf { fill: var(--cv-leaf); stroke: var(--cv-leaf-deep); stroke-width: 1.5; }
+.cv-flower .pt { fill: var(--cv-orange); stroke: var(--cv-orange-deep); stroke-width: 1; }
+.cv-flower .pt2 { fill: var(--cv-orange-deep); }
+.cv-flower .disc { fill: var(--cv-disc); }
+.cv-flower .dot { fill: var(--cv-orange); }
+.cv-bud ellipse { fill: var(--cv-leaf); stroke: var(--cv-leaf-deep); stroke-width: 1.5; }
+.cv-flask .glass, .cv-flask .tube { fill: rgba(255, 255, 255, .55); stroke: var(--cv-purple); stroke-width: 4; stroke-linejoin: round; }
+.cv-flask .liquid, .cv-flask .tube-l { fill: var(--cv-purple); opacity: .75; }
+.cv-flask .bub { fill: var(--surface); opacity: .85; }
+.cv-spark { position: absolute; color: var(--surface); font-size: clamp(14px, 1.6vw, 24px); opacity: .85; animation: cvTwinkle 3.6s ease-in-out infinite; animation-delay: calc(var(--k) * 1.1s); }
+@keyframes cvTwinkle { 0%, 100% { opacity: .25; transform: scale(.8); } 50% { opacity: .95; transform: scale(1.1); } }
+
+.slide.cv-cover .cover-text {
+  position: relative; z-index: 1; max-width: 860px; margin: 0 auto; text-align: center;
+  background: var(--pink-soft); border-radius: 48% 52% 46% 54% / 56% 50% 50% 44%;
+  padding: clamp(40px, 8vh, 84px) clamp(48px, 8vw, 128px); box-shadow: 0 10px 40px rgba(80, 40, 140, .18);
+}
+.cv-tag { display: inline-block; margin: 0 0 14px; padding: 4px 16px; border-radius: 999px; background: var(--surface); color: var(--cv-purple); font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; }
+.slide.cv-cover h1 { margin: 0; line-height: 1.02; text-shadow: none; text-transform: none; letter-spacing: 0; }
+.cv-l1 { display: block; text-transform: uppercase; letter-spacing: .05em; font-size: clamp(1.7rem, 1rem + 3vw, 3.4rem); text-shadow: 3px 3px 0 var(--line); }
+.cv-l2 { display: block; font-style: italic; font-size: clamp(2.2rem, 1.2rem + 4vw, 4.6rem); color: var(--cv-orange-deep); margin-top: 4px; }
+.cv-line { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px auto; color: var(--cv-orange-deep); }
+.cv-line span { width: 70px; height: 2px; background: var(--line); }
+.cv-line .lucide { width: 26px; height: 26px; }
+.slide.cv-cover .lead { max-width: 56ch; margin: 0 auto; font-size: clamp(1rem, .9rem + .4vw, 1.2rem); color: var(--ink); }
+.cv-group { margin: 16px 0 0; color: var(--cv-purple); font-size: 1.15rem; }
+@media (max-width: 720px) {
+  .cv-decor { z-index: 0; }
+  .cv-jar { width: 110px; opacity: .8; } .cv-flowers { width: 130px; opacity: .8; } .cv-flask { width: 90px; opacity: .8; }
+  .slide.cv-cover .cover-text { border-radius: 36px; padding: 32px 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .cv-spark { animation: none; } }
+
+/* ---------- Estrella de ubicación: mis diapositivas y la anterior a cada bloque ---------- */
+.slide.cz::after, .slide.pre-cz::after {
+  content: "★"; position: absolute; top: 8px; right: 18px; z-index: 5; pointer-events: none;
+  font: 30px/1 var(--sans); color: #f5b941; text-shadow: 0 1px 4px rgba(80, 40, 140, .45);
+}
+.slide.pre-cz::after { opacity: .4; filter: blur(1.4px); }
+@media print { .slide.cz::after, .slide.pre-cz::after { display: none; } }
