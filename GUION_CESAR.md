@@ -24,16 +24,16 @@ Emulsión cicatrizante con caléndula · Farmacotecnia II · Grupo 1
 | 8 | | Tres pruebas para comprobarlo | 4 |
 | 9 | **Principio activo** | Las flores de caléndula, fuente de los activos | 4 |
 | 10 | | Extracto comercial que usaremos (Ananda) | 4 |
-| 11 | | Cuatro familias de compuestos | 4 |
+| 11 | | Familias activas y cuáles pasan al extracto oleoso | 4 |
 | 12 | | Ésteres de faradiol | 4 |
-| 13 | | Flavonoides | 4 |
+| 13 | | Protección antioxidante del extracto oleoso | 4 |
 | 14 | | Activos y fases de la cicatrización | 4 |
-| 15 | | Dónde vive cada activo en la crema | 4 |
+| 15 | | El extracto viaja dentro de las gotas | 4 |
 | 16 | | Evidencia clínica | 4 |
 | 17–20 | Cierre | Bibliografía (solo lo citado) | — |
 | 21 | | Gracias | — |
 
-**El hilo conductor:** el bloque 1 elige el vehículo y el bloque 2 explica qué lleva. La diapositiva 15 une los dos: cada activo viaja en la fase de la emulsión donde se disuelve.
+**El hilo conductor:** el bloque 1 elige el vehículo y el bloque 2 explica qué lleva. La diapositiva 15 une los dos: el extracto es oleoso y la emulsión aceite en agua lo lleva dentro de sus gotas sin que la crema quede grasosa.
 
 ---
 
@@ -99,15 +99,15 @@ Una emulsión puede organizarse de dos formas principales, y existen también em
 #### Diapositiva 6 · "De cuatro vehículos posibles, solo la emulsión aceite en agua cumple lo que pide la herida"
 *Presenta las columnas: los cuatro vehículos candidatos.*
 
-Para elegir el vehículo partimos de lo que necesita una herida aguda.
+Para elegir el vehículo partimos de lo que necesita una herida aguda y de cómo es nuestro extracto.
 
 `[→]` Primero, **humedad sin oclusión**: desde los estudios de Winter sabemos que una herida húmeda reepiteliza más rápido. La emulsión agua en aceite y el ungüento son oclusivos.
 
 `[→]` Segundo, **convivir con el exudado** y retirarse con agua; los vehículos grasos no lo permiten.
 
-`[→]` Tercero, **llevar los activos lipófilos**, como el faradiol. El gel acuoso no los disuelve.
+`[→]` Tercero, **disolver los activos lipófilos**, como el faradiol. El gel acuoso no los disuelve.
 
-`[→]` Cuarto, **llevar los activos hidrófilos**, como los flavonoides. El ungüento no los disuelve.
+`[→]` Cuarto, como nuestro extracto es oleoso, **incorporarlo sin que la crema quede grasosa**. En el gel el aceite se separa; la agua en aceite y el ungüento son grasosos. La emulsión aceite en agua lo reparte en gotas finas.
 
 *(Señala la columna verde.)* La única que cumple los cuatro requisitos es la emulsión aceite en agua.
 
@@ -169,20 +169,20 @@ Este es el extracto que vamos a usar: el de la marca **Ananda**, producido en Ca
 
 `[→]` **Pendiente**: el fabricante no declara la concentración ni entrega ficha técnica. La solicitaremos para poder estandarizar la dosis.
 
-#### Diapositiva 11 · "Cuatro familias de compuestos explican el efecto cicatrizante"
-*Señala la flor: cada pétalo es una familia.*
+#### Diapositiva 11 · "De las cuatro familias activas de la flor, el extracto oleoso concentra las lipófilas"
+*Señala la flor: cada pétalo es una familia. Luego las etiquetas de la derecha: pasan, en parte, no pasan.*
 
-En la flor hay muchos compuestos, pero cuatro familias explican el efecto que buscamos.
+En la flor hay cuatro familias de compuestos que explican el efecto cicatrizante, pero no todas pasan a un extracto oleoso.
 
-`[→]` **Triterpenoides**, sobre todo los ésteres de faradiol y las saponinas: son los principales antiinflamatorios.
+`[→]` **Triterpenoides**, sobre todo los ésteres de faradiol: son el principal antiinflamatorio y, por ser lipófilos, **pasan** completos al aceite.
 
-`[→]` **Flavonoides**, glucósidos de quercetina e isorhamnetina: antioxidantes y antimicrobianos.
+`[→]` **Flavonoides**: solo pasan **en parte**, las agliconas; los glucósidos, como la rutina, casi no se disuelven en aceite.
 
-`[→]` **Carotenoides**, como la luteína y el beta-caroteno: dan el color naranja y también son antioxidantes.
+`[→]` **Carotenoides**, como la luteína y el beta-caroteno: son liposolubles y **pasan**; por eso el aceite queda naranja.
 
-`[→]` **Polisacáridos**: estimulan la respuesta inmune local.
+`[→]` **Polisacáridos**: son solubles en agua y **no pasan**.
 
-Además hay un aceite esencial en baja proporción con actividad antimicrobiana. Ninguno actúa solo: el efecto cicatrizante es la suma.
+Conclusión: la fuerza de nuestro extracto está en la acción antiinflamatoria de los triterpenoides y en la antioxidante de los carotenoides.
 
 #### Diapositiva 12 · "Los ésteres de faradiol son el principal antiinflamatorio de la caléndula"
 *Señala la estructura: un triterpeno pentacíclico.*
@@ -193,18 +193,20 @@ Además hay un aceite esencial en baja proporción con actividad antimicrobiana.
 
 `[→]` **Un dato clave**: son muy lipófilos y no se disuelven en agua.
 
-`[→]` **Implicación**: necesitamos un extracto con etanol para obtenerlos y una fase oleosa que los mantenga disueltos en la crema.
+`[→]` **Implicación**: por eso un extracto oleoso es buena elección para este activo, y en la crema queda disuelto en la fase oleosa.
 
-#### Diapositiva 13 · "Los flavonoides protegen el tejido del daño oxidativo y de los microbios"
-*Señala la estructura de la rutina: la parte de la izquierda es la quercetina; la de la derecha, el azúcar.*
+#### Diapositiva 13 · "El extracto oleoso protege del daño oxidativo con carotenoides y antioxidantes del sésamo"
+*Señala la estructura de la luteína: una cadena larga sin azúcares, por eso es liposoluble.*
 
-`[→]` **Qué son**: glucósidos de quercetina y de isorhamnetina, como la rutina.
+Un extracto oleoso no lleva todos los flavonoides, pero conserva la protección antioxidante por otras vías. Esto importa porque los radicales libres del tejido inflamado retrasan la cicatrización.
 
-`[→]` **Antioxidantes**: neutralizan radicales libres que se acumulan en el tejido inflamado y retrasan la cicatrización. Las formulaciones con extracto de caléndula muestran actividad antioxidante medible.
+`[→]` **Carotenoides**: la luteína y el beta-caroteno son liposolubles y pasan completos al aceite.
 
-`[→]` **Antimicrobianos**: ayudan a controlar la carga bacteriana de la herida.
+`[→]` **Flavonoides**: pasan las agliconas; los glucósidos, como la rutina, casi no se disuelven en aceite.
 
-`[→]` **Hidrófilos**: a diferencia del faradiol, se disuelven en agua por su parte de azúcar, así que en la crema están en la fase acuosa.
+`[→]` **Aceite de sésamo**: el propio vehículo suma tocoferoles y lignanos antioxidantes, como el sesamol.
+
+`[→]` **A comprobar**: mediremos la actividad antioxidante de la crema terminada, como se ha hecho con otras formulaciones de caléndula.
 
 #### Diapositiva 14 · "Los activos acompañan cada fase de la cicatrización"
 *Señala las tres flechas y la banda de abajo.*
@@ -217,20 +219,20 @@ Así se conectan los compuestos con el efecto.
 
 `[→]` **Remodelación**: aumenta el depósito de colágeno.
 
-`[→]` **Protección**: durante todo el proceso, flavonoides y carotenoides protegen del daño oxidativo y ayudan a controlar los microorganismos.
+`[→]` **Protección**: durante todo el proceso, los carotenoides y los antioxidantes del aceite de sésamo protegen el tejido del daño oxidativo.
 
-#### Diapositiva 15 · "La emulsión aceite en agua lleva cada activo en la fase donde se disuelve"
+#### Diapositiva 15 · "En la emulsión aceite en agua, el extracto oleoso viaja dentro de las gotas"
 *Este es el puente entre los dos bloques. Señala la gota grande y luego el agua alrededor.*
 
-Aquí se unen las dos partes de la exposición. El extracto trae dos fracciones.
+Aquí se unen las dos partes de la exposición.
 
-`[→]` La lipófila, con los **ésteres de faradiol y los carotenoides**, queda disuelta en las gotas de triglicéridos.
+`[→]` **En la gota**: como el extracto es oleoso, todo él viaja en las gotas. El aceite de sésamo, con los ésteres de faradiol y los carotenoides, se mezcla con los triglicéridos de la fase oleosa.
 
-`[→]` La hidrófila, con los **flavonoides glicosilados y los polisacáridos**, queda en la fase acuosa externa.
+`[→]` **En el agua**: la fase externa lleva agua, glicerina y conservante, y es la que da una crema fresca y fácil de retirar.
 
 `[→]` **Al aplicarla**, parte del agua se evapora y queda sobre la herida una película lipídica con los triterpenoides en contacto con el tejido.
 
-`[→]` **Conclusión**: un solo vehículo lleva todo el extracto. Por eso, aceite en agua.
+`[→]` **Conclusión**: la emulsión aceite en agua es el vehículo ideal para un extracto oleoso: lo reparte en gotas finas sin que la crema quede grasosa.
 
 #### Diapositiva 16 · "Ensayos clínicos respaldan el uso de caléndula en heridas agudas"
 *Señala la escalera: de la evidencia más débil a la más fuerte.*
@@ -257,10 +259,11 @@ Muchas gracias. Quedo atento a sus preguntas.
 
 | Pregunta probable | Respuesta corta | Dónde apoyarte |
 |---|---|---|
-| ¿Por qué no un gel? | El gel acuoso no disuelve los triterpenoides, que son el antiinflamatorio principal. | 6 y 12 |
+| ¿Por qué no un gel? | No disuelve los triterpenoides y no puede dispersar un extracto oleoso sin emulsificante. | 6 y 12 |
 | ¿Por qué no agua en aceite? | Sería oclusiva y podría macerar una herida con exudado. | 6 y 7 |
 | ¿Cómo saben que es aceite en agua? | Dilución, conductividad y colorantes en la Práctica 8. | 8 |
-| ¿Qué compuesto es el responsable? | Sobre todo los ésteres de faradiol (antiinflamatorio), con apoyo de los flavonoides. | 11 a 13 |
+| ¿Qué compuesto es el responsable? | Sobre todo los ésteres de faradiol (antiinflamatorio), con apoyo antioxidante de los carotenoides. | 11 a 13 |
+| ¿Y los flavonoides? | En un extracto oleoso pasan solo en parte; los glucósidos casi no se disuelven en aceite. | 11 y 13 |
 | ¿Por qué un extracto oleoso? | Concentra los triterpenoides, que son lipófilos y el antiinflamatorio principal; el agua sola no los extrae. | 10 y 12 |
 | ¿Qué concentración tiene el extracto? | El fabricante no la declara; pediremos la ficha técnica. | 10 |
 | ¿Qué excipientes llevan? | Están en el anexo: fase oleosa, alcohol cetílico, HLB, humectante. | Botón **+** |
