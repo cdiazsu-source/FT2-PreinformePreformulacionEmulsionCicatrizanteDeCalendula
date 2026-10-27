@@ -728,3 +728,11 @@ body:not(.annex-open) #sectionNav a[data-sec="Anexo"], body:not(.annex-open) .ov
 @media (max-width: 720px) { .cz-matrix { font-size: .82rem; } .cz-matrix th, .cz-matrix td { padding: 6px 4px; } .cz-matrix td span { font-size: .68rem; } }
 .nb.fam.f1, .nb.fam.f2, .nb.fam.f3 { color: var(--ink); }
 .cz-fam .pn { fill: var(--ink); }
+
+/* Extracto comercial */
+.cz-prod { grid-template-columns: .65fr 1.35fr; }
+.cz-prod-fig { padding: 12px; }
+.cz-prod-fig img { width: 100%; max-height: 40vh; object-fit: contain; display: block; }
+.cz-prod-fig figcaption { color: var(--ink); text-align: center; font-size: .95rem; }
+.cz-prod-fig figcaption span { color: var(--muted); font-size: .8rem; }
+@media (max-width: 1000px) { .cz-prod { grid-template-columns: 1fr; } }

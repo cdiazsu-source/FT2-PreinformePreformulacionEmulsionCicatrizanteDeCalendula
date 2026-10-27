@@ -6,7 +6,7 @@ Emulsión cicatrizante con caléndula · Farmacotecnia II · Grupo 1
 1. El tipo de emulsión y por qué.
 2. Los activos de la caléndula que producen el efecto cicatrizante.
 
-**Duración:** unos 11 minutos (≈ 1 300 palabras a ritmo pausado).
+**Duración:** unos 12 minutos (≈ 1 450 palabras a ritmo pausado).
 
 ---
 
@@ -22,17 +22,18 @@ Emulsión cicatrizante con caléndula · Farmacotecnia II · Grupo 1
 | 6 | | De cuatro vehículos, solo la aceite en agua cumple | 4 filas |
 | 7 | | Por qué aceite en agua (ELLA) | 4 |
 | 8 | | Tres pruebas para comprobarlo | 4 |
-| 9 | **Principio activo** | Flores de caléndula y extracto hidroetanólico | 4 |
-| 10 | | Cuatro familias de compuestos | 4 |
-| 11 | | Ésteres de faradiol | 4 |
-| 12 | | Flavonoides | 4 |
-| 13 | | Activos y fases de la cicatrización | 4 |
-| 14 | | Dónde vive cada activo en la crema | 4 |
-| 15 | | Evidencia clínica | 4 |
-| 16–19 | Cierre | Bibliografía (solo lo citado) | — |
-| 20 | | Gracias | — |
+| 9 | **Principio activo** | Las flores de caléndula, fuente de los activos | 4 |
+| 10 | | Extracto comercial que usaremos (Ananda) | 4 |
+| 11 | | Cuatro familias de compuestos | 4 |
+| 12 | | Ésteres de faradiol | 4 |
+| 13 | | Flavonoides | 4 |
+| 14 | | Activos y fases de la cicatrización | 4 |
+| 15 | | Dónde vive cada activo en la crema | 4 |
+| 16 | | Evidencia clínica | 4 |
+| 17–20 | Cierre | Bibliografía (solo lo citado) | — |
+| 21 | | Gracias | — |
 
-**El hilo conductor:** el bloque 1 elige el vehículo y el bloque 2 explica qué lleva. La diapositiva 14 une los dos: cada activo viaja en la fase de la emulsión donde se disuelve.
+**El hilo conductor:** el bloque 1 elige el vehículo y el bloque 2 explica qué lleva. La diapositiva 15 une los dos: cada activo viaja en la fase de la emulsión donde se disuelve.
 
 ---
 
@@ -144,18 +145,31 @@ El tipo de emulsión no se supone: se comprueba.
 
 ### BLOQUE 2 · PRINCIPIO ACTIVO
 
-#### Diapositiva 9 · "Usamos las flores de caléndula en un extracto que capta todos sus activos"
+#### Diapositiva 9 · "Los activos cicatrizantes vienen de las flores de caléndula"
 *Señala la foto.*
 
 `[→]` El principio activo viene de las **flores** de *Calendula officinalis*, familia Asteraceae: la droga vegetal es *Calendulae flos*.
 
 `[→]` La Agencia Europea de Medicamentos reconoce su **uso tradicional** en inflamaciones leves de la piel y como coadyuvante en la cicatrización de heridas menores.
 
-`[→]` Usamos un **extracto hidroetanólico**, con etanol al 60 a 70 %, obtenido por percolación. La mezcla es clave: el etanol arrastra los compuestos lipófilos y el agua los hidrófilos.
+`[→]` El **extracto** se obtiene por maceración en etanol y se transfiere a aceite de sésamo; lo detallo en la siguiente diapositiva.
 
 `[→]` En la crema lo incorporamos al **2 % en peso**.
 
-#### Diapositiva 10 · "Cuatro familias de compuestos explican el efecto cicatrizante"
+#### Diapositiva 10 · "El extracto que usaremos es oleoso: aceite de sésamo con los activos de las flores"
+*Señala el frasco y luego la cadena del proceso, abajo.*
+
+Este es el extracto que vamos a usar: el de la marca **Ananda**, producido en Cachipay, Cundinamarca.
+
+`[→]` **Materia prima**: flores de *Calendula officinalis* cultivadas de forma agroecológica en Bogotá y sus alrededores.
+
+`[→]` **Proceso**: las flores se maceran 28 días en etanol de caña, que forma una tintura; luego esa tintura se mezcla con aceite de sésamo y se destila el alcohol.
+
+`[→]` **Tipo de extracto**: el resultado es oleoso. Concentra sobre todo los compuestos lipófilos, como los ésteres de faradiol y los carotenoides, y en la crema va en la fase oleosa.
+
+`[→]` **Pendiente**: el fabricante no declara la concentración ni entrega ficha técnica. La solicitaremos para poder estandarizar la dosis.
+
+#### Diapositiva 11 · "Cuatro familias de compuestos explican el efecto cicatrizante"
 *Señala la flor: cada pétalo es una familia.*
 
 En la flor hay muchos compuestos, pero cuatro familias explican el efecto que buscamos.
@@ -170,7 +184,7 @@ En la flor hay muchos compuestos, pero cuatro familias explican el efecto que bu
 
 Además hay un aceite esencial en baja proporción con actividad antimicrobiana. Ninguno actúa solo: el efecto cicatrizante es la suma.
 
-#### Diapositiva 11 · "Los ésteres de faradiol son el principal antiinflamatorio de la caléndula"
+#### Diapositiva 12 · "Los ésteres de faradiol son el principal antiinflamatorio de la caléndula"
 *Señala la estructura: un triterpeno pentacíclico.*
 
 `[→]` **Qué son**: faradiol unido a ácidos grasos como el láurico, el mirístico y el palmítico.
@@ -181,7 +195,7 @@ Además hay un aceite esencial en baja proporción con actividad antimicrobiana.
 
 `[→]` **Implicación**: necesitamos un extracto con etanol para obtenerlos y una fase oleosa que los mantenga disueltos en la crema.
 
-#### Diapositiva 12 · "Los flavonoides protegen el tejido del daño oxidativo y de los microbios"
+#### Diapositiva 13 · "Los flavonoides protegen el tejido del daño oxidativo y de los microbios"
 *Señala la estructura de la rutina: la parte de la izquierda es la quercetina; la de la derecha, el azúcar.*
 
 `[→]` **Qué son**: glucósidos de quercetina y de isorhamnetina, como la rutina.
@@ -192,7 +206,7 @@ Además hay un aceite esencial en baja proporción con actividad antimicrobiana.
 
 `[→]` **Hidrófilos**: a diferencia del faradiol, se disuelven en agua por su parte de azúcar, así que en la crema están en la fase acuosa.
 
-#### Diapositiva 13 · "Los activos acompañan cada fase de la cicatrización"
+#### Diapositiva 14 · "Los activos acompañan cada fase de la cicatrización"
 *Señala las tres flechas y la banda de abajo.*
 
 Así se conectan los compuestos con el efecto.
@@ -205,7 +219,7 @@ Así se conectan los compuestos con el efecto.
 
 `[→]` **Protección**: durante todo el proceso, flavonoides y carotenoides protegen del daño oxidativo y ayudan a controlar los microorganismos.
 
-#### Diapositiva 14 · "La emulsión aceite en agua lleva cada activo en la fase donde se disuelve"
+#### Diapositiva 15 · "La emulsión aceite en agua lleva cada activo en la fase donde se disuelve"
 *Este es el puente entre los dos bloques. Señala la gota grande y luego el agua alrededor.*
 
 Aquí se unen las dos partes de la exposición. El extracto trae dos fracciones.
@@ -218,7 +232,7 @@ Aquí se unen las dos partes de la exposición. El extracto trae dos fracciones.
 
 `[→]` **Conclusión**: un solo vehículo lleva todo el extracto. Por eso, aceite en agua.
 
-#### Diapositiva 15 · "Ensayos clínicos respaldan el uso de caléndula en heridas agudas"
+#### Diapositiva 16 · "Ensayos clínicos respaldan el uso de caléndula en heridas agudas"
 *Señala la escalera: de la evidencia más débil a la más fuerte.*
 
 Además de los estudios in vitro y en animales que vimos, hay ensayos clínicos.
@@ -231,10 +245,10 @@ Además de los estudios in vitro y en animales que vimos, hay ensayos clínicos.
 
 `[→]` **Un límite honesto**: esos estudios usan otras formulaciones y concentraciones, así que nuestra crema tendrá que demostrar su propio desempeño.
 
-### Diapositivas 16–19 · Bibliografía
+### Diapositivas 17–20 · Bibliografía
 Pasa rápido: "Estas son las referencias citadas; cada número en las diapositivas enlaza aquí."
 
-### Diapositiva 20 · Gracias
+### Diapositiva 21 · Gracias
 Muchas gracias. Quedo atento a sus preguntas.
 
 ---
@@ -243,11 +257,12 @@ Muchas gracias. Quedo atento a sus preguntas.
 
 | Pregunta probable | Respuesta corta | Dónde apoyarte |
 |---|---|---|
-| ¿Por qué no un gel? | El gel acuoso no disuelve los triterpenoides, que son el antiinflamatorio principal. | 6 y 11 |
+| ¿Por qué no un gel? | El gel acuoso no disuelve los triterpenoides, que son el antiinflamatorio principal. | 6 y 12 |
 | ¿Por qué no agua en aceite? | Sería oclusiva y podría macerar una herida con exudado. | 6 y 7 |
 | ¿Cómo saben que es aceite en agua? | Dilución, conductividad y colorantes en la Práctica 8. | 8 |
-| ¿Qué compuesto es el responsable? | Sobre todo los ésteres de faradiol (antiinflamatorio), con apoyo de los flavonoides. | 10 a 12 |
-| ¿Por qué extracto hidroetanólico y no acuoso? | El agua sola no extrae los triterpenoides lipófilos. | 9 y 11 |
+| ¿Qué compuesto es el responsable? | Sobre todo los ésteres de faradiol (antiinflamatorio), con apoyo de los flavonoides. | 11 a 13 |
+| ¿Por qué un extracto oleoso? | Concentra los triterpenoides, que son lipófilos y el antiinflamatorio principal; el agua sola no los extrae. | 10 y 12 |
+| ¿Qué concentración tiene el extracto? | El fabricante no la declara; pediremos la ficha técnica. | 10 |
 | ¿Qué excipientes llevan? | Están en el anexo: fase oleosa, alcohol cetílico, HLB, humectante. | Botón **+** |
 
 **"¿De dónde salió eso?"** Haz clic en el número de la cita, por ejemplo **[24]**:
