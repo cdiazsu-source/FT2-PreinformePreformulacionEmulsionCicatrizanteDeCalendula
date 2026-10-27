@@ -86,11 +86,11 @@ const INTERACTIONS = [
 const EXCIPIENTS = [
   {
     fn: "Principio activo", icon: "leaf", who: "Por asignar", status: "ok",
-    sel: "Extracto hidroetanólico de Calendula officinalis 5 %", pct: "5,0 %",
+    sel: "Extracto oleoso de Calendula officinalis (Ananda, en aceite de sésamo) 2 %", pct: "2,0 %",
     candidates: [
       { n: "Extracto acuoso", why: "No solubiliza los ésteres de faradiol ni los carotenoides: se pierden los principios antiinflamatorios y cicatrizantes." },
-      { n: "Extracto oleoso", why: "Disuelve la fracción triterpénica pero excluye los flavonoides antioxidantes y añade una carga grasa no estandarizada que altera el HLB requerido." },
-      { n: "Extracto hidroetanólico 60–70 % v/v", why: "Su constante dieléctrica intermedia extrae a la vez la fracción lipófila y la hidrófila. Maceración agitada o percolación en frío (20–25 °C).", pick: true }
+      { n: "Extracto oleoso (seleccionado)", why: "Concentra los ésteres de faradiol y los carotenoides, que son lipófilos; pasa solo parte de los flavonoides. Su aceite de sésamo entra en la fase oleosa y en el HLB requerido (11,4).", pick: true },
+      { n: "Extracto hidroetanólico 60–70 % v/v", why: "Su constante dieléctrica intermedia extrae a la vez la fracción lipófila y la hidrófila. Maceración agitada o percolación en frío (20–25 °C)." }
     ],
     refs: [8, 10, 11, 12]
   },
@@ -179,7 +179,7 @@ const EXCIPIENTS = [
 
 /* ---------- Fórmula base tentativa ---------- */
 const FORMULA = [
-  { n: "Extracto hidroetanólico de caléndula", pct: 5.0, phase: "Acuosa (incorporar < 40 °C)", fn: "Activo", fixed: true, c: "#f39c12" },
+  { n: "Extracto oleoso de caléndula (en aceite de sésamo)", pct: 2.0, phase: "Oleosa", fn: "Activo", fixed: true, c: "#f39c12" },
   { n: "Triglicéridos de cadena media", pct: 8.0, phase: "Oleosa", fn: "Fase oleosa / emoliente", fixed: false, c: "#e6b34a" },
   { n: "Alcohol cetílico", pct: 3.0, phase: "Oleosa", fn: "Coemulsionante / consistencia", fixed: false, c: "#c99a3c" },
   { n: "Tween 80", pct: 3.7, phase: "Acuosa", fn: "Emulsionante O/W", fixed: false, c: "#5aa469" },
@@ -238,10 +238,10 @@ const REFS = [
   "M. Hara and A. S. Verkman, \"Glycerol replacement corrects defective skin hydration, elasticity, and barrier function in aquaporin-3-deficient mice,\" <i>Proc. Natl. Acad. Sci. USA</i>, vol. 100, no. 12, pp. 7360–7365, 2003.",
   "J. W. Fluhr, R. Darlenski, and C. Surber, \"Glycerol and the skin: holistic approach to its origin and functions,\" <i>Br. J. Dermatol.</i>, vol. 159, no. 1, pp. 23–34, 2008.",
   "United States Pharmacopeial Convention, \"Glycerin,\" in <i>United States Pharmacopeia and National Formulary</i>, Rockville, MD, USA, 2021.",
-  "W. D. Bancroft, \"The theory of emulsification, V,\" <i>J. Phys. Chem.</i>, vol. 17, no. 6, pp. 501–519, 1913.",
+  "W. D. Bancroft, \"The theory of emulsification, V,\" <i>J. Phys. Chem.</i>, vol. 17, no. 6, pp. 501–519, 1913, doi: <a href=\"https://doi.org/10.1021/j150141a002\" target=\"_blank\" rel=\"noopener\">10.1021/j150141a002</a>.",
   "M. Fronza, B. Heinzmann, M. Hamburger, S. Laufer, and I. Merfort, \"Determination of the wound healing effect of <i>Calendula</i> extracts using the scratch assay with 3T3 fibroblasts,\" <i>J. Ethnopharmacol.</i>, vol. 126, no. 3, pp. 463–467, 2009, doi: <a href=\"https://doi.org/10.1016/j.jep.2009.09.014\" target=\"_blank\" rel=\"noopener\">10.1016/j.jep.2009.09.014</a>.",
   "C. Nicolaus, S. Junghanns, A. Hartmann, R. Murillo, M. Ganzera, and I. Merfort, \"In vitro studies to evaluate the wound healing properties of <i>Calendula officinalis</i> extracts,\" <i>J. Ethnopharmacol.</i>, vol. 196, pp. 94–103, 2017, doi: <a href=\"https://doi.org/10.1016/j.jep.2016.12.006\" target=\"_blank\" rel=\"noopener\">10.1016/j.jep.2016.12.006</a>.",
-  "K. C. Preethi and R. Kuttan, \"Wound healing activity of flower extract of <i>Calendula officinalis</i>,\" <i>J. Basic Clin. Physiol. Pharmacol.</i>, vol. 20, no. 1, pp. 73–79, 2009, doi: <a href=\"https://doi.org/10.1515/jbcpp.2009.20.1.73\" target=\"_blank\" rel=\"noopener\">10.1515/jbcpp.2009.20.1.73</a>.",
+  "K. C. Preethi and R. Kuttan, \"Wound healing activity of flower extract of <i>Calendula officinalis</i>,\" <i>J. Basic Clin. Physiol. Pharmacol.</i>, vol. 20, no. 1, pp. 73–80, 2009, doi: <a href=\"https://doi.org/10.1515/jbcpp.2009.20.1.73\" target=\"_blank\" rel=\"noopener\">10.1515/jbcpp.2009.20.1.73</a>.",
   "L. M. L. Parente et al., \"Wound healing and anti-inflammatory effect in animal models of <i>Calendula officinalis</i> L. growing in Brazil,\" <i>Evid. Based Complement. Alternat. Med.</i>, vol. 2012, Art. no. 375671, 2012, doi: <a href=\"https://doi.org/10.1155/2012/375671\" target=\"_blank\" rel=\"noopener\">10.1155/2012/375671</a>.",
   "Ananda Esencial, \"Extracto de caléndula · Ananda (10 ml),\" La Tortuga y La Liebre, Colombia, 2026. [En línea]. Disponible: <a href=\"https://www.latortugalaliebre.com/products/extracto-de-calendula-ananda\" target=\"_blank\" rel=\"noopener\">https://www.latortugalaliebre.com/products/extracto-de-calendula-ananda</a>",
   "M. Namiki, \"Nutraceutical functions of sesame: a review,\" <i>Crit. Rev. Food Sci. Nutr.</i>, vol. 47, no. 7, pp. 651–673, 2007, doi: <a href=\"https://doi.org/10.1080/10408390600919114\" target=\"_blank\" rel=\"noopener\">10.1080/10408390600919114</a>."

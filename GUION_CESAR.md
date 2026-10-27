@@ -81,7 +81,7 @@ Lo primero es aclarar un término.
 
 `[→]` Una crema debe tener más de 20 % de agua y menos de 50 % de componentes grasos.
 
-`[→]` La nuestra tiene alrededor de 70 % de agua y 16 % de grasos *(señala la barra)*, así que cumple con holgura.
+`[→]` La nuestra tiene alrededor de 68 % de agua y 18 % de grasos, contando el extracto oleoso *(señala la barra)*, así que cumple con holgura.
 
 #### Diapositiva 5 · "El emulsificante decide qué fase queda afuera"
 *Señala los tres esquemas de izquierda a derecha.*
@@ -122,7 +122,7 @@ Resumo las razones con una sigla: **ELLA**.
 
 `[→]` **Lámina húmeda**: al evaporarse parte del agua queda una película lipídica delgada que mantiene la herida húmeda sin ocluirla.
 
-`[→]` **Ajuste del balance**: el balance hidrófilo-lipófilo que calculamos, 12, está dentro del intervalo de 8 a 18 de este tipo de emulsión.
+`[→]` **Ajuste del balance**: el balance hidrófilo-lipófilo requerido que calculamos, 11,4, ya contando el aceite de sésamo del extracto, está dentro del intervalo de 8 a 18 de este tipo de emulsión.
 
 *(Señala el pie.)* Una agua en aceite podría macerar los bordes de una herida con exudado.
 
@@ -266,6 +266,7 @@ Muchas gracias. Quedo atento a sus preguntas.
 | ¿Y los flavonoides? | En un extracto oleoso pasan solo en parte; los glucósidos casi no se disuelven en aceite. | 11 y 13 |
 | ¿Por qué un extracto oleoso? | Concentra los triterpenoides, que son lipófilos y el antiinflamatorio principal; el agua sola no los extrae. | 10 y 12 |
 | ¿Qué concentración tiene el extracto? | El fabricante no la declara; pediremos la ficha técnica. | 10 |
+| ¿De dónde sale el 11,4? | Promedio ponderado de triglicéridos (11), alcohol cetílico (15) y aceite de sésamo del extracto (7). | Anexo (**+**) |
 | ¿Qué excipientes llevan? | Están en el anexo: fase oleosa, alcohol cetílico, HLB, humectante. | Botón **+** |
 
 **"¿De dónde salió eso?"** Haz clic en el número de la cita, por ejemplo **[24]**:
