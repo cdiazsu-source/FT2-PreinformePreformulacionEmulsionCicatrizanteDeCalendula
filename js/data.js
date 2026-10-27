@@ -237,7 +237,12 @@ const REFS = [
   "H. Lessmann, A. Schnuch, J. Geier, and W. Uter, \"Skin-sensitizing and irritant properties of propylene glycol,\" <i>Contact Dermatitis</i>, vol. 53, no. 5, pp. 247–259, 2005.",
   "M. Hara and A. S. Verkman, \"Glycerol replacement corrects defective skin hydration, elasticity, and barrier function in aquaporin-3-deficient mice,\" <i>Proc. Natl. Acad. Sci. USA</i>, vol. 100, no. 12, pp. 7360–7365, 2003.",
   "J. W. Fluhr, R. Darlenski, and C. Surber, \"Glycerol and the skin: holistic approach to its origin and functions,\" <i>Br. J. Dermatol.</i>, vol. 159, no. 1, pp. 23–34, 2008.",
-  "United States Pharmacopeial Convention, \"Glycerin,\" in <i>United States Pharmacopeia and National Formulary</i>, Rockville, MD, USA, 2021."
+  "United States Pharmacopeial Convention, \"Glycerin,\" in <i>United States Pharmacopeia and National Formulary</i>, Rockville, MD, USA, 2021.",
+  "W. D. Bancroft, \"The theory of emulsification, V,\" <i>J. Phys. Chem.</i>, vol. 17, no. 6, pp. 501–519, 1913.",
+  "M. Fronza, B. Heinzmann, M. Hamburger, S. Laufer, and I. Merfort, \"Determination of the wound healing effect of <i>Calendula</i> extracts using the scratch assay with 3T3 fibroblasts,\" <i>J. Ethnopharmacol.</i>, vol. 126, no. 3, pp. 463–467, 2009, doi: <a href=\"https://doi.org/10.1016/j.jep.2009.09.014\" target=\"_blank\" rel=\"noopener\">10.1016/j.jep.2009.09.014</a>.",
+  "C. Nicolaus, S. Junghanns, A. Hartmann, R. Murillo, M. Ganzera, and I. Merfort, \"In vitro studies to evaluate the wound healing properties of <i>Calendula officinalis</i> extracts,\" <i>J. Ethnopharmacol.</i>, vol. 196, pp. 94–103, 2017, doi: <a href=\"https://doi.org/10.1016/j.jep.2016.12.006\" target=\"_blank\" rel=\"noopener\">10.1016/j.jep.2016.12.006</a>.",
+  "K. C. Preethi and R. Kuttan, \"Wound healing activity of flower extract of <i>Calendula officinalis</i>,\" <i>J. Basic Clin. Physiol. Pharmacol.</i>, vol. 20, no. 1, pp. 73–79, 2009, doi: <a href=\"https://doi.org/10.1515/jbcpp.2009.20.1.73\" target=\"_blank\" rel=\"noopener\">10.1515/jbcpp.2009.20.1.73</a>.",
+  "L. M. L. Parente et al., \"Wound healing and anti-inflammatory effect in animal models of <i>Calendula officinalis</i> L. growing in Brazil,\" <i>Evid. Based Complement. Alternat. Med.</i>, vol. 2012, Art. no. 375671, 2012, doi: <a href=\"https://doi.org/10.1155/2012/375671\" target=\"_blank\" rel=\"noopener\">10.1155/2012/375671</a>."
 ];
 
 /* ---------- Galería de la planta (Wikimedia Commons) ---------- */

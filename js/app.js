@@ -35,7 +35,7 @@
 
   /* ---------------- Puntos 5–10 (próxima entrega, difuminados) ---------------- */
   const UPCOMING_SEC = "5–10 · Próximamente";
-  UPCOMING.forEach((u) => {
+  if ($("#agendaLater")) UPCOMING.forEach((u) => {
     const s = h("section", {
       class: "slide upcoming", "data-section": UPCOMING_SEC, "data-presenter": "Próxima entrega",
       "data-notes": `Punto ${+u.n} · ${u.t}. Se desarrollará en la siguiente entrega del preinforme.`
@@ -49,16 +49,28 @@
       <div class="up-badge"><i data-lucide="hourglass"></i><span>En desarrollo · se presentará en la siguiente entrega</span></div>`);
     $("#deck").insertBefore(s, $(".annex-cover"));
   });
-  $("#agendaLater").innerHTML = UPCOMING.map((u) =>
+  if ($("#agendaLater")) $("#agendaLater").innerHTML = UPCOMING.map((u) =>
     `<a class="agenda-card" data-goto-title="${u.t}"><span class="num"><i data-lucide="${u.icon}"></i>${u.n}</span><h3>${u.t}</h3></a>`).join("");
 
   /* =========================================================
      NAVEGACIÓN DE DIAPOSITIVAS
      ========================================================= */
+  const bibTpl = $("#bibTemplate");
+  if (bibTpl) {
+    const cited = [...new Set($$(".cz-ref").flatMap((el) => (el.textContent.match(/\d+/g) || []).map(Number)))].sort((a, b) => a - b);
+    const per = 7;
+    let last = bibTpl;
+    for (let k = 0; k < cited.length; k += per) {
+      const nums = cited.slice(k, k + per);
+      const s = k === 0 ? bibTpl : bibTpl.cloneNode(true);
+      if (k > 0) { s.removeAttribute("id"); s.removeAttribute("data-sub"); last.after(s); }
+      last = s;
+      s.dataset.nums = nums.join(",");
+      $("ol", s).innerHTML = nums.map((n) => `<li value="${n}" data-n="${n}">${REFS[n - 1] || ""}</li>`).join("");
+    }
+  }
   const slides = $$(".slide");
   const total = slides.length;
-  // Estrella de ubicación: marca la diapositiva anterior a cada bloque de César
-  slides.forEach((s, i) => { if (s.classList.contains("cz") && i > 0 && !slides[i - 1].classList.contains("cz")) slides[i - 1].classList.add("pre-cz"); });
   let idx = 0;
 
   // Anexo oculto: solo aparece al pulsar "+" en la barra superior (o al llegar por enlace directo)
@@ -260,11 +272,8 @@
   });
   pop.addEventListener("mouseleave", () => (pop.hidden = true));
 
-  const bibSlides = slides.map((s, i) => {
-    const [a, b] = (s.dataset.refs || "").split("-").map(Number);
-    return a ? { i, a, b } : null;
-  }).filter(Boolean);
-  const bibFor = (n) => bibSlides.find((x) => n >= x.a && n <= x.b);
+  const bibSlides = slides.map((s, i) => (s.dataset.nums ? { i, nums: s.dataset.nums.split(",").map(Number) } : null)).filter(Boolean);
+  const bibFor = (n) => bibSlides.find((x) => x.nums.includes(n));
   $$(".slide.cz .cz-ref").forEach((el) => {
     el.innerHTML = el.textContent.replace(/\d+/g, (d) => {
       const t = bibFor(+d);
@@ -281,7 +290,7 @@
     backTo = idx;
     pop.hidden = true;
     go(t.i);
-    $$("ol.refs li", slides[t.i]).forEach((li, k) => li.classList.toggle("ref-hit", t.a + k === n));
+    $$("ol.refs li", slides[t.i]).forEach((li) => li.classList.toggle("ref-hit", +li.dataset.n === n));
     $("#refBackN").textContent = backTo + 1;
     backBtn.hidden = false;
   });
@@ -605,7 +614,7 @@
      DIAPOSITIVA: trazabilidad y referencias
      ========================================================= */
   $("#trace").innerHTML = TRACE.map((t, i) => `<div class="tr-row" style="--d:${i * 0.06}s"><span class="tr-r"><i data-lucide="triangle-alert"></i>${t.r}</span><span class="tr-arrow"><i data-lucide="arrow-right"></i></span><span class="tr-e"><i data-lucide="shield-check"></i>${t.e}</span></div>`).join("");
-  $$("ol.refs").forEach((ol) => {
+  $$("ol.refs[data-from]").forEach((ol) => {
     const from = +ol.dataset.from, to = +ol.dataset.to;
     ol.start = from;
     ol.innerHTML = REFS.slice(from - 1, to).map((r) => `<li>${r}</li>`).join("");

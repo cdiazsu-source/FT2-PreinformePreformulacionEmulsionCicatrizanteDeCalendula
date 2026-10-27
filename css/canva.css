@@ -623,13 +623,6 @@
 }
 @media (prefers-reduced-motion: reduce) { .cv-spark { animation: none; } }
 
-/* ---------- Estrella de ubicación: mis diapositivas y la anterior a cada bloque ---------- */
-.slide.cz::after, .slide.pre-cz::after {
-  content: "★"; position: absolute; top: 8px; right: 18px; z-index: 5; pointer-events: none;
-  font: 30px/1 var(--sans); color: #f5b941; text-shadow: 0 1px 4px rgba(80, 40, 140, .45);
-}
-.slide.pre-cz::after { opacity: .4; filter: blur(1.4px); }
-@media print { .slide.cz::after, .slide.pre-cz::after { display: none; } }
 
 /* ---------- Citas enlazadas (solo diapositivas de César) ---------- */
 .slide.cz .cz-cite { color: var(--cv-purple); text-decoration: underline dotted; text-underline-offset: 2px; cursor: pointer; font-weight: 600; }
@@ -644,3 +637,94 @@
 body:not(.annex-open) #sectionNav a[data-sec="Anexo"], body:not(.annex-open) .ov-card.annex { display: none; }
 .annex-toggle { flex: none; width: 24px; height: 24px; margin-left: 4px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 600 15px/1 var(--sans); opacity: .45; cursor: pointer; display: inline-grid; place-items: center; padding: 0; }
 .annex-toggle:hover, .annex-toggle:focus-visible { opacity: 1; }
+
+/* =========================================================
+   Exposición de César: tipo de emulsión y principio activo
+   ========================================================= */
+.slide { --cv-orange: #f29a1f; --cv-orange-deep: #d9700f; --cv-disc: #8a4a12; --cv-leaf: #4f8a3a; --cv-leaf-deep: #2f6a2a; }
+.toc.toc-one { grid-template-columns: 1fr; max-width: 820px; margin: 0 auto; }
+.cz-wide-fig { padding: 8px 14px; margin-bottom: 14px; }
+.cz-wide-fig svg { max-height: 27vh; }
+
+/* Tipos de emulsión */
+.cz-types .bg-water { fill: var(--water); stroke: var(--blue); stroke-width: 1.5; }
+.cz-types .bg-oil { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 1.5; }
+.cz-types .d-oil { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 1; }
+.cz-types .d-water { fill: var(--water); stroke: var(--blue); stroke-width: 1; }
+
+/* Matriz de vehículos */
+.cz-matrix-wrap { max-width: 1100px; margin: 0 auto; }
+.cz-matrix { font-size: 1.02rem; }
+.cz-matrix th, .cz-matrix td { padding: 12px 10px; }
+.cz-matrix thead th { background: var(--cv-purple-soft); color: var(--cv-purple); font-weight: 400; font-size: 1.05rem; }
+.cz-matrix thead th.pick { background: var(--green-soft); color: var(--green); font-weight: 700; }
+.cz-matrix tbody th { text-align: left; font-weight: 400; background: var(--pink-soft); width: 34%; }
+.cz-matrix tbody th .lucide { width: 18px; height: 18px; margin-right: 8px; color: var(--cv-purple); vertical-align: -3px; }
+.cz-matrix td .lucide { width: 22px; height: 22px; stroke-width: 3; vertical-align: middle; }
+.cz-matrix td span { display: block; font-size: .8rem; color: var(--muted); }
+.cz-matrix td.y .lucide { color: var(--green); }
+.cz-matrix td.n .lucide { color: var(--bad); }
+.cz-matrix td.m .lucide { color: var(--cv-orange-deep); }
+.cz-matrix tbody td:nth-child(2) { background: color-mix(in srgb, var(--green-soft) 60%, var(--surface)); }
+
+/* Pruebas de identificación */
+.cz-tests .glass { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; }
+.cz-tests .water-fill { fill: var(--water); }
+.cz-tests .cream-fill { fill: var(--surface-2); }
+.cz-tests .cloud circle { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; opacity: .9; }
+.cz-tests .arrow { stroke: var(--muted); stroke-width: 2; }
+.cz-tests .arr-h { fill: var(--muted); }
+.cz-tests .wire { fill: none; stroke: var(--muted); stroke-width: 2; }
+.cz-tests .electrode { stroke: var(--ink); stroke-width: 5; stroke-linecap: round; }
+.cz-tests .bulb { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 2; }
+.cz-tests .ray { stroke: var(--oil-edge); stroke-width: 2.5; stroke-linecap: round; }
+.cz-tests .slide-blue { fill: color-mix(in srgb, var(--blue) 45%, var(--surface)); stroke: var(--line); stroke-width: 2; }
+.cz-tests .slide-white { fill: var(--surface); stroke: var(--line); stroke-width: 2; }
+.cz-tests .red-dot { fill: var(--bad); opacity: .85; }
+
+/* Droga vegetal */
+.cz-photo img { aspect-ratio: 4 / 3; max-height: 48vh; }
+
+/* Familias de compuestos */
+.cz-split-fam { grid-template-columns: .7fr 1.3fr; }
+.cz-fam { max-height: 50vh; }
+.cz-fam .f1 { fill: var(--cv-orange-deep); } .cz-fam .f2 { fill: var(--oil); } .cz-fam .f3 { fill: var(--cv-orange); } .cz-fam .f4 { fill: var(--cv-leaf); }
+.cz-fam .pn { font-size: 26px; font-weight: 700; fill: var(--surface); }
+.cz-fam .core { fill: var(--cv-disc); }
+.cz-fam .core-t { font-size: 13px; font-style: italic; fill: var(--surface); }
+.nb.fam { border: none; color: var(--surface); width: 26px; height: 26px; font-size: .85rem; }
+.nb.fam.f1 { background: var(--cv-orange-deep); } .nb.fam.f2 { background: var(--oil-edge); } .nb.fam.f3 { background: var(--cv-orange); } .nb.fam.f4 { background: var(--cv-leaf); }
+.slide.cz .cz-stack .ccard.cz-card { padding: 10px 16px; }
+
+/* Estructuras */
+.cz-mol img { max-width: 300px; }
+
+/* Fases de la cicatrización */
+.cz-phases .ph1 { fill: var(--rose-soft); stroke: var(--rose); stroke-width: 1.5; }
+.cz-phases .ph2 { fill: var(--cv-purple-soft); stroke: var(--cv-purple); stroke-width: 1.5; }
+.cz-phases .ph3 { fill: var(--green-soft); stroke: var(--green); stroke-width: 1.5; }
+.cz-phases .ph4 { fill: var(--water); stroke: var(--blue); stroke-width: 1.5; }
+.cz-phases .t-ph { font-size: 20px; }
+.cz-phases .t-s4 { font-size: 15px; fill: var(--ink); }
+
+/* Reparto en la emulsión */
+.cz-part .w { fill: var(--water); stroke: var(--blue); stroke-width: 1.5; }
+.cz-part .o { fill: var(--oil); stroke: var(--oil-edge); stroke-width: 1.2; }
+.cz-part .o.big { stroke-width: 2.5; }
+.cz-part .t-in { font-size: 15px; fill: var(--ink); }
+.cz-part .t-w { font-size: 15px; }
+
+/* Escalera de evidencia */
+.cz-ev .e1 { fill: var(--cv-purple-soft); } .cz-ev .e2 { fill: var(--line); } .cz-ev .e3 { fill: var(--cv-purple); }
+.cz-ev .t-e { font-size: 16px; fill: var(--ink); }
+.cz-ev .t-e3 { font-size: 16px; fill: var(--surface); }
+.cz-ev .base { stroke: var(--ink); stroke-width: 2; }
+
+/* Bibliografía automática */
+.slide.cz-bib .refs { font-size: .92rem; }
+.slide.cz-bib .refs li { margin-bottom: 6px; }
+
+@media (max-width: 1000px) { .cz-split-fam { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .cz-matrix { font-size: .82rem; } .cz-matrix th, .cz-matrix td { padding: 6px 4px; } .cz-matrix td span { font-size: .68rem; } }
+.nb.fam.f1, .nb.fam.f2, .nb.fam.f3 { color: var(--ink); }
+.cz-fam .pn { fill: var(--ink); }
